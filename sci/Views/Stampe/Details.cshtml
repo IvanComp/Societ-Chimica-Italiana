@@ -1,0 +1,114 @@
+﻿@model sci.Models.Stampe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stampe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeReport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFiltro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFiltro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Filtrabile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filtrabile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinabile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ordinabile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExcelAbilitato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExcelAbilitato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Selezionato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Selezionato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodPri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodPri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QueryAmmesse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueryAmmesse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trans)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trans)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QBE.NomeFiltro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QBE.NomeFiltro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

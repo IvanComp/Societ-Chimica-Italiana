@@ -1,0 +1,1475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sci_newModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Convenzioni">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodConv" />
+    </Key>
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="CodConv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ncopie" Type="Byte" Nullable="false" />
+    <Property Name="DatConv" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Convenzioni_Pag" FromRole="Convenzioni" ToRole="Pag" />
+    <NavigationProperty Name="TabConv" Relationship="Self.FK_Convenzioni_TabConvenzioni" FromRole="Convenzioni" ToRole="TabConv" />
+  </EntityType>
+  <EntityType Name="DatGen">
+    <Key>
+      <PropertyRef Name="IDDatGen" />
+    </Key>
+    <Property Name="IDDatGen" Type="Byte" Nullable="false" />
+    <Property Name="NomeProc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Indirizzo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Città" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Prov" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IntLong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IntShort" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Rec" Type="Int16" />
+    <Property Name="Deffuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Versione" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Wesite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DatLoc">
+    <Key>
+      <PropertyRef Name="IDDatLoc" />
+    </Key>
+    <Property Name="IDDatLoc" Type="Byte" Nullable="false" />
+    <Property Name="Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Logon" Type="Double" />
+    <Property Name="FirstTime" Type="Double" />
+    <Property Name="Level" Type="Byte" />
+    <Property Name="PathDati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Stampante" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Divisioni">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodDiv" />
+    </Key>
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="CodDiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Effettiva" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Divisioni_Pag" FromRole="Divisioni" ToRole="Pag" />
+    <NavigationProperty Name="TabDiv" Relationship="Self.FK_Divisioni_TabDiv" FromRole="Divisioni" ToRole="TabDiv" />
+  </EntityType>
+  <EntityType Name="Gruppi">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodGru" />
+    </Key>
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="CodGru" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Gruppi_Pag" FromRole="Gruppi" ToRole="Pag" />
+    <NavigationProperty Name="TabGru" Relationship="Self.FK_Gruppi_TabGru" FromRole="Gruppi" ToRole="TabGru" />
+  </EntityType>
+  <EntityType Name="Mem">
+    <Key>
+      <PropertyRef Name="Cod" />
+    </Key>
+    <Property Name="Cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TabNaz" Relationship="Self.FK_Mem_TabNaz" FromRole="Mem" ToRole="TabNaz" />
+    <NavigationProperty Name="TabSex" Relationship="Self.FK_Mem_TabSex" FromRole="Mem" ToRole="TabSex" />
+    <NavigationProperty Name="TabTitStu" Relationship="Self.FK_Mem_TabTitStu" FromRole="Mem" ToRole="TabTitStu" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_Mem" FromRole="Mem" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="Ordinamenti">
+    <Key>
+      <PropertyRef Name="IDO" />
+    </Key>
+    <Property Name="IDO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeOrdinamentoO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CriterioO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrdinamentoO" Type="Boolean" />
+    <Property Name="NomeQueryO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Stampe" Relationship="sci_newModel.FK_Stampe_Ordinamenti" FromRole="Ordinamenti" ToRole="Stampe" />
+  </EntityType>
+  <EntityType Name="Pag">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" Nullable="false" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="CodSocCol" Type="Int32" />
+    <NavigationProperty Name="Convenzioni" Relationship="Self.FK_Convenzioni_Pag" FromRole="Pag" ToRole="Convenzioni" />
+    <NavigationProperty Name="Divisioni" Relationship="Self.FK_Divisioni_Pag" FromRole="Pag" ToRole="Divisioni" />
+    <NavigationProperty Name="Gruppi" Relationship="Self.FK_Gruppi_Pag" FromRole="Pag" ToRole="Gruppi" />
+    <NavigationProperty Name="Mem" Relationship="Self.FK_Pag_Mem" FromRole="Pag" ToRole="Mem" />
+    <NavigationProperty Name="TabCarica" Relationship="Self.FK_Pag_TabCarica" FromRole="Pag" ToRole="TabCarica" />
+    <NavigationProperty Name="TabCat" Relationship="Self.FK_Pag_TabCat" FromRole="Pag" ToRole="TabCat" />
+    <NavigationProperty Name="TabEnt" Relationship="Self.FK_Pag_TabEnt" FromRole="Pag" ToRole="TabEnt" />
+    <NavigationProperty Name="TabPos" Relationship="Self.FK_Pag_TabPos" FromRole="Pag" ToRole="TabPos" />
+    <NavigationProperty Name="TabSet" Relationship="Self.FK_Pag_TabSet" FromRole="Pag" ToRole="TabSet" />
+    <NavigationProperty Name="TabSez" Relationship="Self.FK_Pag_TabSez" FromRole="Pag" ToRole="TabSez" />
+    <NavigationProperty Name="TabTIscr" Relationship="Self.FK_Pag_TabTIscr" FromRole="Pag" ToRole="TabTIscr" />
+    <NavigationProperty Name="TabTPag" Relationship="Self.FK_Pag_TabTPag" FromRole="Pag" ToRole="TabTPag" />
+    <NavigationProperty Name="Riviste" Relationship="Self.FK_Riviste_Pag" FromRole="Pag" ToRole="Riviste" />
+  </EntityType>
+  <EntityType Name="Riviste">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodRiv" />
+    </Key>
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="CodRiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ncopie" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Riviste_Pag" FromRole="Riviste" ToRole="Pag" />
+    <NavigationProperty Name="TabRiv" Relationship="Self.FK_Riviste_TabRiv" FromRole="Riviste" ToRole="TabRiv" />
+  </EntityType>
+  <EntityType Name="Storico">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TabCarica">
+    <Key>
+      <PropertyRef Name="CodCarica" />
+    </Key>
+    <Property Name="CodCarica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelCarica" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabCarica" FromRole="TabCarica" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabCat">
+    <Key>
+      <PropertyRef Name="AnnoCat" />
+      <PropertyRef Name="CodCat" />
+    </Key>
+    <Property Name="AnnoCat" Type="Int16" Nullable="false" />
+    <Property Name="CodCat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodCat" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoCat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelCat" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabCat" FromRole="TabCat" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabConv">
+    <Key>
+      <PropertyRef Name="AnnoConv" />
+      <PropertyRef Name="CodConv" />
+    </Key>
+    <Property Name="AnnoConv" Type="Int16" Nullable="false" />
+    <Property Name="CodConv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrConv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoConv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelConv" Type="Boolean" />
+    <NavigationProperty Name="Convenzioni" Relationship="Self.FK_Convenzioni_TabConvenzioni" FromRole="TabConv" ToRole="Convenzioni" />
+  </EntityType>
+  <EntityType Name="TabDiv">
+    <Key>
+      <PropertyRef Name="AnnoDiv" />
+      <PropertyRef Name="CodDiv" />
+    </Key>
+    <Property Name="AnnoDiv" Type="Int16" Nullable="false" />
+    <Property Name="CodDiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodDiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrDiv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoDiv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelDiv" Type="Boolean" />
+    <NavigationProperty Name="Divisioni" Relationship="Self.FK_Divisioni_TabDiv" FromRole="TabDiv" ToRole="Divisioni" />
+  </EntityType>
+  <EntityType Name="TabEnt">
+    <Key>
+      <PropertyRef Name="CodEnt" />
+    </Key>
+    <Property Name="CodEnt" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodEnt" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelEnt" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabEnt" FromRole="TabEnt" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabGru">
+    <Key>
+      <PropertyRef Name="AnnoGru" />
+      <PropertyRef Name="CodGru" />
+    </Key>
+    <Property Name="AnnoGru" Type="Int16" Nullable="false" />
+    <Property Name="CodGru" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodGru" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DescrGruppo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoGru" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelGru" Type="Boolean" />
+    <NavigationProperty Name="Gruppi" Relationship="Self.FK_Gruppi_TabGru" FromRole="TabGru" ToRole="Gruppi" />
+  </EntityType>
+  <EntityType Name="TabNaz">
+    <Key>
+      <PropertyRef Name="CodNaz" />
+    </Key>
+    <Property Name="CodNaz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelNaz" Type="Boolean" />
+    <NavigationProperty Name="Mem" Relationship="Self.FK_Mem_TabNaz" FromRole="TabNaz" ToRole="Mem" />
+  </EntityType>
+  <EntityType Name="TabPos">
+    <Key>
+      <PropertyRef Name="CodPos" />
+    </Key>
+    <Property Name="CodPos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodPos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelPos" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabPos" FromRole="TabPos" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabRiv">
+    <Key>
+      <PropertyRef Name="AnnoRiv" />
+      <PropertyRef Name="CodRiv" />
+    </Key>
+    <Property Name="AnnoRiv" Type="Int16" Nullable="false" />
+    <Property Name="CodRiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodRiv" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DescrRiv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DescrS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoRiv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FormatoRiv" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="TipoRiv" Type="Byte" />
+    <Property Name="SelRiv" Type="Boolean" />
+    <NavigationProperty Name="Riviste" Relationship="Self.FK_Riviste_TabRiv" FromRole="TabRiv" ToRole="Riviste" />
+  </EntityType>
+  <EntityType Name="TabSet">
+    <Key>
+      <PropertyRef Name="CodSet" />
+    </Key>
+    <Property Name="CodSet" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodSet" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelSet" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabSet" FromRole="TabSet" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabSex">
+    <Key>
+      <PropertyRef Name="CodSex" />
+    </Key>
+    <Property Name="CodSex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelSex" Type="Boolean" />
+    <NavigationProperty Name="Mem" Relationship="Self.FK_Mem_TabSex" FromRole="TabSex" ToRole="Mem" />
+  </EntityType>
+  <EntityType Name="TabSez">
+    <Key>
+      <PropertyRef Name="CodSez" />
+    </Key>
+    <Property Name="CodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSez" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelSez" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabSez" FromRole="TabSez" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabTIscr">
+    <Key>
+      <PropertyRef Name="CodTIscr" />
+    </Key>
+    <Property Name="CodTIscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelTIscr" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabTIscr" FromRole="TabTIscr" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabTitStu">
+    <Key>
+      <PropertyRef Name="TCodTitStu" />
+    </Key>
+    <Property Name="TCodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelTitStu" Type="Boolean" />
+    <NavigationProperty Name="Mem" Relationship="Self.FK_Mem_TabTitStu" FromRole="TabTitStu" ToRole="Mem" />
+  </EntityType>
+  <EntityType Name="TabTPag">
+    <Key>
+      <PropertyRef Name="CodTPag" />
+    </Key>
+    <Property Name="CodTPag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelTPag" Type="Boolean" />
+    <NavigationProperty Name="Pag" Relationship="Self.FK_Pag_TabTPag" FromRole="TabTPag" ToRole="Pag" />
+  </EntityType>
+  <EntityType Name="TabValute">
+    <Key>
+      <PropertyRef Name="AnnoV" />
+    </Key>
+    <Property Name="AnnoV" Type="Int16" Nullable="false" />
+    <Property Name="FormatoV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DecimaliV" Type="Byte" />
+    <Property Name="Simbolo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Mem">
+    <Key>
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag_Mem">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag_Mem_Convenzioni">
+    <Key>
+      <PropertyRef Name="CodConv" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodConv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ncopie" Type="Byte" />
+    <Property Name="DatConv" Type="DateTime" Precision="0" />
+    <Property Name="DescrConv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoConv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag_Mem_Divisioni">
+    <Key>
+      <PropertyRef Name="CodDiv" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodDiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Effettiva" Type="Boolean" />
+    <Property Name="DescrDiv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoDiv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag_Mem_Gruppi">
+    <Key>
+      <PropertyRef Name="CodGru" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodGru" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImportoGru" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DescrGruppo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Q_Pag_Mem_Riviste">
+    <Key>
+      <PropertyRef Name="AnnoRiv" />
+      <PropertyRef Name="CodRiv" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="Ncopie" Type="Byte" />
+    <Property Name="AnnoRiv" Type="Int16" Nullable="false" />
+    <Property Name="CodRiv" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCodRiv" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DescrRiv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DescrS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoRiv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FormatoRiv" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="TipoRiv" Type="Byte" />
+    <Property Name="Expr2" Type="Int16" Nullable="false" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sett" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" Nullable="false" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titolo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="TitPres1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="TitiPres2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CognomePres2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTitStu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Convenzioni_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Convenzioni" Type="Self.Convenzioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Convenzioni">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Convenzioni_TabConvenzioni">
+    <End Role="TabConv" Type="Self.TabConv" Multiplicity="1" />
+    <End Role="Convenzioni" Type="Self.Convenzioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabConv">
+        <PropertyRef Name="AnnoConv" />
+        <PropertyRef Name="CodConv" />
+      </Principal>
+      <Dependent Role="Convenzioni">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodConv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Divisioni_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Divisioni" Type="Self.Divisioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Divisioni">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Divisioni_TabDiv">
+    <End Role="TabDiv" Type="Self.TabDiv" Multiplicity="1" />
+    <End Role="Divisioni" Type="Self.Divisioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabDiv">
+        <PropertyRef Name="AnnoDiv" />
+        <PropertyRef Name="CodDiv" />
+      </Principal>
+      <Dependent Role="Divisioni">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodDiv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gruppi_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Gruppi" Type="Self.Gruppi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Gruppi">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gruppi_TabGru">
+    <End Role="TabGru" Type="Self.TabGru" Multiplicity="1" />
+    <End Role="Gruppi" Type="Self.Gruppi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabGru">
+        <PropertyRef Name="AnnoGru" />
+        <PropertyRef Name="CodGru" />
+      </Principal>
+      <Dependent Role="Gruppi">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodGru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabNaz">
+    <End Role="TabNaz" Type="Self.TabNaz" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabNaz">
+        <PropertyRef Name="CodNaz" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="Naz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabSex">
+    <End Role="TabSex" Type="Self.TabSex" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSex">
+        <PropertyRef Name="CodSex" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="Sesso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabTitStu">
+    <End Role="TabTitStu" Type="Self.TabTitStu" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTitStu">
+        <PropertyRef Name="TCodTitStu" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="CodTitStu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_Mem">
+    <End Role="Mem" Type="Self.Mem" Multiplicity="1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mem">
+        <PropertyRef Name="Cod" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="CodP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabCarica">
+    <End Role="TabCarica" Type="Self.TabCarica" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabCarica">
+        <PropertyRef Name="CodCarica" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Carica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabCat">
+    <End Role="TabCat" Type="Self.TabCat" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabCat">
+        <PropertyRef Name="CodCat" />
+        <PropertyRef Name="AnnoCat" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Cat" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabEnt">
+    <End Role="TabEnt" Type="Self.TabEnt" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabEnt">
+        <PropertyRef Name="CodEnt" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Ent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabPos">
+    <End Role="TabPos" Type="Self.TabPos" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabPos">
+        <PropertyRef Name="CodPos" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Pos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabSet">
+    <End Role="TabSet" Type="Self.TabSet" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSet">
+        <PropertyRef Name="CodSet" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Sett" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabSez">
+    <End Role="TabSez" Type="Self.TabSez" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSez">
+        <PropertyRef Name="CodSez" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Sez" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabTIscr">
+    <End Role="TabTIscr" Type="Self.TabTIscr" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTIscr">
+        <PropertyRef Name="CodTIscr" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Tiscr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabTPag">
+    <End Role="TabTPag" Type="Self.TabTPag" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTPag">
+        <PropertyRef Name="CodTPag" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Tpag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Riviste_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Riviste" Type="Self.Riviste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Riviste">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Riviste_TabRiv">
+    <End Role="TabRiv" Type="Self.TabRiv" Multiplicity="1" />
+    <End Role="Riviste" Type="Self.Riviste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabRiv">
+        <PropertyRef Name="AnnoRiv" />
+        <PropertyRef Name="CodRiv" />
+      </Principal>
+      <Dependent Role="Riviste">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodRiv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sci_newEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Convenzioni" EntityType="Self.Convenzioni" />
+    <EntitySet Name="DatGen" EntityType="Self.DatGen" />
+    <EntitySet Name="DatLoc" EntityType="Self.DatLoc" />
+    <EntitySet Name="Divisioni" EntityType="Self.Divisioni" />
+    <EntitySet Name="Gruppi" EntityType="Self.Gruppi" />
+    <EntitySet Name="Mem" EntityType="Self.Mem" />
+    <EntitySet Name="Ordinamenti" EntityType="Self.Ordinamenti" />
+    <EntitySet Name="Pag" EntityType="Self.Pag" />
+    <EntitySet Name="Riviste" EntityType="Self.Riviste" />
+    <EntitySet Name="Storico" EntityType="Self.Storico" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TabCarica" EntityType="Self.TabCarica" />
+    <EntitySet Name="TabCat" EntityType="Self.TabCat" />
+    <EntitySet Name="TabConv" EntityType="Self.TabConv" />
+    <EntitySet Name="TabDiv" EntityType="Self.TabDiv" />
+    <EntitySet Name="TabEnt" EntityType="Self.TabEnt" />
+    <EntitySet Name="TabGru" EntityType="Self.TabGru" />
+    <EntitySet Name="TabNaz" EntityType="Self.TabNaz" />
+    <EntitySet Name="TabPos" EntityType="Self.TabPos" />
+    <EntitySet Name="TabRiv" EntityType="Self.TabRiv" />
+    <EntitySet Name="TabSet" EntityType="Self.TabSet" />
+    <EntitySet Name="TabSex" EntityType="Self.TabSex" />
+    <EntitySet Name="TabSez" EntityType="Self.TabSez" />
+    <EntitySet Name="TabTIscr" EntityType="Self.TabTIscr" />
+    <EntitySet Name="TabTitStu" EntityType="Self.TabTitStu" />
+    <EntitySet Name="TabTPag" EntityType="Self.TabTPag" />
+    <EntitySet Name="TabValute" EntityType="Self.TabValute" />
+    <EntitySet Name="Q_Mem" EntityType="Self.Q_Mem" />
+    <EntitySet Name="Q_Pag" EntityType="Self.Q_Pag" />
+    <EntitySet Name="Q_Pag_Mem" EntityType="Self.Q_Pag_Mem" />
+    <EntitySet Name="Q_Pag_Mem_Convenzioni" EntityType="Self.Q_Pag_Mem_Convenzioni" />
+    <EntitySet Name="Q_Pag_Mem_Divisioni" EntityType="Self.Q_Pag_Mem_Divisioni" />
+    <EntitySet Name="Q_Pag_Mem_Gruppi" EntityType="Self.Q_Pag_Mem_Gruppi" />
+    <EntitySet Name="Q_Pag_Mem_Riviste" EntityType="Self.Q_Pag_Mem_Riviste" />
+    <AssociationSet Name="FK_Convenzioni_Pag" Association="Self.FK_Convenzioni_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Convenzioni" EntitySet="Convenzioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Convenzioni_TabConvenzioni" Association="Self.FK_Convenzioni_TabConvenzioni">
+      <End Role="TabConv" EntitySet="TabConv" />
+      <End Role="Convenzioni" EntitySet="Convenzioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Divisioni_Pag" Association="Self.FK_Divisioni_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Divisioni" EntitySet="Divisioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Divisioni_TabDiv" Association="Self.FK_Divisioni_TabDiv">
+      <End Role="TabDiv" EntitySet="TabDiv" />
+      <End Role="Divisioni" EntitySet="Divisioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gruppi_Pag" Association="Self.FK_Gruppi_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Gruppi" EntitySet="Gruppi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gruppi_TabGru" Association="Self.FK_Gruppi_TabGru">
+      <End Role="TabGru" EntitySet="TabGru" />
+      <End Role="Gruppi" EntitySet="Gruppi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabNaz" Association="Self.FK_Mem_TabNaz">
+      <End Role="TabNaz" EntitySet="TabNaz" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabSex" Association="Self.FK_Mem_TabSex">
+      <End Role="TabSex" EntitySet="TabSex" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabTitStu" Association="Self.FK_Mem_TabTitStu">
+      <End Role="TabTitStu" EntitySet="TabTitStu" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_Mem" Association="Self.FK_Pag_Mem">
+      <End Role="Mem" EntitySet="Mem" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabCarica" Association="Self.FK_Pag_TabCarica">
+      <End Role="TabCarica" EntitySet="TabCarica" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabCat" Association="Self.FK_Pag_TabCat">
+      <End Role="TabCat" EntitySet="TabCat" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabEnt" Association="Self.FK_Pag_TabEnt">
+      <End Role="TabEnt" EntitySet="TabEnt" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabPos" Association="Self.FK_Pag_TabPos">
+      <End Role="TabPos" EntitySet="TabPos" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabSet" Association="Self.FK_Pag_TabSet">
+      <End Role="TabSet" EntitySet="TabSet" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabSez" Association="Self.FK_Pag_TabSez">
+      <End Role="TabSez" EntitySet="TabSez" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabTIscr" Association="Self.FK_Pag_TabTIscr">
+      <End Role="TabTIscr" EntitySet="TabTIscr" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabTPag" Association="Self.FK_Pag_TabTPag">
+      <End Role="TabTPag" EntitySet="TabTPag" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Riviste_Pag" Association="Self.FK_Riviste_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Riviste" EntitySet="Riviste" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Riviste_TabRiv" Association="Self.FK_Riviste_TabRiv">
+      <End Role="TabRiv" EntitySet="TabRiv" />
+      <End Role="Riviste" EntitySet="Riviste" />
+    </AssociationSet>
+    <EntitySet Name="Filtri" EntityType="sci_newModel.Filtri" />
+    <EntitySet Name="Filtri_Parametri" EntityType="sci_newModel.Filtri_Parametri" />
+    <EntitySet Name="Stampe" EntityType="sci_newModel.Stampe" />
+    <EntitySet Name="TabParametriFiltri" EntityType="sci_newModel.TabParametriFiltri" />
+    <AssociationSet Name="FK_QBE" Association="sci_newModel.FK_QBE">
+      <End Role="Filtri" EntitySet="Filtri" />
+      <End Role="Filtri_Parametri" EntitySet="Filtri_Parametri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stampe_QBE" Association="sci_newModel.FK_Stampe_QBE">
+      <End Role="Filtri" EntitySet="Filtri" />
+      <End Role="Stampe" EntitySet="Stampe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parametri" Association="sci_newModel.FK_Parametri">
+      <End Role="TabParametriFiltri" EntitySet="TabParametriFiltri" />
+      <End Role="Filtri_Parametri" EntitySet="Filtri_Parametri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stampe_Ordinamenti" Association="sci_newModel.FK_Stampe_Ordinamenti">
+      <End Role="Ordinamenti" EntitySet="Ordinamenti" />
+      <End Role="Stampe" EntitySet="Stampe" />
+    </AssociationSet>
+    <FunctionImport Name="up_Dovuto" ReturnType="Collection(Decimal)">
+      <Parameter Name="AnnoP" Mode="In" Type="Int32" />
+      <Parameter Name="CodP" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Posta_Messaggi" EntityType="sci_newModel.Posta_Messaggi" />
+    <EntitySet Name="Posta_Prototipi" EntityType="sci_newModel.Posta_Prototipi" />
+    <AssociationSet Name="FK_Posta_Messaggi_Posta_Prototipi" Association="sci_newModel.FK_Posta_Messaggi_Posta_Prototipi">
+      <End Role="Posta_Prototipi" EntitySet="Posta_Prototipi" />
+      <End Role="Posta_Messaggi" EntitySet="Posta_Messaggi" />
+    </AssociationSet>
+    <EntitySet Name="TabPosta" EntityType="sci_newModel.TabPosta" />
+    <AssociationSet Name="FK_Posta_Prototipi_TabPosta" Association="sci_newModel.FK_Posta_Prototipi_TabPosta">
+      <End Role="TabPosta" EntitySet="TabPosta" />
+      <End Role="Posta_Prototipi" EntitySet="Posta_Prototipi" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Filtri">
+    <Key>
+      <PropertyRef Name="IDFiltro" />
+    </Key>
+    <Property Name="IDFiltro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeFiltro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SQL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NomeQuery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Filtri_Parametri" Relationship="sci_newModel.FK_QBE" FromRole="Filtri" ToRole="Filtri_Parametri" />
+    <NavigationProperty Name="Stampe" Relationship="sci_newModel.FK_Stampe_QBE" FromRole="Filtri" ToRole="Stampe" />
+  </EntityType>
+  <EntityType Name="Filtri_Parametri">
+    <Key>
+      <PropertyRef Name="IDFiltro" />
+      <PropertyRef Name="IDP" />
+      <PropertyRef Name="Ordine" />
+    </Key>
+    <Property Name="IDFiltro" Type="Int32" Nullable="false" />
+    <Property Name="IDP" Type="Int32" Nullable="false" />
+    <Property Name="Prompt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordine" Type="Int32" Nullable="false" />
+    <Property Name="Valore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Filtri" Relationship="sci_newModel.FK_QBE" FromRole="Filtri_Parametri" ToRole="Filtri" />
+    <NavigationProperty Name="TabParametriFiltri" Relationship="sci_newModel.FK_Parametri" FromRole="Filtri_Parametri" ToRole="TabParametriFiltri" />
+  </EntityType>
+  <EntityType Name="Stampe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NomeReport" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Descrizione" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDFiltro" Type="Int32" />
+    <Property Name="Filtro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IDOrdinamento" Type="Int32" />
+    <Property Name="Ordinamento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Filtrabile" Type="Boolean" />
+    <Property Name="Ordinabile" Type="Boolean" />
+    <Property Name="Selezionato" Type="Boolean" />
+    <Property Name="QueryAmmesse" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Filtri" Relationship="sci_newModel.FK_Stampe_QBE" FromRole="Stampe" ToRole="Filtri" />
+    <NavigationProperty Name="Ordinamenti" Relationship="sci_newModel.FK_Stampe_Ordinamenti" FromRole="Stampe" ToRole="Ordinamenti" />
+  </EntityType>
+  <EntityType Name="TabParametriFiltri">
+    <Key>
+      <PropertyRef Name="Idp" />
+    </Key>
+    <Property Name="Idp" Type="Int32" Nullable="false" />
+    <Property Name="NomeParametro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TipoParametro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Filtri_Parametri" Relationship="sci_newModel.FK_Parametri" FromRole="TabParametriFiltri" ToRole="Filtri_Parametri" />
+  </EntityType>
+  <Association Name="FK_QBE">
+    <End Type="sci_newModel.Filtri" Role="Filtri" Multiplicity="1" />
+    <End Type="sci_newModel.Filtri_Parametri" Role="Filtri_Parametri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtri">
+        <PropertyRef Name="IDFiltro" />
+      </Principal>
+      <Dependent Role="Filtri_Parametri">
+        <PropertyRef Name="IDFiltro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stampe_QBE">
+    <End Type="sci_newModel.Filtri" Role="Filtri" Multiplicity="0..1" />
+    <End Type="sci_newModel.Stampe" Role="Stampe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtri">
+        <PropertyRef Name="IDFiltro" />
+      </Principal>
+      <Dependent Role="Stampe">
+        <PropertyRef Name="IDFiltro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parametri">
+    <End Type="sci_newModel.TabParametriFiltri" Role="TabParametriFiltri" Multiplicity="1" />
+    <End Type="sci_newModel.Filtri_Parametri" Role="Filtri_Parametri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabParametriFiltri">
+        <PropertyRef Name="Idp" />
+      </Principal>
+      <Dependent Role="Filtri_Parametri">
+        <PropertyRef Name="IDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stampe_Ordinamenti">
+    <End Type="sci_newModel.Ordinamenti" Role="Ordinamenti" Multiplicity="0..1" />
+    <End Type="sci_newModel.Stampe" Role="Stampe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordinamenti">
+        <PropertyRef Name="IDO" />
+      </Principal>
+      <Dependent Role="Stampe">
+        <PropertyRef Name="IDOrdinamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Posta_Messaggi">
+    <Key>
+      <PropertyRef Name="Codice" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="Codice" Type="Int32" Nullable="false" />
+    <Property Name="FlagInvio" Type="Boolean" Nullable="false" />
+    <Property Name="FlagRicevuta" Type="Boolean" Nullable="false" />
+    <Property Name="FlagSpedito" Type="Boolean" Nullable="false" />
+    <Property Name="FlagDettaglio" Type="Boolean" Nullable="false" />
+    <Property Name="FlagNotificaServer" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Messaggio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CodP" Type="Int32" Nullable="false" />
+    <Property Name="AnnoP" Type="Int16" Nullable="false" />
+    <Property Name="Tiscr" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Cat" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Pagato" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dovuto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DatPag" Type="DateTime" Precision="0" />
+    <Property Name="DatReg" Type="DateTime" Precision="0" />
+    <Property Name="DatCassa" Type="DateTime" Precision="0" />
+    <Property Name="Tpag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fuori" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Lode" Type="Boolean" />
+    <Property Name="Carica" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Sez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Set" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Ent" Type="Int32" />
+    <Property Name="CodSocCol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AnnoCat" Type="Int16" />
+    <Property Name="CodCat" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NCodCat" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoCat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelCat" Type="Boolean" />
+    <Property Name="CodTIscr" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTIscr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelTIscr" Type="Boolean" />
+    <Property Name="CodTPag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrTPag" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelTPag" Type="Boolean" />
+    <Property Name="CodSez" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSez" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSez" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelSez" Type="Boolean" />
+    <Property Name="CodCarica" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrCarica" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelCarica" Type="Boolean" />
+    <Property Name="CodEnt" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NCodEnt" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrEnt" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelEnt" Type="Boolean" />
+    <Property Name="CodPos" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NCodPos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrPos" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelPos" Type="Boolean" />
+    <Property Name="CodSet" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NCodSet" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSet" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelSet" Type="Boolean" />
+    <Property Name="AnnoV" Type="Int16" />
+    <Property Name="FormatoV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DecimaliV" Type="Byte" />
+    <Property Name="Simbolo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Cod" Type="Int32" />
+    <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Ist" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Via" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Cit" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Naz" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DaNa" Type="DateTime" Precision="0" />
+    <Property Name="Tel" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="E_Mail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="DimAn" Type="Int16" />
+    <Property Name="NoStampa" Type="Boolean" />
+    <Property Name="Modificato" Type="DateTime" Precision="0" />
+    <Property Name="PresentatoDa" Type="Int32" />
+    <Property Name="FlagRegalo" Type="Boolean" />
+    <Property Name="PresentatoDa2" Type="Int32" />
+    <Property Name="FlagRegalo2" Type="Boolean" />
+    <Property Name="AnnoPresentazione" Type="Int16" />
+    <Property Name="CodTitStu" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CodSex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrSex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelSex" Type="Boolean" />
+    <Property Name="CodNaz" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="DescrNaz" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SelNaz" Type="Boolean" />
+    <Property Name="SocioPresentatore1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SocioPresentatore2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Eta" Type="Double" />
+    <Property Name="Fascia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VeraEta" Type="Int32" />
+    <Property Name="CodDiv" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Effettiva" Type="Boolean" />
+    <Property Name="NCodDiv" Type="Int16" />
+    <Property Name="DescrDiv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoDiv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelDiv" Type="Boolean" />
+    <Property Name="AnnoDiv" Type="Int16" />
+    <Property Name="CodGru" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="AnnoGru" Type="Int16" />
+    <Property Name="DescrGruppo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ImportoGru" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SelGru" Type="Boolean" />
+    <Property Name="CodRiv" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NCopie" Type="Byte" />
+    <Property Name="AnnoRiv" Type="Int16" />
+    <NavigationProperty Name="Posta_Prototipi" Relationship="sci_newModel.FK_Posta_Messaggi_Posta_Prototipi" FromRole="Posta_Messaggi" ToRole="Posta_Prototipi" />
+  </EntityType>
+  <EntityType Name="Posta_Prototipi">
+    <Key>
+      <PropertyRef Name="Codice" />
+    </Key>
+    <Property Name="Codice" Type="Int32" Nullable="false" />
+    <Property Name="CodiceConn" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Sender" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationTo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiptTo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Footer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BCC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="emailtest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Allegati" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Azione" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FullMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posta_Messaggi" Relationship="sci_newModel.FK_Posta_Messaggi_Posta_Prototipi" FromRole="Posta_Prototipi" ToRole="Posta_Messaggi" />
+    <NavigationProperty Name="TabPosta" Relationship="sci_newModel.FK_Posta_Prototipi_TabPosta" FromRole="Posta_Prototipi" ToRole="TabPosta" />
+  </EntityType>
+  <Association Name="FK_Posta_Messaggi_Posta_Prototipi">
+    <End Type="sci_newModel.Posta_Prototipi" Role="Posta_Prototipi" Multiplicity="1" />
+    <End Type="sci_newModel.Posta_Messaggi" Role="Posta_Messaggi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posta_Prototipi">
+        <PropertyRef Name="Codice" />
+      </Principal>
+      <Dependent Role="Posta_Messaggi">
+        <PropertyRef Name="Codice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TabPosta">
+    <Key>
+      <PropertyRef Name="Codice" />
+    </Key>
+    <Property Name="Codice" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Descrizione" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="smtpServer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="smtpServerPort" Type="Int32" />
+    <Property Name="sendUsing" Type="Byte" />
+    <Property Name="AutenticationType" Type="Byte" />
+    <Property Name="SendUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiptTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posta_Prototipi" Relationship="sci_newModel.FK_Posta_Prototipi_TabPosta" FromRole="TabPosta" ToRole="Posta_Prototipi" />
+  </EntityType>
+  <Association Name="FK_Posta_Prototipi_TabPosta">
+    <End Type="sci_newModel.TabPosta" Role="TabPosta" Multiplicity="1" />
+    <End Type="sci_newModel.Posta_Prototipi" Role="Posta_Prototipi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabPosta">
+        <PropertyRef Name="Codice" />
+      </Principal>
+      <Dependent Role="Posta_Prototipi">
+        <PropertyRef Name="CodiceConn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

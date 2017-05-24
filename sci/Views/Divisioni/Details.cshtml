@@ -1,0 +1,42 @@
+﻿@model sci.Models.Divisioni
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Divisioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Effettiva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Effettiva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pag.Tiscr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pag.Tiscr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabDiv.NCodDiv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabDiv.NCodDiv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

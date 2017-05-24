@@ -1,0 +1,42 @@
+﻿@model sci.Models.Riviste
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Riviste</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ncopie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ncopie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pag.Tiscr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pag.Tiscr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabRiv.NCodRiv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabRiv.NCodRiv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<sci.Models.Stampe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtrabile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinabile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Selezionato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueryAmmesse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtri.NomeFiltro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinamenti.NomeOrdinamentoO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filtro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ordinamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filtrabile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ordinabile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Selezionato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QueryAmmesse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filtri.NomeFiltro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ordinamenti.NomeOrdinamentoO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="34f23a9e89c04e368ad6db5a4074ed0e" Name="Diagram1" DisplayType="true" ZoomLevel="100">
+        <EntityTypeShape EntityType="sci_newModel.Convenzioni" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.DatGen" Width="1.5" PointX="9.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.DatLoc" Width="1.5" PointX="9.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Divisioni" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Gruppi" Width="1.5" PointX="7.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Mem" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Ordinamenti" Width="1.5" PointX="11.875" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Pag" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Riviste" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Storico" Width="1.5" PointX="15.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.sysdiagrams" Width="1.5" PointX="15.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabCarica" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabCat" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabConv" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabDiv" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabEnt" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabGru" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabNaz" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabPos" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabRiv" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabSet" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabSex" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabSez" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabTIscr" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabTitStu" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabTPag" Width="1.5" PointX="3" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.TabValute" Width="1.5" PointX="15.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Mem" Width="1.5" PointX="15.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag" Width="1.5" PointX="17.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag_Mem" Width="1.5" PointX="17.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag_Mem_Convenzioni" Width="1.5" PointX="7.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag_Mem_Divisioni" Width="1.5" PointX="19.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag_Mem_Gruppi" Width="1.5" PointX="19.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sci_newModel.Q_Pag_Mem_Riviste" Width="1.5" PointX="21.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="sci_newModel.FK_Convenzioni_Pag" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Convenzioni_TabConvenzioni" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Divisioni_Pag" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Divisioni_TabDiv" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Gruppi_Pag" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Gruppi_TabGru" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Mem_TabNaz" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Mem_TabSex" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Mem_TabTitStu" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_Mem" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabCarica" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabCat" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabEnt" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabPos" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabSet" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabSez" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabTIscr" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Pag_TabTPag" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Riviste_Pag" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.FK_Riviste_TabRiv" ManuallyRouted="false" />
+        <AssociationConnector Association="sci_newModel.StampeQBE" />
+        <EntityTypeShape EntityType="sci_newModel.Filtri" Width="1.5" PointX="22.375" PointY="19.5" />
+        <EntityTypeShape EntityType="sci_newModel.Filtri_Parametri" Width="1.5" PointX="24.625" PointY="19.375" />
+        <EntityTypeShape EntityType="sci_newModel.Stampe" Width="1.5" PointX="24.625" PointY="10.25" />
+        <EntityTypeShape EntityType="sci_newModel.TabParametriFiltri" Width="1.5" PointX="22.375" PointY="22.625" />
+        <AssociationConnector Association="sci_newModel.FK_QBE" />
+        <AssociationConnector Association="sci_newModel.FK_Stampe_QBE" />
+        <AssociationConnector Association="sci_newModel.FK_Parametri" />
+        <AssociationConnector Association="sci_newModel.FK_Stampe_Ordinamenti" />
+        <EntityTypeShape EntityType="sci_newModel.Posta_Messaggi" Width="1.5" PointX="40.75" PointY="1.25" />
+        <EntityTypeShape EntityType="sci_newModel.Posta_Prototipi" Width="1.5" PointX="35.25" PointY="1.125" />
+        <AssociationConnector Association="sci_newModel.FK_Posta_Messaggi_Posta_Prototipi" />
+        <EntityTypeShape EntityType="sci_newModel.TabPosta" Width="1.5" PointX="28.625" PointY="1.875" />
+        <AssociationConnector Association="sci_newModel.FK_Posta_Prototipi_TabPosta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

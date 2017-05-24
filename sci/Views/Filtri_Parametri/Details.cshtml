@@ -1,0 +1,50 @@
+﻿@model sci.Models.Filtri_Parametri
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Filtri_Parametri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Prompt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prompt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Filtri.NomeFiltro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filtri.NomeFiltro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabParametriFiltri.NomeParametro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabParametriFiltri.NomeParametro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,142 @@
+﻿@model IEnumerable<sci.Models.Pag>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnnoP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pagato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dovuto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatPag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatReg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatCassa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fuori)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodSocCol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mem.Sesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabCarica.DescrCarica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabCat.DescrCat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabEnt.DescrEnt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabPos.DescrPos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabSet.DescrSet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabSez.DescrSez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabTIscr.DescrTIscr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabTPag.DescrTPag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnnoP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pagato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dovuto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatPag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatReg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatCassa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fuori)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodSocCol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mem.Sesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabCarica.DescrCarica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabCat.NCodCat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabEnt.NCodEnt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabPos.NCodPos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabSet.NCodSet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabSez.NCodSez)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabTIscr.DescrTIscr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabTPag.DescrTPag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { codp = item.CodP, annop = item.AnnoP }) |
+            @Html.ActionLink("Details", "Details", new { codp = item.CodP, annop = item.AnnoP }) |
+            @Html.ActionLink("Delete", "Delete", new { codp = item.CodP, annop = item.AnnoP })
+        </td>
+    </tr>
+}
+
+</table>

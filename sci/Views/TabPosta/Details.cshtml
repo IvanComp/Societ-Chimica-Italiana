@@ -1,0 +1,98 @@
+﻿@model sci.Models.TabPosta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TabPosta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smtpServer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smtpServer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smtpServerPort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smtpServerPort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sendUsing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sendUsing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutenticationType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutenticationType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SendUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SendUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SendPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SendPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotificationTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotificationTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptTo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Codice }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

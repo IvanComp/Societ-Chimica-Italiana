@@ -1,0 +1,236 @@
+﻿@model sci.Models.Posta_Prototipi
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h3>Mailing</h3>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    <div style="width: 30%; margin: 0 auto;">
+        <div id="result" style="font-family: Tahoma;
+            font-size: 0.9em; color: darkgray; margin-top: 230px; padding-bottom: 5px">
+            Initializing and Preparing...
+        </div>
+
+        <div id="progressbar" style="width: 300px; height: 15px"></div>
+        <br />
+    </div>
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Codice)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodiceConn, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodiceConn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CodiceConn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sender, new { htmlAttributes = new { @class = "form-control" , @type = "email" } })
+                @Html.ValidationMessageFor(model => model.Sender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NotificationTo, htmlAttributes: new { @class = "control-label col-md-2", @type = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NotificationTo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NotificationTo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReceiptTo, htmlAttributes: new { @class = "control-label col-md-2", @type = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReceiptTo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReceiptTo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Header, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Header, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Header, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Footer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Footer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Footer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CC, htmlAttributes: new { @class = "control-label col-md-2", @type = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CC, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.CC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BCC, htmlAttributes: new { @class = "control-label col-md-2", @type = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BCC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BCC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.emailtest, htmlAttributes: new { @class = "control-label col-md-2", @type = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.emailtest, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.emailtest, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Allegati, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Allegati, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Allegati, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Azione, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Azione)
+                    @Html.ValidationMessageFor(model => model.Azione, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FullMessage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FullMessage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FullMessage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salva" class="btn btn-default" name="submit" id="salva"/>
+                <input type="submit" value="SendMail" class="btn btn-default" name="submit" id="sendmail" />
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Da inviare</th>
+            <th>Ricevuta</th>
+            <th>Inviato</th>
+            <th>Notifica</th>
+            <th>Destinatario</th>
+            <th>Email</th>
+        </tr>
+        @foreach (var item in Model.Posta_Messaggi)
+        {
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.FlagInvio, new { @disabled = "disabled" })
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.FlagRicevuta, new { @disabled = "disabled" })
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.FlagSpedito, new { @disabled = "disabled" })
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.FlagNotificaServer, new { @disabled = "disabled" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.E_Mail)
+                </td>
+                <td>
+                    @Html.ActionLink("Aggiorna", "Update", "Posta_Messaggi", new { codice = Model.Codice, codp = item.CodP, annop = item.AnnoP }, null) |
+                    @Html.ActionLink("Cancella", "Details", "Posta_Messaggi", new { codp = item.CodP, annop = item.AnnoP }, null) |
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
+<script src="~/signalr/hubs"></script>
+
+
+<script type="text/javascript" language="javascript">
+
+        $(document).ready(function () {
+
+            // initialize progress bar
+            $("#progressbar").progressbar({ value: 0 });
+
+            // initialize the connection to the server
+            var progressNotifier = $.connection.DDProcess;
+
+            // client-side sendMessage function that will be called from the server-side
+            progressNotifier.client.sendMessage = function (message) {
+                // update progress
+                UpdateProgress(message);
+            };
+
+            // establish the connection to the server and start server-side operation
+            $.connection.hub.start().done(function () {
+                // call the method CallLongOperation defined in the Hub
+                progressNotifier.server.callLongOperation();
+            });
+        });
+
+        function UpdateProgress(message) {
+            // get result div
+            var result = $("#result");
+            // set message
+            result.html(message);
+            // get progress bar
+            var value = $("#progressbar").progressbar("option", "value");
+            // update progress bar
+            $("#progressbar").progressbar("value", value + 1);
+
+        }
+
+</script>
+}

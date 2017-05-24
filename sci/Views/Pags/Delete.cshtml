@@ -1,0 +1,160 @@
+﻿@model sci.Models.Pag
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pag</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pagato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pagato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dovuto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dovuto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatPag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatPag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatCassa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatCassa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuori)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuori)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodSocCol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodSocCol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mem.Sesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mem.Sesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabCarica.DescrCarica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabCarica.DescrCarica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabCat.NCodCat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabCat.NCodCat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabEnt.NCodEnt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabEnt.NCodEnt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabPos.NCodPos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabPos.NCodPos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSet.NCodSet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSet.NCodSet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSez.NCodSez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSez.NCodSez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabTIscr.DescrTIscr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabTIscr.DescrTIscr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabTPag.DescrTPag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabTPag.DescrTPag)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

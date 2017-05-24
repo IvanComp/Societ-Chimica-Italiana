@@ -1,0 +1,45 @@
+﻿@model IEnumerable<sci.Models.TabCarica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodCarica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescrCarica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelCarica)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodCarica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescrCarica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelCarica)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CodCarica }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CodCarica }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CodCarica })
+        </td>
+    </tr>
+}
+
+</table>

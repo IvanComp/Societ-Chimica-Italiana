@@ -1,0 +1,58 @@
+﻿@model IEnumerable<sci.Models.Q_Pag_Mem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rpt</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titolo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cognome)
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titolo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+         </tr>
+    }
+    
+    </table>
+    <div>
+        <div><a href="@Url.Action("Rpt",new { id = "PDF" , reportname=ViewBag.reportname, query=ViewBag.query, filter=ViewBag.filter, orderby = ViewBag.orderby })">PDF</a></div>
+        <div><a href="@Url.Action("Rpt",new { id = "Excel" , reportname=ViewBag.reportname, query=ViewBag.query, filter=ViewBag.filter, orderby = ViewBag.orderby  })">Excel</a></div>
+        <div><a href="@Url.Action("Rpt",new { id = "Word"  , reportname=ViewBag.reportname, query=ViewBag.query, filter=ViewBag.filter, orderby = ViewBag.orderby })">Word</a></div>
+    </div>
+</body>
+</html>

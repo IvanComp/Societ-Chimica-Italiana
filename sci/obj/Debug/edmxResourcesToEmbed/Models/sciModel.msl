@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sci_newModelStoreContainer" CdmEntityContainer="sci_newEntities">
+    <EntitySetMapping Name="Convenzioni">
+      <EntityTypeMapping TypeName="sci_newModel.Convenzioni">
+        <MappingFragment StoreEntitySet="Convenzioni">
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="CodConv" ColumnName="CodConv" />
+          <ScalarProperty Name="Ncopie" ColumnName="Ncopie" />
+          <ScalarProperty Name="DatConv" ColumnName="DatConv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatGen">
+      <EntityTypeMapping TypeName="sci_newModel.DatGen">
+        <MappingFragment StoreEntitySet="DatGen">
+          <ScalarProperty Name="IDDatGen" ColumnName="IDDatGen" />
+          <ScalarProperty Name="NomeProc" ColumnName="NomeProc" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Indirizzo" ColumnName="Indirizzo" />
+          <ScalarProperty Name="Città" ColumnName="Città" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Prov" ColumnName="Prov" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IntLong" ColumnName="IntLong" />
+          <ScalarProperty Name="IntShort" ColumnName="IntShort" />
+          <ScalarProperty Name="Rec" ColumnName="Rec" />
+          <ScalarProperty Name="Deffuori" ColumnName="Deffuori" />
+          <ScalarProperty Name="Versione" ColumnName="Versione" />
+          <ScalarProperty Name="Wesite" ColumnName="Wesite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatLoc">
+      <EntityTypeMapping TypeName="sci_newModel.DatLoc">
+        <MappingFragment StoreEntitySet="DatLoc">
+          <ScalarProperty Name="IDDatLoc" ColumnName="IDDatLoc" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Logon" ColumnName="Logon" />
+          <ScalarProperty Name="FirstTime" ColumnName="FirstTime" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="PathDati" ColumnName="PathDati" />
+          <ScalarProperty Name="Stampante" ColumnName="Stampante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisioni">
+      <EntityTypeMapping TypeName="sci_newModel.Divisioni">
+        <MappingFragment StoreEntitySet="Divisioni">
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="CodDiv" ColumnName="CodDiv" />
+          <ScalarProperty Name="Effettiva" ColumnName="Effettiva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gruppi">
+      <EntityTypeMapping TypeName="sci_newModel.Gruppi">
+        <MappingFragment StoreEntitySet="Gruppi">
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="CodGru" ColumnName="CodGru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mem">
+      <EntityTypeMapping TypeName="sci_newModel.Mem">
+        <MappingFragment StoreEntitySet="Mem">
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordinamenti">
+      <EntityTypeMapping TypeName="sci_newModel.Ordinamenti">
+        <MappingFragment StoreEntitySet="Ordinamenti">
+          <ScalarProperty Name="IDO" ColumnName="IDO" />
+          <ScalarProperty Name="NomeOrdinamentoO" ColumnName="NomeOrdinamentoO" />
+          <ScalarProperty Name="CriterioO" ColumnName="CriterioO" />
+          <ScalarProperty Name="OrdinamentoO" ColumnName="OrdinamentoO" />
+          <ScalarProperty Name="NomeQueryO" ColumnName="NomeQueryO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pag">
+      <EntityTypeMapping TypeName="sci_newModel.Pag">
+        <MappingFragment StoreEntitySet="Pag">
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="CodSocCol" ColumnName="CodSocCol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Riviste">
+      <EntityTypeMapping TypeName="sci_newModel.Riviste">
+        <MappingFragment StoreEntitySet="Riviste">
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="CodRiv" ColumnName="CodRiv" />
+          <ScalarProperty Name="Ncopie" ColumnName="Ncopie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Storico">
+      <EntityTypeMapping TypeName="sci_newModel.Storico">
+        <MappingFragment StoreEntitySet="Storico">
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="sci_newModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabCarica">
+      <EntityTypeMapping TypeName="sci_newModel.TabCarica">
+        <MappingFragment StoreEntitySet="TabCarica">
+          <ScalarProperty Name="CodCarica" ColumnName="CodCarica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="SelCarica" ColumnName="SelCarica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabCat">
+      <EntityTypeMapping TypeName="sci_newModel.TabCat">
+        <MappingFragment StoreEntitySet="TabCat">
+          <ScalarProperty Name="AnnoCat" ColumnName="AnnoCat" />
+          <ScalarProperty Name="CodCat" ColumnName="CodCat" />
+          <ScalarProperty Name="NCodCat" ColumnName="NCodCat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="ImportoCat" ColumnName="ImportoCat" />
+          <ScalarProperty Name="SelCat" ColumnName="SelCat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabConv">
+      <EntityTypeMapping TypeName="sci_newModel.TabConv">
+        <MappingFragment StoreEntitySet="TabConv">
+          <ScalarProperty Name="AnnoConv" ColumnName="AnnoConv" />
+          <ScalarProperty Name="CodConv" ColumnName="CodConv" />
+          <ScalarProperty Name="DescrConv" ColumnName="DescrConv" />
+          <ScalarProperty Name="ImportoConv" ColumnName="ImportoConv" />
+          <ScalarProperty Name="SelConv" ColumnName="SelConv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabDiv">
+      <EntityTypeMapping TypeName="sci_newModel.TabDiv">
+        <MappingFragment StoreEntitySet="TabDiv">
+          <ScalarProperty Name="AnnoDiv" ColumnName="AnnoDiv" />
+          <ScalarProperty Name="CodDiv" ColumnName="CodDiv" />
+          <ScalarProperty Name="NCodDiv" ColumnName="NCodDiv" />
+          <ScalarProperty Name="DescrDiv" ColumnName="DescrDiv" />
+          <ScalarProperty Name="ImportoDiv" ColumnName="ImportoDiv" />
+          <ScalarProperty Name="SelDiv" ColumnName="SelDiv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabEnt">
+      <EntityTypeMapping TypeName="sci_newModel.TabEnt">
+        <MappingFragment StoreEntitySet="TabEnt">
+          <ScalarProperty Name="CodEnt" ColumnName="CodEnt" />
+          <ScalarProperty Name="NCodEnt" ColumnName="NCodEnt" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="SelEnt" ColumnName="SelEnt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabGru">
+      <EntityTypeMapping TypeName="sci_newModel.TabGru">
+        <MappingFragment StoreEntitySet="TabGru">
+          <ScalarProperty Name="AnnoGru" ColumnName="AnnoGru" />
+          <ScalarProperty Name="CodGru" ColumnName="CodGru" />
+          <ScalarProperty Name="NCodGru" ColumnName="NCodGru" />
+          <ScalarProperty Name="DescrGruppo" ColumnName="DescrGruppo" />
+          <ScalarProperty Name="ImportoGru" ColumnName="ImportoGru" />
+          <ScalarProperty Name="SelGru" ColumnName="SelGru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabNaz">
+      <EntityTypeMapping TypeName="sci_newModel.TabNaz">
+        <MappingFragment StoreEntitySet="TabNaz">
+          <ScalarProperty Name="CodNaz" ColumnName="CodNaz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="SelNaz" ColumnName="SelNaz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabPos">
+      <EntityTypeMapping TypeName="sci_newModel.TabPos">
+        <MappingFragment StoreEntitySet="TabPos">
+          <ScalarProperty Name="CodPos" ColumnName="CodPos" />
+          <ScalarProperty Name="NCodPos" ColumnName="NCodPos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="SelPos" ColumnName="SelPos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabRiv">
+      <EntityTypeMapping TypeName="sci_newModel.TabRiv">
+        <MappingFragment StoreEntitySet="TabRiv">
+          <ScalarProperty Name="AnnoRiv" ColumnName="AnnoRiv" />
+          <ScalarProperty Name="CodRiv" ColumnName="CodRiv" />
+          <ScalarProperty Name="NCodRiv" ColumnName="NCodRiv" />
+          <ScalarProperty Name="DescrRiv" ColumnName="DescrRiv" />
+          <ScalarProperty Name="DescrS" ColumnName="DescrS" />
+          <ScalarProperty Name="ImportoRiv" ColumnName="ImportoRiv" />
+          <ScalarProperty Name="FormatoRiv" ColumnName="FormatoRiv" />
+          <ScalarProperty Name="TipoRiv" ColumnName="TipoRiv" />
+          <ScalarProperty Name="SelRiv" ColumnName="SelRiv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabSet">
+      <EntityTypeMapping TypeName="sci_newModel.TabSet">
+        <MappingFragment StoreEntitySet="TabSet">
+          <ScalarProperty Name="CodSet" ColumnName="CodSet" />
+          <ScalarProperty Name="NCodSet" ColumnName="NCodSet" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="SelSet" ColumnName="SelSet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabSex">
+      <EntityTypeMapping TypeName="sci_newModel.TabSex">
+        <MappingFragment StoreEntitySet="TabSex">
+          <ScalarProperty Name="CodSex" ColumnName="CodSex" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="SelSex" ColumnName="SelSex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabSez">
+      <EntityTypeMapping TypeName="sci_newModel.TabSez">
+        <MappingFragment StoreEntitySet="TabSez">
+          <ScalarProperty Name="CodSez" ColumnName="CodSez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="DescrSez" ColumnName="DescrSez" />
+          <ScalarProperty Name="SelSez" ColumnName="SelSez" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabTIscr">
+      <EntityTypeMapping TypeName="sci_newModel.TabTIscr">
+        <MappingFragment StoreEntitySet="TabTIscr">
+          <ScalarProperty Name="CodTIscr" ColumnName="CodTIscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="SelTIscr" ColumnName="SelTIscr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabTitStu">
+      <EntityTypeMapping TypeName="sci_newModel.TabTitStu">
+        <MappingFragment StoreEntitySet="TabTitStu">
+          <ScalarProperty Name="TCodTitStu" ColumnName="TCodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+          <ScalarProperty Name="SelTitStu" ColumnName="SelTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabTPag">
+      <EntityTypeMapping TypeName="sci_newModel.TabTPag">
+        <MappingFragment StoreEntitySet="TabTPag">
+          <ScalarProperty Name="CodTPag" ColumnName="CodTPag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="SelTPag" ColumnName="SelTPag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabValute">
+      <EntityTypeMapping TypeName="sci_newModel.TabValute">
+        <MappingFragment StoreEntitySet="TabValute">
+          <ScalarProperty Name="AnnoV" ColumnName="AnnoV" />
+          <ScalarProperty Name="FormatoV" ColumnName="FormatoV" />
+          <ScalarProperty Name="DecimaliV" ColumnName="DecimaliV" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Mem">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Mem">
+        <MappingFragment StoreEntitySet="Q_Mem">
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag">
+        <MappingFragment StoreEntitySet="Q_Pag">
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag_Mem">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag_Mem">
+        <MappingFragment StoreEntitySet="Q_Pag_Mem">
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag_Mem_Convenzioni">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag_Mem_Convenzioni">
+        <MappingFragment StoreEntitySet="Q_Pag_Mem_Convenzioni">
+          <ScalarProperty Name="CodConv" ColumnName="CodConv" />
+          <ScalarProperty Name="Ncopie" ColumnName="Ncopie" />
+          <ScalarProperty Name="DatConv" ColumnName="DatConv" />
+          <ScalarProperty Name="DescrConv" ColumnName="DescrConv" />
+          <ScalarProperty Name="ImportoConv" ColumnName="ImportoConv" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag_Mem_Divisioni">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag_Mem_Divisioni">
+        <MappingFragment StoreEntitySet="Q_Pag_Mem_Divisioni">
+          <ScalarProperty Name="CodDiv" ColumnName="CodDiv" />
+          <ScalarProperty Name="Effettiva" ColumnName="Effettiva" />
+          <ScalarProperty Name="DescrDiv" ColumnName="DescrDiv" />
+          <ScalarProperty Name="ImportoDiv" ColumnName="ImportoDiv" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag_Mem_Gruppi">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag_Mem_Gruppi">
+        <MappingFragment StoreEntitySet="Q_Pag_Mem_Gruppi">
+          <ScalarProperty Name="CodGru" ColumnName="CodGru" />
+          <ScalarProperty Name="ImportoGru" ColumnName="ImportoGru" />
+          <ScalarProperty Name="DescrGruppo" ColumnName="DescrGruppo" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Q_Pag_Mem_Riviste">
+      <EntityTypeMapping TypeName="sci_newModel.Q_Pag_Mem_Riviste">
+        <MappingFragment StoreEntitySet="Q_Pag_Mem_Riviste">
+          <ScalarProperty Name="Ncopie" ColumnName="Ncopie" />
+          <ScalarProperty Name="AnnoRiv" ColumnName="AnnoRiv" />
+          <ScalarProperty Name="CodRiv" ColumnName="CodRiv" />
+          <ScalarProperty Name="NCodRiv" ColumnName="NCodRiv" />
+          <ScalarProperty Name="DescrRiv" ColumnName="DescrRiv" />
+          <ScalarProperty Name="DescrS" ColumnName="DescrS" />
+          <ScalarProperty Name="ImportoRiv" ColumnName="ImportoRiv" />
+          <ScalarProperty Name="FormatoRiv" ColumnName="FormatoRiv" />
+          <ScalarProperty Name="TipoRiv" ColumnName="TipoRiv" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="Sett" ColumnName="Sett" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="TitPres1" ColumnName="TitPres1" />
+          <ScalarProperty Name="MomePres1" ColumnName="MomePres1" />
+          <ScalarProperty Name="CognomePres1" ColumnName="CognomePres1" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="TitiPres2" ColumnName="TitiPres2" />
+          <ScalarProperty Name="NomePres2" ColumnName="NomePres2" />
+          <ScalarProperty Name="CognomePres2" ColumnName="CognomePres2" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="DescrTitStu" ColumnName="DescrTitStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filtri">
+      <EntityTypeMapping TypeName="sci_newModel.Filtri">
+        <MappingFragment StoreEntitySet="Filtri">
+          <ScalarProperty Name="NomeQuery" ColumnName="NomeQuery" />
+          <ScalarProperty Name="SQL" ColumnName="SQL" />
+          <ScalarProperty Name="NomeFiltro" ColumnName="NomeFiltro" />
+          <ScalarProperty Name="IDFiltro" ColumnName="IDFiltro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filtri_Parametri">
+      <EntityTypeMapping TypeName="sci_newModel.Filtri_Parametri">
+        <MappingFragment StoreEntitySet="Filtri_Parametri">
+          <ScalarProperty Name="Valore" ColumnName="Valore" />
+          <ScalarProperty Name="Ordine" ColumnName="Ordine" />
+          <ScalarProperty Name="Prompt" ColumnName="Prompt" />
+          <ScalarProperty Name="IDP" ColumnName="IDP" />
+          <ScalarProperty Name="IDFiltro" ColumnName="IDFiltro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stampe">
+      <EntityTypeMapping TypeName="sci_newModel.Stampe">
+        <MappingFragment StoreEntitySet="Stampe">
+          <ScalarProperty Name="QueryAmmesse" ColumnName="QueryAmmesse" />
+          <ScalarProperty Name="Selezionato" ColumnName="Selezionato" />
+          <ScalarProperty Name="Ordinabile" ColumnName="Ordinabile" />
+          <ScalarProperty Name="Filtrabile" ColumnName="Filtrabile" />
+          <ScalarProperty Name="Ordinamento" ColumnName="Ordinamento" />
+          <ScalarProperty Name="IDOrdinamento" ColumnName="IDOrdinamento" />
+          <ScalarProperty Name="Filtro" ColumnName="Filtro" />
+          <ScalarProperty Name="IDFiltro" ColumnName="IDFiltro" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="NomeReport" ColumnName="NomeReport" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabParametriFiltri">
+      <EntityTypeMapping TypeName="sci_newModel.TabParametriFiltri">
+        <MappingFragment StoreEntitySet="TabParametriFiltri">
+          <ScalarProperty Name="TipoParametro" ColumnName="TipoParametro" />
+          <ScalarProperty Name="NomeParametro" ColumnName="NomeParametro" />
+          <ScalarProperty Name="Idp" ColumnName="Idp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="up_Dovuto" FunctionName="sci_newModel.Store.up_Dovuto" />
+    <EntitySetMapping Name="Posta_Messaggi">
+      <EntityTypeMapping TypeName="sci_newModel.Posta_Messaggi">
+        <MappingFragment StoreEntitySet="Posta_Messaggi">
+          <ScalarProperty Name="AnnoRiv" ColumnName="AnnoRiv" />
+          <ScalarProperty Name="NCopie" ColumnName="NCopie" />
+          <ScalarProperty Name="CodRiv" ColumnName="CodRiv" />
+          <ScalarProperty Name="SelGru" ColumnName="SelGru" />
+          <ScalarProperty Name="ImportoGru" ColumnName="ImportoGru" />
+          <ScalarProperty Name="DescrGruppo" ColumnName="DescrGruppo" />
+          <ScalarProperty Name="AnnoGru" ColumnName="AnnoGru" />
+          <ScalarProperty Name="CodGru" ColumnName="CodGru" />
+          <ScalarProperty Name="AnnoDiv" ColumnName="AnnoDiv" />
+          <ScalarProperty Name="SelDiv" ColumnName="SelDiv" />
+          <ScalarProperty Name="ImportoDiv" ColumnName="ImportoDiv" />
+          <ScalarProperty Name="DescrDiv" ColumnName="DescrDiv" />
+          <ScalarProperty Name="NCodDiv" ColumnName="NCodDiv" />
+          <ScalarProperty Name="Effettiva" ColumnName="Effettiva" />
+          <ScalarProperty Name="CodDiv" ColumnName="CodDiv" />
+          <ScalarProperty Name="VeraEta" ColumnName="VeraEta" />
+          <ScalarProperty Name="Fascia" ColumnName="Fascia" />
+          <ScalarProperty Name="Eta" ColumnName="Eta" />
+          <ScalarProperty Name="SocioPresentatore2" ColumnName="SocioPresentatore2" />
+          <ScalarProperty Name="SocioPresentatore1" ColumnName="SocioPresentatore1" />
+          <ScalarProperty Name="SelNaz" ColumnName="SelNaz" />
+          <ScalarProperty Name="DescrNaz" ColumnName="DescrNaz" />
+          <ScalarProperty Name="CodNaz" ColumnName="CodNaz" />
+          <ScalarProperty Name="SelSex" ColumnName="SelSex" />
+          <ScalarProperty Name="DescrSex" ColumnName="DescrSex" />
+          <ScalarProperty Name="CodSex" ColumnName="CodSex" />
+          <ScalarProperty Name="CodTitStu" ColumnName="CodTitStu" />
+          <ScalarProperty Name="AnnoPresentazione" ColumnName="AnnoPresentazione" />
+          <ScalarProperty Name="FlagRegalo2" ColumnName="FlagRegalo2" />
+          <ScalarProperty Name="PresentatoDa2" ColumnName="PresentatoDa2" />
+          <ScalarProperty Name="FlagRegalo" ColumnName="FlagRegalo" />
+          <ScalarProperty Name="PresentatoDa" ColumnName="PresentatoDa" />
+          <ScalarProperty Name="Modificato" ColumnName="Modificato" />
+          <ScalarProperty Name="NoStampa" ColumnName="NoStampa" />
+          <ScalarProperty Name="DimAn" ColumnName="DimAn" />
+          <ScalarProperty Name="E_Mail" ColumnName="E_Mail" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="DaNa" ColumnName="DaNa" />
+          <ScalarProperty Name="Naz" ColumnName="Naz" />
+          <ScalarProperty Name="Cit" ColumnName="Cit" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="Ist" ColumnName="Ist" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+          <ScalarProperty Name="DecimaliV" ColumnName="DecimaliV" />
+          <ScalarProperty Name="FormatoV" ColumnName="FormatoV" />
+          <ScalarProperty Name="AnnoV" ColumnName="AnnoV" />
+          <ScalarProperty Name="SelSet" ColumnName="SelSet" />
+          <ScalarProperty Name="DescrSet" ColumnName="DescrSet" />
+          <ScalarProperty Name="NCodSet" ColumnName="NCodSet" />
+          <ScalarProperty Name="CodSet" ColumnName="CodSet" />
+          <ScalarProperty Name="SelPos" ColumnName="SelPos" />
+          <ScalarProperty Name="DescrPos" ColumnName="DescrPos" />
+          <ScalarProperty Name="NCodPos" ColumnName="NCodPos" />
+          <ScalarProperty Name="CodPos" ColumnName="CodPos" />
+          <ScalarProperty Name="SelEnt" ColumnName="SelEnt" />
+          <ScalarProperty Name="DescrEnt" ColumnName="DescrEnt" />
+          <ScalarProperty Name="NCodEnt" ColumnName="NCodEnt" />
+          <ScalarProperty Name="CodEnt" ColumnName="CodEnt" />
+          <ScalarProperty Name="SelCarica" ColumnName="SelCarica" />
+          <ScalarProperty Name="DescrCarica" ColumnName="DescrCarica" />
+          <ScalarProperty Name="CodCarica" ColumnName="CodCarica" />
+          <ScalarProperty Name="SelSez" ColumnName="SelSez" />
+          <ScalarProperty Name="DescrSez" ColumnName="DescrSez" />
+          <ScalarProperty Name="NCodSez" ColumnName="NCodSez" />
+          <ScalarProperty Name="CodSez" ColumnName="CodSez" />
+          <ScalarProperty Name="SelTPag" ColumnName="SelTPag" />
+          <ScalarProperty Name="DescrTPag" ColumnName="DescrTPag" />
+          <ScalarProperty Name="CodTPag" ColumnName="CodTPag" />
+          <ScalarProperty Name="SelTIscr" ColumnName="SelTIscr" />
+          <ScalarProperty Name="DescrTIscr" ColumnName="DescrTIscr" />
+          <ScalarProperty Name="CodTIscr" ColumnName="CodTIscr" />
+          <ScalarProperty Name="SelCat" ColumnName="SelCat" />
+          <ScalarProperty Name="ImportoCat" ColumnName="ImportoCat" />
+          <ScalarProperty Name="DescrCat" ColumnName="DescrCat" />
+          <ScalarProperty Name="NCodCat" ColumnName="NCodCat" />
+          <ScalarProperty Name="CodCat" ColumnName="CodCat" />
+          <ScalarProperty Name="AnnoCat" ColumnName="AnnoCat" />
+          <ScalarProperty Name="CodSocCol" ColumnName="CodSocCol" />
+          <ScalarProperty Name="Ent" ColumnName="Ent" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="Set" ColumnName="Set" />
+          <ScalarProperty Name="Sez" ColumnName="Sez" />
+          <ScalarProperty Name="Carica" ColumnName="Carica" />
+          <ScalarProperty Name="Lode" ColumnName="Lode" />
+          <ScalarProperty Name="Fuori" ColumnName="Fuori" />
+          <ScalarProperty Name="Tpag" ColumnName="Tpag" />
+          <ScalarProperty Name="DatCassa" ColumnName="DatCassa" />
+          <ScalarProperty Name="DatReg" ColumnName="DatReg" />
+          <ScalarProperty Name="DatPag" ColumnName="DatPag" />
+          <ScalarProperty Name="Dovuto" ColumnName="Dovuto" />
+          <ScalarProperty Name="Pagato" ColumnName="Pagato" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="Tiscr" ColumnName="Tiscr" />
+          <ScalarProperty Name="AnnoP" ColumnName="AnnoP" />
+          <ScalarProperty Name="CodP" ColumnName="CodP" />
+          <ScalarProperty Name="Messaggio" ColumnName="Messaggio" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="FlagNotificaServer" ColumnName="FlagNotificaServer" />
+          <ScalarProperty Name="FlagDettaglio" ColumnName="FlagDettaglio" />
+          <ScalarProperty Name="FlagSpedito" ColumnName="FlagSpedito" />
+          <ScalarProperty Name="FlagRicevuta" ColumnName="FlagRicevuta" />
+          <ScalarProperty Name="FlagInvio" ColumnName="FlagInvio" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posta_Prototipi">
+      <EntityTypeMapping TypeName="sci_newModel.Posta_Prototipi">
+        <MappingFragment StoreEntitySet="Posta_Prototipi">
+          <ScalarProperty Name="FullMessage" ColumnName="FullMessage" />
+          <ScalarProperty Name="Azione" ColumnName="Azione" />
+          <ScalarProperty Name="Allegati" ColumnName="Allegati" />
+          <ScalarProperty Name="emailtest" ColumnName="emailtest" />
+          <ScalarProperty Name="BCC" ColumnName="BCC" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Footer" ColumnName="Footer" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ReceiptTo" ColumnName="ReceiptTo" />
+          <ScalarProperty Name="NotificationTo" ColumnName="NotificationTo" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="CodiceConn" ColumnName="CodiceConn" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabPosta">
+      <EntityTypeMapping TypeName="sci_newModel.TabPosta">
+        <MappingFragment StoreEntitySet="TabPosta">
+          <ScalarProperty Name="ReceiptTo" ColumnName="ReceiptTo" />
+          <ScalarProperty Name="NotificationTo" ColumnName="NotificationTo" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="SendPassword" ColumnName="SendPassword" />
+          <ScalarProperty Name="SendUsername" ColumnName="SendUsername" />
+          <ScalarProperty Name="AutenticationType" ColumnName="AutenticationType" />
+          <ScalarProperty Name="sendUsing" ColumnName="sendUsing" />
+          <ScalarProperty Name="smtpServerPort" ColumnName="smtpServerPort" />
+          <ScalarProperty Name="smtpServer" ColumnName="smtpServer" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

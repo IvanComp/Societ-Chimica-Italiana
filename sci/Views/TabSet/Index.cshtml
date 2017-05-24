@@ -1,0 +1,53 @@
+﻿@model IEnumerable<sci.Models.TabSet>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NCodSet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescrSet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SelSet)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NCodSet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescrSet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelSet)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CodSet }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CodSet }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CodSet })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

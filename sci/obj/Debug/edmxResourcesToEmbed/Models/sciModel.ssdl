@@ -1,0 +1,1828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sci_newModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Convenzioni">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodConv" />
+    </Key>
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="CodConv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Ncopie" Type="tinyint" Nullable="false" />
+    <Property Name="DatConv" Type="datetime2" Precision="0" />
+  </EntityType>
+  <EntityType Name="DatGen">
+    <Key>
+      <PropertyRef Name="IDDatGen" />
+    </Key>
+    <Property Name="IDDatGen" Type="tinyint" Nullable="false" />
+    <Property Name="NomeProc" Type="nvarchar" MaxLength="10" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="30" />
+    <Property Name="Indirizzo" Type="nvarchar" MaxLength="30" />
+    <Property Name="Città" Type="nvarchar" MaxLength="30" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="5" />
+    <Property Name="Prov" Type="nvarchar" MaxLength="2" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="30" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="IntLong" Type="nvarchar" MaxLength="50" />
+    <Property Name="IntShort" Type="nvarchar" MaxLength="15" />
+    <Property Name="Rec" Type="smallint" />
+    <Property Name="Deffuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Versione" Type="nvarchar" MaxLength="20" />
+    <Property Name="Wesite" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DatLoc">
+    <Key>
+      <PropertyRef Name="IDDatLoc" />
+    </Key>
+    <Property Name="IDDatLoc" Type="tinyint" Nullable="false" />
+    <Property Name="Person" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime2" Precision="0" />
+    <Property Name="Logon" Type="float" />
+    <Property Name="FirstTime" Type="float" />
+    <Property Name="Level" Type="tinyint" />
+    <Property Name="PathDati" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stampante" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Divisioni">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodDiv" />
+    </Key>
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="CodDiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Effettiva" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Filtri">
+    <Key>
+      <PropertyRef Name="IDFiltro" />
+    </Key>
+    <Property Name="IDFiltro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeFiltro" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SQL" Type="nvarchar(max)" />
+    <Property Name="NomeQuery" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Filtri_Parametri">
+    <Key>
+      <PropertyRef Name="IDFiltro" />
+      <PropertyRef Name="IDP" />
+      <PropertyRef Name="Ordine" />
+    </Key>
+    <Property Name="IDFiltro" Type="int" Nullable="false" />
+    <Property Name="IDP" Type="int" Nullable="false" />
+    <Property Name="Prompt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ordine" Type="int" Nullable="false" />
+    <Property Name="Valore" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Gruppi">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodGru" />
+    </Key>
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="CodGru" Type="nvarchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mem">
+    <Key>
+      <PropertyRef Name="Cod" />
+    </Key>
+    <Property Name="Cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Ordinamenti">
+    <Key>
+      <PropertyRef Name="IDO" />
+    </Key>
+    <Property Name="IDO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeOrdinamentoO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CriterioO" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrdinamentoO" Type="bit" />
+    <Property Name="NomeQueryO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pag">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="Pagato" Type="money" Nullable="false" />
+    <Property Name="Dovuto" Type="money" Nullable="false" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" Nullable="false" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="CodSocCol" Type="int" />
+  </EntityType>
+  <EntityType Name="Posta_Messaggi">
+    <Key>
+      <PropertyRef Name="Codice" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="Codice" Type="int" Nullable="false" />
+    <Property Name="FlagInvio" Type="bit" Nullable="false" />
+    <Property Name="FlagRicevuta" Type="bit" Nullable="false" />
+    <Property Name="FlagSpedito" Type="bit" Nullable="false" />
+    <Property Name="FlagDettaglio" Type="bit" Nullable="false" />
+    <Property Name="FlagNotificaServer" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Messaggio" Type="nvarchar(max)" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="1" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="1" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="1" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Set" Type="nvarchar" MaxLength="1" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="1" />
+    <Property Name="Ent" Type="int" />
+    <Property Name="CodSocCol" Type="nvarchar" MaxLength="50" />
+    <Property Name="AnnoCat" Type="smallint" />
+    <Property Name="CodCat" Type="nvarchar" MaxLength="1" />
+    <Property Name="NCodCat" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImportoCat" Type="money" />
+    <Property Name="SelCat" Type="bit" />
+    <Property Name="CodTIscr" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelTIscr" Type="bit" />
+    <Property Name="CodTPag" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelTPag" Type="bit" />
+    <Property Name="CodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescrSez" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelSez" Type="bit" />
+    <Property Name="CodCarica" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelCarica" Type="bit" />
+    <Property Name="CodEnt" Type="nvarchar" MaxLength="1" />
+    <Property Name="NCodEnt" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelEnt" Type="bit" />
+    <Property Name="CodPos" Type="nvarchar" MaxLength="1" />
+    <Property Name="NCodPos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelPos" Type="bit" />
+    <Property Name="CodSet" Type="nvarchar" MaxLength="1" />
+    <Property Name="NCodSet" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelSet" Type="bit" />
+    <Property Name="AnnoV" Type="smallint" />
+    <Property Name="FormatoV" Type="nvarchar" MaxLength="255" />
+    <Property Name="DecimaliV" Type="tinyint" />
+    <Property Name="Simbolo" Type="nvarchar" MaxLength="2" />
+    <Property Name="Cod" Type="int" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="40" />
+    <Property Name="Via" Type="nvarchar" MaxLength="40" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="5" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="40" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="1" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="40" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="40" />
+    <Property Name="E_Mail" Type="nvarchar" MaxLength="40" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="1" />
+    <Property Name="CodSex" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelSex" Type="bit" />
+    <Property Name="CodNaz" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelNaz" Type="bit" />
+    <Property Name="SocioPresentatore1" Type="nvarchar" MaxLength="40" />
+    <Property Name="SocioPresentatore2" Type="nvarchar" MaxLength="40" />
+    <Property Name="Eta" Type="float" />
+    <Property Name="Fascia" Type="nvarchar" MaxLength="255" />
+    <Property Name="VeraEta" Type="int" />
+    <Property Name="CodDiv" Type="nvarchar" MaxLength="1" />
+    <Property Name="Effettiva" Type="bit" />
+    <Property Name="NCodDiv" Type="smallint" />
+    <Property Name="DescrDiv" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImportoDiv" Type="money" />
+    <Property Name="SelDiv" Type="bit" />
+    <Property Name="AnnoDiv" Type="smallint" />
+    <Property Name="CodGru" Type="nvarchar" MaxLength="1" />
+    <Property Name="AnnoGru" Type="smallint" />
+    <Property Name="DescrGruppo" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImportoGru" Type="money" />
+    <Property Name="SelGru" Type="bit" />
+    <Property Name="CodRiv" Type="nvarchar" MaxLength="1" />
+    <Property Name="NCopie" Type="tinyint" />
+    <Property Name="AnnoRiv" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Posta_Prototipi">
+    <Key>
+      <PropertyRef Name="Codice" />
+    </Key>
+    <Property Name="Codice" Type="int" Nullable="false" />
+    <Property Name="CodiceConn" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="255" />
+    <Property Name="NotificationTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="ReceiptTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="Header" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Footer" Type="nvarchar(max)" />
+    <Property Name="CC" Type="nvarchar" MaxLength="255" />
+    <Property Name="BCC" Type="nvarchar" MaxLength="255" />
+    <Property Name="emailtest" Type="nvarchar" MaxLength="255" />
+    <Property Name="Allegati" Type="nvarchar" MaxLength="255" />
+    <Property Name="Azione" Type="nvarchar" MaxLength="255" />
+    <Property Name="FullMessage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Riviste">
+    <Key>
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="CodRiv" />
+    </Key>
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="CodRiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Ncopie" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stampe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="100" />
+    <Property Name="NomeReport" Type="nvarchar" MaxLength="100" />
+    <Property Name="Descrizione" Type="nvarchar(max)" />
+    <Property Name="IDFiltro" Type="int" />
+    <Property Name="Filtro" Type="nvarchar" MaxLength="100" />
+    <Property Name="IDOrdinamento" Type="int" />
+    <Property Name="Ordinamento" Type="nvarchar" MaxLength="100" />
+    <Property Name="Filtrabile" Type="bit" />
+    <Property Name="Ordinabile" Type="bit" />
+    <Property Name="Selezionato" Type="bit" />
+    <Property Name="QueryAmmesse" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Storico">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TabCarica">
+    <Key>
+      <PropertyRef Name="CodCarica" />
+    </Key>
+    <Property Name="CodCarica" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelCarica" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabCat">
+    <Key>
+      <PropertyRef Name="AnnoCat" />
+      <PropertyRef Name="CodCat" />
+    </Key>
+    <Property Name="AnnoCat" Type="smallint" Nullable="false" />
+    <Property Name="CodCat" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodCat" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportoCat" Type="money" />
+    <Property Name="SelCat" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabConv">
+    <Key>
+      <PropertyRef Name="AnnoConv" />
+      <PropertyRef Name="CodConv" />
+    </Key>
+    <Property Name="AnnoConv" Type="smallint" Nullable="false" />
+    <Property Name="CodConv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrConv" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImportoConv" Type="money" />
+    <Property Name="SelConv" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabDiv">
+    <Key>
+      <PropertyRef Name="AnnoDiv" />
+      <PropertyRef Name="CodDiv" />
+    </Key>
+    <Property Name="AnnoDiv" Type="smallint" Nullable="false" />
+    <Property Name="CodDiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodDiv" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrDiv" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportoDiv" Type="money" />
+    <Property Name="SelDiv" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabEnt">
+    <Key>
+      <PropertyRef Name="CodEnt" />
+    </Key>
+    <Property Name="CodEnt" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodEnt" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelEnt" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabGru">
+    <Key>
+      <PropertyRef Name="AnnoGru" />
+      <PropertyRef Name="CodGru" />
+    </Key>
+    <Property Name="AnnoGru" Type="smallint" Nullable="false" />
+    <Property Name="CodGru" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodGru" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescrGruppo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportoGru" Type="money" />
+    <Property Name="SelGru" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabNaz">
+    <Key>
+      <PropertyRef Name="CodNaz" />
+    </Key>
+    <Property Name="CodNaz" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelNaz" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabParametriFiltri">
+    <Key>
+      <PropertyRef Name="Idp" />
+    </Key>
+    <Property Name="Idp" Type="int" Nullable="false" />
+    <Property Name="NomeParametro" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoParametro" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TabPos">
+    <Key>
+      <PropertyRef Name="CodPos" />
+    </Key>
+    <Property Name="CodPos" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodPos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelPos" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabPosta">
+    <Key>
+      <PropertyRef Name="Codice" />
+    </Key>
+    <Property Name="Codice" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Descrizione" Type="nvarchar" MaxLength="50" />
+    <Property Name="smtpServer" Type="nvarchar" MaxLength="50" />
+    <Property Name="smtpServerPort" Type="int" />
+    <Property Name="sendUsing" Type="tinyint" />
+    <Property Name="AutenticationType" Type="tinyint" />
+    <Property Name="SendUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceiptTo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TabRiv">
+    <Key>
+      <PropertyRef Name="AnnoRiv" />
+      <PropertyRef Name="CodRiv" />
+    </Key>
+    <Property Name="AnnoRiv" Type="smallint" Nullable="false" />
+    <Property Name="CodRiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodRiv" Type="nvarchar" MaxLength="5" />
+    <Property Name="DescrRiv" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescrS" Type="nvarchar" MaxLength="10" />
+    <Property Name="ImportoRiv" Type="money" />
+    <Property Name="FormatoRiv" Type="nvarchar" MaxLength="1" />
+    <Property Name="TipoRiv" Type="tinyint" />
+    <Property Name="SelRiv" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabSet">
+    <Key>
+      <PropertyRef Name="CodSet" />
+    </Key>
+    <Property Name="CodSet" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodSet" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelSet" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabSex">
+    <Key>
+      <PropertyRef Name="CodSex" />
+    </Key>
+    <Property Name="CodSex" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="SelSex" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabSez">
+    <Key>
+      <PropertyRef Name="CodSez" />
+    </Key>
+    <Property Name="CodSez" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSez" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelSez" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabTIscr">
+    <Key>
+      <PropertyRef Name="CodTIscr" />
+    </Key>
+    <Property Name="CodTIscr" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelTIscr" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabTitStu">
+    <Key>
+      <PropertyRef Name="TCodTitStu" />
+    </Key>
+    <Property Name="TCodTitStu" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelTitStu" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabTPag">
+    <Key>
+      <PropertyRef Name="CodTPag" />
+    </Key>
+    <Property Name="CodTPag" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelTPag" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabValute">
+    <Key>
+      <PropertyRef Name="AnnoV" />
+    </Key>
+    <Property Name="AnnoV" Type="smallint" Nullable="false" />
+    <Property Name="FormatoV" Type="nvarchar" MaxLength="255" />
+    <Property Name="DecimaliV" Type="tinyint" />
+    <Property Name="Simbolo" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Mem'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Mem">
+    <Key>
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+    </Key>
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag_Mem'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag_Mem">
+    <Key>
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag_Mem_Convenzioni'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag_Mem_Convenzioni">
+    <Key>
+      <PropertyRef Name="CodConv" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodConv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Ncopie" Type="tinyint" />
+    <Property Name="DatConv" Type="datetime2" Precision="0" />
+    <Property Name="DescrConv" Type="nvarchar" MaxLength="30" />
+    <Property Name="ImportoConv" Type="money" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag_Mem_Divisioni'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag_Mem_Divisioni">
+    <Key>
+      <PropertyRef Name="CodDiv" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodDiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Effettiva" Type="bit" />
+    <Property Name="DescrDiv" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImportoDiv" Type="money" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag_Mem_Gruppi'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag_Mem_Gruppi">
+    <Key>
+      <PropertyRef Name="CodGru" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="CodGru" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ImportoGru" Type="money" />
+    <Property Name="DescrGruppo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sci_new.dbo.Q_Pag_Mem_Riviste'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+  <EntityType Name="Q_Pag_Mem_Riviste">
+    <Key>
+      <PropertyRef Name="AnnoRiv" />
+      <PropertyRef Name="CodRiv" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="CodP" />
+      <PropertyRef Name="AnnoP" />
+      <PropertyRef Name="Cod" />
+      <PropertyRef Name="Nom" />
+    </Key>
+    <Property Name="Ncopie" Type="tinyint" />
+    <Property Name="AnnoRiv" Type="smallint" Nullable="false" />
+    <Property Name="CodRiv" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NCodRiv" Type="nvarchar" MaxLength="5" />
+    <Property Name="DescrRiv" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescrS" Type="nvarchar" MaxLength="10" />
+    <Property Name="ImportoRiv" Type="money" />
+    <Property Name="FormatoRiv" Type="nvarchar" MaxLength="1" />
+    <Property Name="TipoRiv" Type="tinyint" />
+    <Property Name="Expr2" Type="smallint" Nullable="false" />
+    <Property Name="CodP" Type="int" Nullable="false" />
+    <Property Name="AnnoP" Type="smallint" Nullable="false" />
+    <Property Name="Tiscr" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTIscr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cat" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pagato" Type="money" />
+    <Property Name="Dovuto" Type="money" />
+    <Property Name="DatPag" Type="datetime2" Precision="0" />
+    <Property Name="DatReg" Type="datetime2" Precision="0" />
+    <Property Name="DatCassa" Type="datetime2" Precision="0" />
+    <Property Name="Tpag" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTPag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fuori" Type="nvarchar" MaxLength="3" />
+    <Property Name="Lode" Type="bit" />
+    <Property Name="Carica" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrCarica" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sez" Type="nvarchar" MaxLength="3" />
+    <Property Name="NCodSez" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sett" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pos" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrPos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ent" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrEnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cod" Type="int" Nullable="false" />
+    <Property Name="Sesso" Type="nvarchar" MaxLength="1" />
+    <Property Name="DescrSex" Type="nvarchar" MaxLength="30" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Titolo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ist" Type="nvarchar" MaxLength="100" />
+    <Property Name="Via" Type="nvarchar" MaxLength="100" />
+    <Property Name="CAP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naz" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrNaz" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaNa" Type="datetime2" Precision="0" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DimAn" Type="smallint" />
+    <Property Name="NoStampa" Type="bit" />
+    <Property Name="Modificato" Type="datetime2" Precision="0" />
+    <Property Name="PresentatoDa" Type="int" />
+    <Property Name="TitPres1" Type="nvarchar" MaxLength="15" />
+    <Property Name="MomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres1" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo" Type="bit" />
+    <Property Name="PresentatoDa2" Type="int" />
+    <Property Name="TitiPres2" Type="nvarchar" MaxLength="15" />
+    <Property Name="NomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CognomePres2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlagRegalo2" Type="bit" />
+    <Property Name="AnnoPresentazione" Type="smallint" />
+    <Property Name="CodTitStu" Type="nvarchar" MaxLength="3" />
+    <Property Name="DescrTitStu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Convenzioni_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Convenzioni" Type="Self.Convenzioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Convenzioni">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Convenzioni_TabConvenzioni">
+    <End Role="TabConv" Type="Self.TabConv" Multiplicity="1" />
+    <End Role="Convenzioni" Type="Self.Convenzioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabConv">
+        <PropertyRef Name="AnnoConv" />
+        <PropertyRef Name="CodConv" />
+      </Principal>
+      <Dependent Role="Convenzioni">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodConv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Divisioni_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Divisioni" Type="Self.Divisioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Divisioni">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Divisioni_TabDiv">
+    <End Role="TabDiv" Type="Self.TabDiv" Multiplicity="1" />
+    <End Role="Divisioni" Type="Self.Divisioni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabDiv">
+        <PropertyRef Name="AnnoDiv" />
+        <PropertyRef Name="CodDiv" />
+      </Principal>
+      <Dependent Role="Divisioni">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodDiv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gruppi_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Gruppi" Type="Self.Gruppi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Gruppi">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gruppi_TabGru">
+    <End Role="TabGru" Type="Self.TabGru" Multiplicity="1" />
+    <End Role="Gruppi" Type="Self.Gruppi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabGru">
+        <PropertyRef Name="AnnoGru" />
+        <PropertyRef Name="CodGru" />
+      </Principal>
+      <Dependent Role="Gruppi">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodGru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabNaz">
+    <End Role="TabNaz" Type="Self.TabNaz" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabNaz">
+        <PropertyRef Name="CodNaz" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="Naz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabSex">
+    <End Role="TabSex" Type="Self.TabSex" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSex">
+        <PropertyRef Name="CodSex" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="Sesso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mem_TabTitStu">
+    <End Role="TabTitStu" Type="Self.TabTitStu" Multiplicity="0..1" />
+    <End Role="Mem" Type="Self.Mem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTitStu">
+        <PropertyRef Name="TCodTitStu" />
+      </Principal>
+      <Dependent Role="Mem">
+        <PropertyRef Name="CodTitStu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_Mem">
+    <End Role="Mem" Type="Self.Mem" Multiplicity="1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mem">
+        <PropertyRef Name="Cod" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="CodP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabCarica">
+    <End Role="TabCarica" Type="Self.TabCarica" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabCarica">
+        <PropertyRef Name="CodCarica" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Carica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabCat">
+    <End Role="TabCat" Type="Self.TabCat" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabCat">
+        <PropertyRef Name="CodCat" />
+        <PropertyRef Name="AnnoCat" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Cat" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabEnt">
+    <End Role="TabEnt" Type="Self.TabEnt" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabEnt">
+        <PropertyRef Name="CodEnt" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Ent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabPos">
+    <End Role="TabPos" Type="Self.TabPos" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabPos">
+        <PropertyRef Name="CodPos" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Pos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabSet">
+    <End Role="TabSet" Type="Self.TabSet" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSet">
+        <PropertyRef Name="CodSet" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Sett" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabSez">
+    <End Role="TabSez" Type="Self.TabSez" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabSez">
+        <PropertyRef Name="CodSez" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Sez" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabTIscr">
+    <End Role="TabTIscr" Type="Self.TabTIscr" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTIscr">
+        <PropertyRef Name="CodTIscr" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Tiscr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pag_TabTPag">
+    <End Role="TabTPag" Type="Self.TabTPag" Multiplicity="0..1" />
+    <End Role="Pag" Type="Self.Pag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabTPag">
+        <PropertyRef Name="CodTPag" />
+      </Principal>
+      <Dependent Role="Pag">
+        <PropertyRef Name="Tpag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parametri">
+    <End Role="TabParametriFiltri" Type="Self.TabParametriFiltri" Multiplicity="1" />
+    <End Role="Filtri_Parametri" Type="Self.Filtri_Parametri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabParametriFiltri">
+        <PropertyRef Name="Idp" />
+      </Principal>
+      <Dependent Role="Filtri_Parametri">
+        <PropertyRef Name="IDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posta_Messaggi_Posta_Prototipi">
+    <End Role="Posta_Prototipi" Type="Self.Posta_Prototipi" Multiplicity="1" />
+    <End Role="Posta_Messaggi" Type="Self.Posta_Messaggi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posta_Prototipi">
+        <PropertyRef Name="Codice" />
+      </Principal>
+      <Dependent Role="Posta_Messaggi">
+        <PropertyRef Name="Codice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posta_Prototipi_TabPosta">
+    <End Role="TabPosta" Type="Self.TabPosta" Multiplicity="1" />
+    <End Role="Posta_Prototipi" Type="Self.Posta_Prototipi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabPosta">
+        <PropertyRef Name="Codice" />
+      </Principal>
+      <Dependent Role="Posta_Prototipi">
+        <PropertyRef Name="CodiceConn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QBE">
+    <End Role="Filtri" Type="Self.Filtri" Multiplicity="1" />
+    <End Role="Filtri_Parametri" Type="Self.Filtri_Parametri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtri">
+        <PropertyRef Name="IDFiltro" />
+      </Principal>
+      <Dependent Role="Filtri_Parametri">
+        <PropertyRef Name="IDFiltro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Riviste_Pag">
+    <End Role="Pag" Type="Self.Pag" Multiplicity="1" />
+    <End Role="Riviste" Type="Self.Riviste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pag">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Principal>
+      <Dependent Role="Riviste">
+        <PropertyRef Name="CodP" />
+        <PropertyRef Name="AnnoP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Riviste_TabRiv">
+    <End Role="TabRiv" Type="Self.TabRiv" Multiplicity="1" />
+    <End Role="Riviste" Type="Self.Riviste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabRiv">
+        <PropertyRef Name="AnnoRiv" />
+        <PropertyRef Name="CodRiv" />
+      </Principal>
+      <Dependent Role="Riviste">
+        <PropertyRef Name="AnnoP" />
+        <PropertyRef Name="CodRiv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stampe_Ordinamenti">
+    <End Role="Ordinamenti" Type="Self.Ordinamenti" Multiplicity="0..1" />
+    <End Role="Stampe" Type="Self.Stampe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordinamenti">
+        <PropertyRef Name="IDO" />
+      </Principal>
+      <Dependent Role="Stampe">
+        <PropertyRef Name="IDOrdinamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stampe_QBE">
+    <End Role="Filtri" Type="Self.Filtri" Multiplicity="0..1" />
+    <End Role="Stampe" Type="Self.Stampe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtri">
+        <PropertyRef Name="IDFiltro" />
+      </Principal>
+      <Dependent Role="Stampe">
+        <PropertyRef Name="IDFiltro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="up_Dovuto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AnnoP" Type="int" Mode="In" />
+    <Parameter Name="CodP" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="sci_newModelStoreContainer">
+    <EntitySet Name="Convenzioni" EntityType="Self.Convenzioni" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatGen" EntityType="Self.DatGen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatLoc" EntityType="Self.DatLoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Divisioni" EntityType="Self.Divisioni" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filtri" EntityType="Self.Filtri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filtri_Parametri" EntityType="Self.Filtri_Parametri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gruppi" EntityType="Self.Gruppi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mem" EntityType="Self.Mem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ordinamenti" EntityType="Self.Ordinamenti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pag" EntityType="Self.Pag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posta_Messaggi" EntityType="Self.Posta_Messaggi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posta_Prototipi" EntityType="Self.Posta_Prototipi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Riviste" EntityType="Self.Riviste" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stampe" EntityType="Self.Stampe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storico" EntityType="Self.Storico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabCarica" EntityType="Self.TabCarica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabCat" EntityType="Self.TabCat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabConv" EntityType="Self.TabConv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabDiv" EntityType="Self.TabDiv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabEnt" EntityType="Self.TabEnt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabGru" EntityType="Self.TabGru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabNaz" EntityType="Self.TabNaz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabParametriFiltri" EntityType="Self.TabParametriFiltri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabPos" EntityType="Self.TabPos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabPosta" EntityType="Self.TabPosta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabRiv" EntityType="Self.TabRiv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabSet" EntityType="Self.TabSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabSex" EntityType="Self.TabSex" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabSez" EntityType="Self.TabSez" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabTIscr" EntityType="Self.TabTIscr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabTitStu" EntityType="Self.TabTitStu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabTPag" EntityType="Self.TabTPag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabValute" EntityType="Self.TabValute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Q_Mem" EntityType="Self.Q_Mem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Mem].[Cod] AS [Cod], 
+    [Q_Mem].[Sesso] AS [Sesso], 
+    [Q_Mem].[DescrSex] AS [DescrSex], 
+    [Q_Mem].[Nom] AS [Nom], 
+    [Q_Mem].[Titolo] AS [Titolo], 
+    [Q_Mem].[Nome] AS [Nome], 
+    [Q_Mem].[Cognome] AS [Cognome], 
+    [Q_Mem].[Ist] AS [Ist], 
+    [Q_Mem].[Via] AS [Via], 
+    [Q_Mem].[CAP] AS [CAP], 
+    [Q_Mem].[Cit] AS [Cit], 
+    [Q_Mem].[Naz] AS [Naz], 
+    [Q_Mem].[DescrNaz] AS [DescrNaz], 
+    [Q_Mem].[DaNa] AS [DaNa], 
+    [Q_Mem].[Tel] AS [Tel], 
+    [Q_Mem].[Fax] AS [Fax], 
+    [Q_Mem].[Email] AS [Email], 
+    [Q_Mem].[DimAn] AS [DimAn], 
+    [Q_Mem].[NoStampa] AS [NoStampa], 
+    [Q_Mem].[Modificato] AS [Modificato], 
+    [Q_Mem].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Mem].[TitPres1] AS [TitPres1], 
+    [Q_Mem].[MomePres1] AS [MomePres1], 
+    [Q_Mem].[CognomePres1] AS [CognomePres1], 
+    [Q_Mem].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Mem].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Mem].[TitiPres2] AS [TitiPres2], 
+    [Q_Mem].[NomePres2] AS [NomePres2], 
+    [Q_Mem].[CognomePres2] AS [CognomePres2], 
+    [Q_Mem].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Mem].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Mem].[CodTitStu] AS [CodTitStu], 
+    [Q_Mem].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Mem] AS [Q_Mem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag" EntityType="Self.Q_Pag" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag].[CodP] AS [CodP], 
+    [Q_Pag].[AnnoP] AS [AnnoP], 
+    [Q_Pag].[Tiscr] AS [Tiscr], 
+    [Q_Pag].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag].[Cat] AS [Cat], 
+    [Q_Pag].[DescrCat] AS [DescrCat], 
+    [Q_Pag].[Pagato] AS [Pagato], 
+    [Q_Pag].[Dovuto] AS [Dovuto], 
+    [Q_Pag].[DatPag] AS [DatPag], 
+    [Q_Pag].[DatReg] AS [DatReg], 
+    [Q_Pag].[DatCassa] AS [DatCassa], 
+    [Q_Pag].[Tpag] AS [Tpag], 
+    [Q_Pag].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag].[Fuori] AS [Fuori], 
+    [Q_Pag].[Lode] AS [Lode], 
+    [Q_Pag].[Carica] AS [Carica], 
+    [Q_Pag].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag].[Sez] AS [Sez], 
+    [Q_Pag].[NCodSez] AS [NCodSez], 
+    [Q_Pag].[Sett] AS [Sett], 
+    [Q_Pag].[DescrSet] AS [DescrSet], 
+    [Q_Pag].[Pos] AS [Pos], 
+    [Q_Pag].[DescrPos] AS [DescrPos], 
+    [Q_Pag].[Ent] AS [Ent], 
+    [Q_Pag].[DescrEnt] AS [DescrEnt]
+    FROM [dbo].[Q_Pag] AS [Q_Pag]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag_Mem" EntityType="Self.Q_Pag_Mem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag_Mem].[CodP] AS [CodP], 
+    [Q_Pag_Mem].[AnnoP] AS [AnnoP], 
+    [Q_Pag_Mem].[Tiscr] AS [Tiscr], 
+    [Q_Pag_Mem].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag_Mem].[Cat] AS [Cat], 
+    [Q_Pag_Mem].[DescrCat] AS [DescrCat], 
+    [Q_Pag_Mem].[Pagato] AS [Pagato], 
+    [Q_Pag_Mem].[Dovuto] AS [Dovuto], 
+    [Q_Pag_Mem].[DatPag] AS [DatPag], 
+    [Q_Pag_Mem].[DatReg] AS [DatReg], 
+    [Q_Pag_Mem].[DatCassa] AS [DatCassa], 
+    [Q_Pag_Mem].[Tpag] AS [Tpag], 
+    [Q_Pag_Mem].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag_Mem].[Fuori] AS [Fuori], 
+    [Q_Pag_Mem].[Lode] AS [Lode], 
+    [Q_Pag_Mem].[Carica] AS [Carica], 
+    [Q_Pag_Mem].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag_Mem].[Sez] AS [Sez], 
+    [Q_Pag_Mem].[NCodSez] AS [NCodSez], 
+    [Q_Pag_Mem].[Sett] AS [Sett], 
+    [Q_Pag_Mem].[DescrSet] AS [DescrSet], 
+    [Q_Pag_Mem].[Pos] AS [Pos], 
+    [Q_Pag_Mem].[DescrPos] AS [DescrPos], 
+    [Q_Pag_Mem].[Ent] AS [Ent], 
+    [Q_Pag_Mem].[DescrEnt] AS [DescrEnt], 
+    [Q_Pag_Mem].[Cod] AS [Cod], 
+    [Q_Pag_Mem].[Sesso] AS [Sesso], 
+    [Q_Pag_Mem].[DescrSex] AS [DescrSex], 
+    [Q_Pag_Mem].[Nom] AS [Nom], 
+    [Q_Pag_Mem].[Titolo] AS [Titolo], 
+    [Q_Pag_Mem].[Nome] AS [Nome], 
+    [Q_Pag_Mem].[Cognome] AS [Cognome], 
+    [Q_Pag_Mem].[Ist] AS [Ist], 
+    [Q_Pag_Mem].[Via] AS [Via], 
+    [Q_Pag_Mem].[CAP] AS [CAP], 
+    [Q_Pag_Mem].[Cit] AS [Cit], 
+    [Q_Pag_Mem].[Naz] AS [Naz], 
+    [Q_Pag_Mem].[DescrNaz] AS [DescrNaz], 
+    [Q_Pag_Mem].[DaNa] AS [DaNa], 
+    [Q_Pag_Mem].[Tel] AS [Tel], 
+    [Q_Pag_Mem].[Fax] AS [Fax], 
+    [Q_Pag_Mem].[Email] AS [Email], 
+    [Q_Pag_Mem].[DimAn] AS [DimAn], 
+    [Q_Pag_Mem].[NoStampa] AS [NoStampa], 
+    [Q_Pag_Mem].[Modificato] AS [Modificato], 
+    [Q_Pag_Mem].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Pag_Mem].[TitPres1] AS [TitPres1], 
+    [Q_Pag_Mem].[MomePres1] AS [MomePres1], 
+    [Q_Pag_Mem].[CognomePres1] AS [CognomePres1], 
+    [Q_Pag_Mem].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Pag_Mem].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Pag_Mem].[TitiPres2] AS [TitiPres2], 
+    [Q_Pag_Mem].[NomePres2] AS [NomePres2], 
+    [Q_Pag_Mem].[CognomePres2] AS [CognomePres2], 
+    [Q_Pag_Mem].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Pag_Mem].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Pag_Mem].[CodTitStu] AS [CodTitStu], 
+    [Q_Pag_Mem].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Pag_Mem] AS [Q_Pag_Mem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag_Mem_Convenzioni" EntityType="Self.Q_Pag_Mem_Convenzioni" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag_Mem_Convenzioni].[CodConv] AS [CodConv], 
+    [Q_Pag_Mem_Convenzioni].[Ncopie] AS [Ncopie], 
+    [Q_Pag_Mem_Convenzioni].[DatConv] AS [DatConv], 
+    [Q_Pag_Mem_Convenzioni].[DescrConv] AS [DescrConv], 
+    [Q_Pag_Mem_Convenzioni].[ImportoConv] AS [ImportoConv], 
+    [Q_Pag_Mem_Convenzioni].[CodP] AS [CodP], 
+    [Q_Pag_Mem_Convenzioni].[AnnoP] AS [AnnoP], 
+    [Q_Pag_Mem_Convenzioni].[Tiscr] AS [Tiscr], 
+    [Q_Pag_Mem_Convenzioni].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag_Mem_Convenzioni].[Cat] AS [Cat], 
+    [Q_Pag_Mem_Convenzioni].[DescrCat] AS [DescrCat], 
+    [Q_Pag_Mem_Convenzioni].[Pagato] AS [Pagato], 
+    [Q_Pag_Mem_Convenzioni].[Dovuto] AS [Dovuto], 
+    [Q_Pag_Mem_Convenzioni].[DatPag] AS [DatPag], 
+    [Q_Pag_Mem_Convenzioni].[DatReg] AS [DatReg], 
+    [Q_Pag_Mem_Convenzioni].[DatCassa] AS [DatCassa], 
+    [Q_Pag_Mem_Convenzioni].[Tpag] AS [Tpag], 
+    [Q_Pag_Mem_Convenzioni].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag_Mem_Convenzioni].[Fuori] AS [Fuori], 
+    [Q_Pag_Mem_Convenzioni].[Lode] AS [Lode], 
+    [Q_Pag_Mem_Convenzioni].[Carica] AS [Carica], 
+    [Q_Pag_Mem_Convenzioni].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag_Mem_Convenzioni].[Sez] AS [Sez], 
+    [Q_Pag_Mem_Convenzioni].[NCodSez] AS [NCodSez], 
+    [Q_Pag_Mem_Convenzioni].[Sett] AS [Sett], 
+    [Q_Pag_Mem_Convenzioni].[DescrSet] AS [DescrSet], 
+    [Q_Pag_Mem_Convenzioni].[Pos] AS [Pos], 
+    [Q_Pag_Mem_Convenzioni].[DescrPos] AS [DescrPos], 
+    [Q_Pag_Mem_Convenzioni].[Ent] AS [Ent], 
+    [Q_Pag_Mem_Convenzioni].[DescrEnt] AS [DescrEnt], 
+    [Q_Pag_Mem_Convenzioni].[Cod] AS [Cod], 
+    [Q_Pag_Mem_Convenzioni].[Sesso] AS [Sesso], 
+    [Q_Pag_Mem_Convenzioni].[DescrSex] AS [DescrSex], 
+    [Q_Pag_Mem_Convenzioni].[Nom] AS [Nom], 
+    [Q_Pag_Mem_Convenzioni].[Titolo] AS [Titolo], 
+    [Q_Pag_Mem_Convenzioni].[Nome] AS [Nome], 
+    [Q_Pag_Mem_Convenzioni].[Cognome] AS [Cognome], 
+    [Q_Pag_Mem_Convenzioni].[Ist] AS [Ist], 
+    [Q_Pag_Mem_Convenzioni].[Via] AS [Via], 
+    [Q_Pag_Mem_Convenzioni].[CAP] AS [CAP], 
+    [Q_Pag_Mem_Convenzioni].[Cit] AS [Cit], 
+    [Q_Pag_Mem_Convenzioni].[Naz] AS [Naz], 
+    [Q_Pag_Mem_Convenzioni].[DescrNaz] AS [DescrNaz], 
+    [Q_Pag_Mem_Convenzioni].[DaNa] AS [DaNa], 
+    [Q_Pag_Mem_Convenzioni].[Tel] AS [Tel], 
+    [Q_Pag_Mem_Convenzioni].[Fax] AS [Fax], 
+    [Q_Pag_Mem_Convenzioni].[Email] AS [Email], 
+    [Q_Pag_Mem_Convenzioni].[DimAn] AS [DimAn], 
+    [Q_Pag_Mem_Convenzioni].[NoStampa] AS [NoStampa], 
+    [Q_Pag_Mem_Convenzioni].[Modificato] AS [Modificato], 
+    [Q_Pag_Mem_Convenzioni].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Pag_Mem_Convenzioni].[TitPres1] AS [TitPres1], 
+    [Q_Pag_Mem_Convenzioni].[MomePres1] AS [MomePres1], 
+    [Q_Pag_Mem_Convenzioni].[CognomePres1] AS [CognomePres1], 
+    [Q_Pag_Mem_Convenzioni].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Pag_Mem_Convenzioni].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Pag_Mem_Convenzioni].[TitiPres2] AS [TitiPres2], 
+    [Q_Pag_Mem_Convenzioni].[NomePres2] AS [NomePres2], 
+    [Q_Pag_Mem_Convenzioni].[CognomePres2] AS [CognomePres2], 
+    [Q_Pag_Mem_Convenzioni].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Pag_Mem_Convenzioni].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Pag_Mem_Convenzioni].[CodTitStu] AS [CodTitStu], 
+    [Q_Pag_Mem_Convenzioni].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Pag_Mem_Convenzioni] AS [Q_Pag_Mem_Convenzioni]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag_Mem_Divisioni" EntityType="Self.Q_Pag_Mem_Divisioni" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag_Mem_Divisioni].[CodDiv] AS [CodDiv], 
+    [Q_Pag_Mem_Divisioni].[Effettiva] AS [Effettiva], 
+    [Q_Pag_Mem_Divisioni].[DescrDiv] AS [DescrDiv], 
+    [Q_Pag_Mem_Divisioni].[ImportoDiv] AS [ImportoDiv], 
+    [Q_Pag_Mem_Divisioni].[CodP] AS [CodP], 
+    [Q_Pag_Mem_Divisioni].[AnnoP] AS [AnnoP], 
+    [Q_Pag_Mem_Divisioni].[Tiscr] AS [Tiscr], 
+    [Q_Pag_Mem_Divisioni].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag_Mem_Divisioni].[Cat] AS [Cat], 
+    [Q_Pag_Mem_Divisioni].[DescrCat] AS [DescrCat], 
+    [Q_Pag_Mem_Divisioni].[Pagato] AS [Pagato], 
+    [Q_Pag_Mem_Divisioni].[Dovuto] AS [Dovuto], 
+    [Q_Pag_Mem_Divisioni].[DatPag] AS [DatPag], 
+    [Q_Pag_Mem_Divisioni].[DatReg] AS [DatReg], 
+    [Q_Pag_Mem_Divisioni].[DatCassa] AS [DatCassa], 
+    [Q_Pag_Mem_Divisioni].[Tpag] AS [Tpag], 
+    [Q_Pag_Mem_Divisioni].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag_Mem_Divisioni].[Fuori] AS [Fuori], 
+    [Q_Pag_Mem_Divisioni].[Lode] AS [Lode], 
+    [Q_Pag_Mem_Divisioni].[Carica] AS [Carica], 
+    [Q_Pag_Mem_Divisioni].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag_Mem_Divisioni].[Sez] AS [Sez], 
+    [Q_Pag_Mem_Divisioni].[NCodSez] AS [NCodSez], 
+    [Q_Pag_Mem_Divisioni].[Sett] AS [Sett], 
+    [Q_Pag_Mem_Divisioni].[DescrSet] AS [DescrSet], 
+    [Q_Pag_Mem_Divisioni].[Pos] AS [Pos], 
+    [Q_Pag_Mem_Divisioni].[DescrPos] AS [DescrPos], 
+    [Q_Pag_Mem_Divisioni].[Ent] AS [Ent], 
+    [Q_Pag_Mem_Divisioni].[DescrEnt] AS [DescrEnt], 
+    [Q_Pag_Mem_Divisioni].[Cod] AS [Cod], 
+    [Q_Pag_Mem_Divisioni].[Sesso] AS [Sesso], 
+    [Q_Pag_Mem_Divisioni].[DescrSex] AS [DescrSex], 
+    [Q_Pag_Mem_Divisioni].[Nom] AS [Nom], 
+    [Q_Pag_Mem_Divisioni].[Titolo] AS [Titolo], 
+    [Q_Pag_Mem_Divisioni].[Nome] AS [Nome], 
+    [Q_Pag_Mem_Divisioni].[Cognome] AS [Cognome], 
+    [Q_Pag_Mem_Divisioni].[Ist] AS [Ist], 
+    [Q_Pag_Mem_Divisioni].[Via] AS [Via], 
+    [Q_Pag_Mem_Divisioni].[CAP] AS [CAP], 
+    [Q_Pag_Mem_Divisioni].[Cit] AS [Cit], 
+    [Q_Pag_Mem_Divisioni].[Naz] AS [Naz], 
+    [Q_Pag_Mem_Divisioni].[DescrNaz] AS [DescrNaz], 
+    [Q_Pag_Mem_Divisioni].[DaNa] AS [DaNa], 
+    [Q_Pag_Mem_Divisioni].[Tel] AS [Tel], 
+    [Q_Pag_Mem_Divisioni].[Fax] AS [Fax], 
+    [Q_Pag_Mem_Divisioni].[Email] AS [Email], 
+    [Q_Pag_Mem_Divisioni].[DimAn] AS [DimAn], 
+    [Q_Pag_Mem_Divisioni].[NoStampa] AS [NoStampa], 
+    [Q_Pag_Mem_Divisioni].[Modificato] AS [Modificato], 
+    [Q_Pag_Mem_Divisioni].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Pag_Mem_Divisioni].[TitPres1] AS [TitPres1], 
+    [Q_Pag_Mem_Divisioni].[MomePres1] AS [MomePres1], 
+    [Q_Pag_Mem_Divisioni].[CognomePres1] AS [CognomePres1], 
+    [Q_Pag_Mem_Divisioni].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Pag_Mem_Divisioni].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Pag_Mem_Divisioni].[TitiPres2] AS [TitiPres2], 
+    [Q_Pag_Mem_Divisioni].[NomePres2] AS [NomePres2], 
+    [Q_Pag_Mem_Divisioni].[CognomePres2] AS [CognomePres2], 
+    [Q_Pag_Mem_Divisioni].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Pag_Mem_Divisioni].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Pag_Mem_Divisioni].[CodTitStu] AS [CodTitStu], 
+    [Q_Pag_Mem_Divisioni].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Pag_Mem_Divisioni] AS [Q_Pag_Mem_Divisioni]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag_Mem_Gruppi" EntityType="Self.Q_Pag_Mem_Gruppi" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag_Mem_Gruppi].[CodGru] AS [CodGru], 
+    [Q_Pag_Mem_Gruppi].[ImportoGru] AS [ImportoGru], 
+    [Q_Pag_Mem_Gruppi].[DescrGruppo] AS [DescrGruppo], 
+    [Q_Pag_Mem_Gruppi].[CodP] AS [CodP], 
+    [Q_Pag_Mem_Gruppi].[AnnoP] AS [AnnoP], 
+    [Q_Pag_Mem_Gruppi].[Tiscr] AS [Tiscr], 
+    [Q_Pag_Mem_Gruppi].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag_Mem_Gruppi].[Cat] AS [Cat], 
+    [Q_Pag_Mem_Gruppi].[DescrCat] AS [DescrCat], 
+    [Q_Pag_Mem_Gruppi].[Pagato] AS [Pagato], 
+    [Q_Pag_Mem_Gruppi].[Dovuto] AS [Dovuto], 
+    [Q_Pag_Mem_Gruppi].[DatPag] AS [DatPag], 
+    [Q_Pag_Mem_Gruppi].[DatReg] AS [DatReg], 
+    [Q_Pag_Mem_Gruppi].[DatCassa] AS [DatCassa], 
+    [Q_Pag_Mem_Gruppi].[Tpag] AS [Tpag], 
+    [Q_Pag_Mem_Gruppi].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag_Mem_Gruppi].[Fuori] AS [Fuori], 
+    [Q_Pag_Mem_Gruppi].[Lode] AS [Lode], 
+    [Q_Pag_Mem_Gruppi].[Carica] AS [Carica], 
+    [Q_Pag_Mem_Gruppi].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag_Mem_Gruppi].[Sez] AS [Sez], 
+    [Q_Pag_Mem_Gruppi].[NCodSez] AS [NCodSez], 
+    [Q_Pag_Mem_Gruppi].[Sett] AS [Sett], 
+    [Q_Pag_Mem_Gruppi].[DescrSet] AS [DescrSet], 
+    [Q_Pag_Mem_Gruppi].[Pos] AS [Pos], 
+    [Q_Pag_Mem_Gruppi].[DescrPos] AS [DescrPos], 
+    [Q_Pag_Mem_Gruppi].[Ent] AS [Ent], 
+    [Q_Pag_Mem_Gruppi].[DescrEnt] AS [DescrEnt], 
+    [Q_Pag_Mem_Gruppi].[Cod] AS [Cod], 
+    [Q_Pag_Mem_Gruppi].[Sesso] AS [Sesso], 
+    [Q_Pag_Mem_Gruppi].[DescrSex] AS [DescrSex], 
+    [Q_Pag_Mem_Gruppi].[Nom] AS [Nom], 
+    [Q_Pag_Mem_Gruppi].[Titolo] AS [Titolo], 
+    [Q_Pag_Mem_Gruppi].[Nome] AS [Nome], 
+    [Q_Pag_Mem_Gruppi].[Cognome] AS [Cognome], 
+    [Q_Pag_Mem_Gruppi].[Ist] AS [Ist], 
+    [Q_Pag_Mem_Gruppi].[Via] AS [Via], 
+    [Q_Pag_Mem_Gruppi].[CAP] AS [CAP], 
+    [Q_Pag_Mem_Gruppi].[Cit] AS [Cit], 
+    [Q_Pag_Mem_Gruppi].[Naz] AS [Naz], 
+    [Q_Pag_Mem_Gruppi].[DescrNaz] AS [DescrNaz], 
+    [Q_Pag_Mem_Gruppi].[DaNa] AS [DaNa], 
+    [Q_Pag_Mem_Gruppi].[Tel] AS [Tel], 
+    [Q_Pag_Mem_Gruppi].[Fax] AS [Fax], 
+    [Q_Pag_Mem_Gruppi].[Email] AS [Email], 
+    [Q_Pag_Mem_Gruppi].[DimAn] AS [DimAn], 
+    [Q_Pag_Mem_Gruppi].[NoStampa] AS [NoStampa], 
+    [Q_Pag_Mem_Gruppi].[Modificato] AS [Modificato], 
+    [Q_Pag_Mem_Gruppi].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Pag_Mem_Gruppi].[TitPres1] AS [TitPres1], 
+    [Q_Pag_Mem_Gruppi].[MomePres1] AS [MomePres1], 
+    [Q_Pag_Mem_Gruppi].[CognomePres1] AS [CognomePres1], 
+    [Q_Pag_Mem_Gruppi].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Pag_Mem_Gruppi].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Pag_Mem_Gruppi].[TitiPres2] AS [TitiPres2], 
+    [Q_Pag_Mem_Gruppi].[NomePres2] AS [NomePres2], 
+    [Q_Pag_Mem_Gruppi].[CognomePres2] AS [CognomePres2], 
+    [Q_Pag_Mem_Gruppi].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Pag_Mem_Gruppi].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Pag_Mem_Gruppi].[CodTitStu] AS [CodTitStu], 
+    [Q_Pag_Mem_Gruppi].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Pag_Mem_Gruppi] AS [Q_Pag_Mem_Gruppi]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Q_Pag_Mem_Riviste" EntityType="Self.Q_Pag_Mem_Riviste" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Q_Pag_Mem_Riviste].[Ncopie] AS [Ncopie], 
+    [Q_Pag_Mem_Riviste].[AnnoRiv] AS [AnnoRiv], 
+    [Q_Pag_Mem_Riviste].[CodRiv] AS [CodRiv], 
+    [Q_Pag_Mem_Riviste].[NCodRiv] AS [NCodRiv], 
+    [Q_Pag_Mem_Riviste].[DescrRiv] AS [DescrRiv], 
+    [Q_Pag_Mem_Riviste].[DescrS] AS [DescrS], 
+    [Q_Pag_Mem_Riviste].[ImportoRiv] AS [ImportoRiv], 
+    [Q_Pag_Mem_Riviste].[FormatoRiv] AS [FormatoRiv], 
+    [Q_Pag_Mem_Riviste].[TipoRiv] AS [TipoRiv], 
+    [Q_Pag_Mem_Riviste].[Expr2] AS [Expr2], 
+    [Q_Pag_Mem_Riviste].[CodP] AS [CodP], 
+    [Q_Pag_Mem_Riviste].[AnnoP] AS [AnnoP], 
+    [Q_Pag_Mem_Riviste].[Tiscr] AS [Tiscr], 
+    [Q_Pag_Mem_Riviste].[DescrTIscr] AS [DescrTIscr], 
+    [Q_Pag_Mem_Riviste].[Cat] AS [Cat], 
+    [Q_Pag_Mem_Riviste].[DescrCat] AS [DescrCat], 
+    [Q_Pag_Mem_Riviste].[Pagato] AS [Pagato], 
+    [Q_Pag_Mem_Riviste].[Dovuto] AS [Dovuto], 
+    [Q_Pag_Mem_Riviste].[DatPag] AS [DatPag], 
+    [Q_Pag_Mem_Riviste].[DatReg] AS [DatReg], 
+    [Q_Pag_Mem_Riviste].[DatCassa] AS [DatCassa], 
+    [Q_Pag_Mem_Riviste].[Tpag] AS [Tpag], 
+    [Q_Pag_Mem_Riviste].[DescrTPag] AS [DescrTPag], 
+    [Q_Pag_Mem_Riviste].[Fuori] AS [Fuori], 
+    [Q_Pag_Mem_Riviste].[Lode] AS [Lode], 
+    [Q_Pag_Mem_Riviste].[Carica] AS [Carica], 
+    [Q_Pag_Mem_Riviste].[DescrCarica] AS [DescrCarica], 
+    [Q_Pag_Mem_Riviste].[Sez] AS [Sez], 
+    [Q_Pag_Mem_Riviste].[NCodSez] AS [NCodSez], 
+    [Q_Pag_Mem_Riviste].[Sett] AS [Sett], 
+    [Q_Pag_Mem_Riviste].[DescrSet] AS [DescrSet], 
+    [Q_Pag_Mem_Riviste].[Pos] AS [Pos], 
+    [Q_Pag_Mem_Riviste].[DescrPos] AS [DescrPos], 
+    [Q_Pag_Mem_Riviste].[Ent] AS [Ent], 
+    [Q_Pag_Mem_Riviste].[DescrEnt] AS [DescrEnt], 
+    [Q_Pag_Mem_Riviste].[Cod] AS [Cod], 
+    [Q_Pag_Mem_Riviste].[Sesso] AS [Sesso], 
+    [Q_Pag_Mem_Riviste].[DescrSex] AS [DescrSex], 
+    [Q_Pag_Mem_Riviste].[Nom] AS [Nom], 
+    [Q_Pag_Mem_Riviste].[Titolo] AS [Titolo], 
+    [Q_Pag_Mem_Riviste].[Nome] AS [Nome], 
+    [Q_Pag_Mem_Riviste].[Cognome] AS [Cognome], 
+    [Q_Pag_Mem_Riviste].[Ist] AS [Ist], 
+    [Q_Pag_Mem_Riviste].[Via] AS [Via], 
+    [Q_Pag_Mem_Riviste].[CAP] AS [CAP], 
+    [Q_Pag_Mem_Riviste].[Cit] AS [Cit], 
+    [Q_Pag_Mem_Riviste].[Naz] AS [Naz], 
+    [Q_Pag_Mem_Riviste].[DescrNaz] AS [DescrNaz], 
+    [Q_Pag_Mem_Riviste].[DaNa] AS [DaNa], 
+    [Q_Pag_Mem_Riviste].[Tel] AS [Tel], 
+    [Q_Pag_Mem_Riviste].[Fax] AS [Fax], 
+    [Q_Pag_Mem_Riviste].[Email] AS [Email], 
+    [Q_Pag_Mem_Riviste].[DimAn] AS [DimAn], 
+    [Q_Pag_Mem_Riviste].[NoStampa] AS [NoStampa], 
+    [Q_Pag_Mem_Riviste].[Modificato] AS [Modificato], 
+    [Q_Pag_Mem_Riviste].[PresentatoDa] AS [PresentatoDa], 
+    [Q_Pag_Mem_Riviste].[TitPres1] AS [TitPres1], 
+    [Q_Pag_Mem_Riviste].[MomePres1] AS [MomePres1], 
+    [Q_Pag_Mem_Riviste].[CognomePres1] AS [CognomePres1], 
+    [Q_Pag_Mem_Riviste].[FlagRegalo] AS [FlagRegalo], 
+    [Q_Pag_Mem_Riviste].[PresentatoDa2] AS [PresentatoDa2], 
+    [Q_Pag_Mem_Riviste].[TitiPres2] AS [TitiPres2], 
+    [Q_Pag_Mem_Riviste].[NomePres2] AS [NomePres2], 
+    [Q_Pag_Mem_Riviste].[CognomePres2] AS [CognomePres2], 
+    [Q_Pag_Mem_Riviste].[FlagRegalo2] AS [FlagRegalo2], 
+    [Q_Pag_Mem_Riviste].[AnnoPresentazione] AS [AnnoPresentazione], 
+    [Q_Pag_Mem_Riviste].[CodTitStu] AS [CodTitStu], 
+    [Q_Pag_Mem_Riviste].[DescrTitStu] AS [DescrTitStu]
+    FROM [dbo].[Q_Pag_Mem_Riviste] AS [Q_Pag_Mem_Riviste]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Convenzioni_Pag" Association="Self.FK_Convenzioni_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Convenzioni" EntitySet="Convenzioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Convenzioni_TabConvenzioni" Association="Self.FK_Convenzioni_TabConvenzioni">
+      <End Role="TabConv" EntitySet="TabConv" />
+      <End Role="Convenzioni" EntitySet="Convenzioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Divisioni_Pag" Association="Self.FK_Divisioni_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Divisioni" EntitySet="Divisioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Divisioni_TabDiv" Association="Self.FK_Divisioni_TabDiv">
+      <End Role="TabDiv" EntitySet="TabDiv" />
+      <End Role="Divisioni" EntitySet="Divisioni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gruppi_Pag" Association="Self.FK_Gruppi_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Gruppi" EntitySet="Gruppi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gruppi_TabGru" Association="Self.FK_Gruppi_TabGru">
+      <End Role="TabGru" EntitySet="TabGru" />
+      <End Role="Gruppi" EntitySet="Gruppi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabNaz" Association="Self.FK_Mem_TabNaz">
+      <End Role="TabNaz" EntitySet="TabNaz" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabSex" Association="Self.FK_Mem_TabSex">
+      <End Role="TabSex" EntitySet="TabSex" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mem_TabTitStu" Association="Self.FK_Mem_TabTitStu">
+      <End Role="TabTitStu" EntitySet="TabTitStu" />
+      <End Role="Mem" EntitySet="Mem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_Mem" Association="Self.FK_Pag_Mem">
+      <End Role="Mem" EntitySet="Mem" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabCarica" Association="Self.FK_Pag_TabCarica">
+      <End Role="TabCarica" EntitySet="TabCarica" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabCat" Association="Self.FK_Pag_TabCat">
+      <End Role="TabCat" EntitySet="TabCat" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabEnt" Association="Self.FK_Pag_TabEnt">
+      <End Role="TabEnt" EntitySet="TabEnt" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabPos" Association="Self.FK_Pag_TabPos">
+      <End Role="TabPos" EntitySet="TabPos" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabSet" Association="Self.FK_Pag_TabSet">
+      <End Role="TabSet" EntitySet="TabSet" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabSez" Association="Self.FK_Pag_TabSez">
+      <End Role="TabSez" EntitySet="TabSez" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabTIscr" Association="Self.FK_Pag_TabTIscr">
+      <End Role="TabTIscr" EntitySet="TabTIscr" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pag_TabTPag" Association="Self.FK_Pag_TabTPag">
+      <End Role="TabTPag" EntitySet="TabTPag" />
+      <End Role="Pag" EntitySet="Pag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parametri" Association="Self.FK_Parametri">
+      <End Role="TabParametriFiltri" EntitySet="TabParametriFiltri" />
+      <End Role="Filtri_Parametri" EntitySet="Filtri_Parametri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posta_Messaggi_Posta_Prototipi" Association="Self.FK_Posta_Messaggi_Posta_Prototipi">
+      <End Role="Posta_Prototipi" EntitySet="Posta_Prototipi" />
+      <End Role="Posta_Messaggi" EntitySet="Posta_Messaggi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posta_Prototipi_TabPosta" Association="Self.FK_Posta_Prototipi_TabPosta">
+      <End Role="TabPosta" EntitySet="TabPosta" />
+      <End Role="Posta_Prototipi" EntitySet="Posta_Prototipi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QBE" Association="Self.FK_QBE">
+      <End Role="Filtri" EntitySet="Filtri" />
+      <End Role="Filtri_Parametri" EntitySet="Filtri_Parametri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Riviste_Pag" Association="Self.FK_Riviste_Pag">
+      <End Role="Pag" EntitySet="Pag" />
+      <End Role="Riviste" EntitySet="Riviste" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Riviste_TabRiv" Association="Self.FK_Riviste_TabRiv">
+      <End Role="TabRiv" EntitySet="TabRiv" />
+      <End Role="Riviste" EntitySet="Riviste" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stampe_Ordinamenti" Association="Self.FK_Stampe_Ordinamenti">
+      <End Role="Ordinamenti" EntitySet="Ordinamenti" />
+      <End Role="Stampe" EntitySet="Stampe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stampe_QBE" Association="Self.FK_Stampe_QBE">
+      <End Role="Filtri" EntitySet="Filtri" />
+      <End Role="Stampe" EntitySet="Stampe" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

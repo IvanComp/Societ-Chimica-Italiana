@@ -1,0 +1,219 @@
+﻿@model sci.Models.Pag
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Dettagli Iscrizione</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Mem.Cod) &nbsp; @Html.DisplayFor(model => model.Mem.Nome)&nbsp; @Html.DisplayFor(model => model.Mem.Cognome)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pagato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pagato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dovuto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dovuto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatPag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatPag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatCassa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatCassa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuori)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuori)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodSocCol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodSocCol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mem.Sesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mem.Sesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabCarica.DescrCarica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabCarica.DescrCarica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabCat.NCodCat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabCat.NCodCat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabEnt.NCodEnt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabEnt.NCodEnt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabPos.NCodPos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabPos.NCodPos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSet.NCodSet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSet.NCodSet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSez.NCodSez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSez.NCodSez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabTIscr.DescrTIscr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabTIscr.DescrTIscr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabTPag.DescrTPag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabTPag.DescrTPag)
+        </dd>
+    </dl>
+    <table>
+        <tr>
+            <td>
+                <table class="table">
+                    @foreach (var item in Model.Divisioni)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabDiv.DescrDiv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabDiv.ImportoDiv)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+            <td>
+                <table class="table">
+                    @foreach (var item in Model.Gruppi)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabGru.DescrGruppo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabGru.ImportoGru)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="table">
+                    @foreach (var item in Model.Riviste)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabRiv.DescrRiv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabRiv.ImportoRiv)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+            <td>
+                <table class="table">
+                    @foreach (var item in Model.Convenzioni)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabConv.DescrConv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TabConv.ImportoConv)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+</table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

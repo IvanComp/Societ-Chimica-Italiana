@@ -1,0 +1,45 @@
+﻿@model IEnumerable<sci.Models.Divisioni>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Effettiva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pag.Tiscr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabDiv.NCodDiv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Effettiva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pag.Tiscr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabDiv.NCodDiv)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { AnnoP=item.AnnoP, CodP=item.CodP, CodDiv=item.CodDiv }) |
+            @Html.ActionLink("Details", "Details", new { AnnoP = item.AnnoP, CodP = item.CodP, CodDiv = item.CodDiv }) |
+            @Html.ActionLink("Delete", "Delete", new { AnnoP = item.AnnoP, CodP = item.CodP, CodDiv = item.CodDiv })
+        </td>
+    </tr>
+}
+
+</table>

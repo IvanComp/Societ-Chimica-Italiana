@@ -1,0 +1,141 @@
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\ApplicationInsights.config
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\csc.exe
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\vbc.exe
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\VBCSCompiler.exe
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\sci.dll.config
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\sci.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\sci.pdb
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\obj\Debug\sci.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\obj\Debug\sci.pdb
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\obj\Debug\RdlCompile.cache
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\obj\Debug\RdlCompile.compiled
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\System.Linq.Dynamic.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\obj\Debug\sci.csprojResolveAssemblyReference.cache
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\roberto\Documents\Visual Studio 2015\Projects\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Federico\Desktop\sci\obj\Debug\sci.dll
+C:\Users\Federico\Desktop\sci\obj\Debug\sci.pdb
+C:\Users\Federico\Desktop\sci\bin\ApplicationInsights.config
+C:\Users\Federico\Desktop\sci\bin\roslyn\csc.exe
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Federico\Desktop\sci\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Federico\Desktop\sci\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Federico\Desktop\sci\bin\roslyn\vbc.exe
+C:\Users\Federico\Desktop\sci\bin\roslyn\VBCSCompiler.exe
+C:\Users\Federico\Desktop\sci\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Federico\Desktop\sci\bin\sci.dll.config
+C:\Users\Federico\Desktop\sci\bin\sci.dll
+C:\Users\Federico\Desktop\sci\bin\sci.pdb
+C:\Users\Federico\Desktop\sci\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Federico\Desktop\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Federico\Desktop\sci\bin\System.Linq.Dynamic.dll
+C:\Users\Federico\Desktop\sci\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Federico\Desktop\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Federico\Desktop\sci\obj\Debug\sci.csprojResolveAssemblyReference.cache
+C:\Users\Federico\Desktop\sci\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Federico\Desktop\sci\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\ApplicationInsights.config
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\csc.exe
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\vbc.exe
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\VBCSCompiler.exe
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\sci.dll.config
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\sci.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\sci.pdb
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\System.Linq.Dynamic.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\obj\Debug\sci.csprojResolveAssemblyReference.cache
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\obj\Debug\sci.dll
+C:\Users\Federico\Desktop\Ciao\drive-download-20170518T160459Z-001\sci\obj\Debug\sci.pdb
+C:\Università\Stage++\Codice\sci\bin\ApplicationInsights.config
+C:\Università\Stage++\Codice\sci\bin\roslyn\csc.exe
+C:\Università\Stage++\Codice\sci\bin\roslyn\csc.exe.config
+C:\Università\Stage++\Codice\sci\bin\roslyn\csc.rsp
+C:\Università\Stage++\Codice\sci\bin\roslyn\csi.exe
+C:\Università\Stage++\Codice\sci\bin\roslyn\csi.exe.config
+C:\Università\Stage++\Codice\sci\bin\roslyn\csi.rsp
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Università\Stage++\Codice\sci\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.AppContext.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Collections.Immutable.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Console.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Diagnostics.Process.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.IO.Compression.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.IO.FileSystem.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.IO.Pipes.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Reflection.Metadata.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.AccessControl.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Claims.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Threading.Thread.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.ValueTuple.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Xml.XPath.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Università\Stage++\Codice\sci\bin\roslyn\vbc.exe
+C:\Università\Stage++\Codice\sci\bin\roslyn\vbc.exe.config
+C:\Università\Stage++\Codice\sci\bin\roslyn\vbc.rsp
+C:\Università\Stage++\Codice\sci\bin\roslyn\VBCSCompiler.exe
+C:\Università\Stage++\Codice\sci\bin\roslyn\VBCSCompiler.exe.config
+C:\Università\Stage++\Codice\sci\bin\sci.dll.config
+C:\Università\Stage++\Codice\sci\bin\sci.dll
+C:\Università\Stage++\Codice\sci\bin\sci.pdb
+C:\Università\Stage++\Codice\sci\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Università\Stage++\Codice\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Università\Stage++\Codice\sci\bin\Microsoft.ReportViewer.Common.dll
+C:\Università\Stage++\Codice\sci\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Università\Stage++\Codice\sci\bin\System.Linq.Dynamic.dll
+C:\Università\Stage++\Codice\sci\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Università\Stage++\Codice\sci\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Università\Stage++\Codice\sci\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Università\Stage++\Codice\sci\obj\Debug\sci.csprojResolveAssemblyReference.cache
+C:\Università\Stage++\Codice\sci\obj\Debug\sci.dll
+C:\Università\Stage++\Codice\sci\obj\Debug\sci.pdb

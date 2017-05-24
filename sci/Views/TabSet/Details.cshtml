@@ -1,0 +1,50 @@
+﻿@model sci.Models.TabSet
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>TabSet</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NCodSet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NCodSet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DescrSet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DescrSet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SelSet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SelSet)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CodSet }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

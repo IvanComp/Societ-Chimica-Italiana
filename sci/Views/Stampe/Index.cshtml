@@ -1,0 +1,87 @@
+﻿@model IEnumerable<sci.Models.Stampe>
+
+@{
+    ViewBag.Title = "Selezione Stampe";
+}
+
+<h2>Selezione Stampe</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDFiltro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QueryAmmesse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtri.NomeFiltro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtri.SQL)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("Seleziona", "Stampe", new { id = item.ID }))
+    {
+        @Html.AntiForgeryToken()
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Nome)
+                @Html.Hidden("ID",item.ID,new { @id="ID", @name="ID" })
+                @Html.Hidden("Nome",item.Nome, new { @id = "Nome", @name = "Nome" })
+                @Html.Hidden("NomeReport",item.NomeReport, new { @id = "NomeReport", @name = "NomeReport" })
+                @Html.Hidden("Descrizione",item.Descrizione, new { @id = "Descrizione", @name = "Descrizione" })
+                @Html.Hidden("Filtro", item.Filtro, new { @id = "Filtro", @name = "Filtro" })
+                @Html.Hidden("Ordinamento", item.Ordinamento, new { @id = "Ordinamento", @name = "Ordinamento" })
+                @Html.Hidden("Filtrabile",item.Filtrabile, new { @id = "Filtrabile", @name = "Filtrabile" })
+                @Html.Hidden("Ordinabile",item.Ordinabile, new { @id = "Ordinabile", @name = "Ordinabile" })
+                @Html.Hidden("Selezionato",item.Selezionato, new { @id = "Selezionato", @name = "Selezionato" })
+                @Html.Hidden("QueryAmmesse",item.QueryAmmesse, new { @id = "QueryAmmesse", @name = "QueryAmmesse" })
+                @Html.Hidden("NomeFiltro", item.Filtri.NomeFiltro, new { @id = "NomeFiltro", @name = "NomeFiltro" })
+                @Html.Hidden("NomeOrdinamento", item.Ordinamenti.NomeOrdinamentoO, new { @id = "NomeOrdinamento", @name = "NomeOrdinamento" })
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NomeReport)
+            </td>
+             <td>
+                @Html.DropDownListFor(modelItem => item.IDFiltro, new SelectList((IEnumerable<SelectListItem>)ViewBag.Filtri, "Value", "Text", item.IDFiltro),new { @id="IDFiltro", @Name="IDFiltro" })
+            </td>
+            <td>
+                @Html.DropDownListFor(modelItem => item.IDOrdinamento, new SelectList((IEnumerable<SelectListItem>)ViewBag.Ordinamenti, "Value", "Text", item.IDOrdinamento), new { @id = "IDOrdinamento", @Name = "IDOrdinamento" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueryAmmesse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filtri.NomeFiltro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filtri.SQL)
+            </td>
+            <td>
+                <input type="submit" value="Seleziona" class="btn btn-default" />
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+             </td>
+            <td>
+                <input type="submit" value="Seleziona Parametri" class="btn btn-default" />
+                @Html.ActionLink("Edit", "Edit", "Filtri_Parametri", new { id = item.ID })
+            </td>
+        </tr>
+    }
+}
+
+</table>

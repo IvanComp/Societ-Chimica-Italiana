@@ -1,0 +1,540 @@
+﻿@model sci.Models.Pag
+
+@{
+    ViewBag.Title = "Gestione Iscrizione ";
+
+
+    if (TempData.ContainsKey("msg"))
+    {
+        <div class="alert alert-danger">@TempData["msg"]</div>
+    }
+    else if (TempData.ContainsKey("msg-ok"))
+    {
+        <div class="alert alert-success">@TempData["msg-ok"]</div>
+    }
+}
+
+
+<h3>
+    Gestione Iscrizione &nbsp;
+    @Html.DisplayFor(model => model.Mem.Nome) &nbsp;
+    @Html.DisplayFor(model => model.Mem.Cognome) &nbsp;
+    Cod. 
+    @Html.DisplayFor(model => model.Mem.Cod) &nbsp;
+    Anno &nbsp;
+    @Html.DisplayFor(model => model.AnnoP)
+</h3>
+@using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+{
+    @Html.Raw("Ricerca per Nominativo o Codice: ");
+    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+    <input type="submit" value="Cerca" />
+}
+
+<table class="table table-condensed">
+    <tr>
+        @foreach (String anno in ViewBag.anniPag)
+        {
+            <td>
+                @Html.ActionLink(@anno, "Edit", new { AnnoP = @anno, CodP = Model.CodP })&nbsp;
+            </td>
+        }
+    </tr>
+</table>
+
+@using (Html.BeginForm("Edit", "Pags", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CodP)
+        @Html.HiddenFor(model => model.AnnoP)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tiscr, "Tipo Iscrizione", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Tiscr", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Tiscr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cat, "Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Cat", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Cat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pagato, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Pagato, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pagato, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Dovuto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Dovuto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Dovuto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DatPag, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DatPag, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatPag, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DatReg, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DatReg, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatReg, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DatCassa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DatCassa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatCassa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tpag, "Modalità Pagamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Tpag", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Tpag, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fuori, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fuori, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Fuori, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Lode)
+                    @Html.ValidationMessageFor(model => model.Lode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Carica, "Carica", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Carica", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Carica, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sez, "Sezione", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Sez", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sez, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sett, "Settore", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Sett", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sett, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pos, "Posizione", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Pos", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Pos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ent, "Ente", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Ent", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Ent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodSocCol, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodSocCol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CodSocCol, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salva Registrazione" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    Html.EndForm();
+
+}
+
+<table class="table">
+        <tr>
+            <td valign="top">
+                <table class="table table-striped table-bordered">
+                    @if ((ViewBag.CodDiv != null) || ((ViewBag.CodDiv == null) && (Model.Divisioni.Count() > 0)))
+                    {
+                        <tr class="alert-info">
+                            <th>
+                                Divisione
+                            </th>
+                            <th>
+                                Importo
+                            </th>
+                            <th>
+                                Effettiva
+                            </th>
+                        </tr>
+                    }
+                    @if ((Model.Divisioni.Count() == 0) && (ViewBag.CodDiv != null)) {
+                        var item = Model.Divisioni.DefaultIfEmpty();
+                        {
+                            <tr>
+                                @using (Html.BeginForm("CreateDivisioni", "Pags"))
+                                {
+                                   @Html.AntiForgeryToken()
+                                   <td colspan="2">
+                                        @Html.Hidden("CodP", null, new { @id = "CodP", @name = "CodP" })
+                                        @Html.Hidden("AnnoP", null, new { @id = "AnnoP", @name = "AnnoP" })
+                                        @Html.DropDownList("CodDiv", null, htmlAttributes: new { @class = "form-control" })
+                                   </td>
+                                   <td>
+                                       @Html.CheckBox("Effettiva", false) 
+                                   </td>
+                                   <td>
+                                        <input type="submit" value="Aggiungi Divisione" class="btn btn-info" />
+                                   </td>
+                                }
+                            </tr>
+                        }
+                    }
+                    else { 
+                    foreach (var item in Model.Divisioni)
+                    {
+                            using (Html.BeginForm("DeleteDivisioni", "Pags", new { Annop = item.AnnoP, CodP = item.CodP, CodDiv = item.CodDiv }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabDiv.DescrDiv)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabDiv.ImportoDiv)
+                                </td>
+                                <td>
+                                    @if (item.Effettiva.Equals(true)) {
+                 
+                                       <b>x</b>
+                                    }
+                                 </td>
+
+                                <td><input type="submit" value="Cancella" class="btn btn-warning" /></td>
+                            </tr>
+                            }
+                            if ((item == Model.Divisioni.Last()) && (ViewBag.CodDiv != null))
+                            {
+                                    <tr>
+                                        @using (Html.BeginForm("CreateDivisioni", "Pags"))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <td colspan="2">
+                                                @Html.Hidden("CodP", item.CodP, new { @id = "CodP", @name = "CodP" })
+                                                @Html.Hidden("AnnoP", item.AnnoP, new { @id = "AnnoP", @name = "AnnoP" })
+                                                @Html.DropDownList("CodDiv", null, htmlAttributes: new { @class = "form-control" })
+                                            </td>
+                                            <td>
+                                                @Html.ValidationMessageFor(model => item.Effettiva, "", new { @class = "text-danger" })
+                                                @Html.CheckBox("Effettiva",item.Effettiva)
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="Aggiungi Divisione" class="btn btn-info" />
+                                            </td>
+                                        }
+                                    </tr>
+                            }
+                        }
+                    }
+
+                </table>
+            </td>
+            <td valign="top">
+                <table class="table table-striped table-bordered">
+                    @if ((ViewBag.CodGru != null) || ((ViewBag.CodGru == null) && (Model.Gruppi.Count() > 0)))
+                    {
+                        <tr class="alert-info">
+                            <th>
+                                Gruppo
+                            </th>
+                            <th>
+                                Importo
+                            </th>
+                        </tr>
+                    }
+                    @if ((Model.Gruppi.Count() == 0) && (ViewBag.CodGru != null))
+                    {
+                        var item = Model.Gruppi.DefaultIfEmpty();
+                        {
+                            <tr>
+                                @using (Html.BeginForm("CreateGruppi", "Pags"))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <td colspan="2">
+                                        @Html.Hidden("CodP", null, new { @id = "CodP", @name = "CodP" })
+                                        @Html.Hidden("AnnoP", null, new { @id = "AnnoP", @name = "AnnoP" })
+                                        @Html.DropDownList("CodGru", null, htmlAttributes: new { @class = "form-control" })
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Aggiungi Gruppo" class="btn btn-info" />
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        foreach (var item in Model.Gruppi)
+                        {
+                            using (Html.BeginForm("DeleteGruppi", "Pags", new { Annop = item.AnnoP, CodP = item.CodP, CodGru = item.CodGru }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TabGru.DescrGruppo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TabGru.ImportoGru)
+                                    </td>
+                                    <td><input type="submit" value="Cancella" class="btn btn-warning" /></td>
+                                </tr>
+                            }
+                            if ((item == Model.Gruppi.Last()) && (ViewBag.CodGru != null))
+                            {
+                                <tr>
+                                    @using (Html.BeginForm("CreateGruppi", "Pags"))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <td colspan="2">
+                                            @Html.Hidden("CodP", item.CodP, new { @id = "CodP", @name = "CodP" })
+                                            @Html.Hidden("AnnoP", item.AnnoP, new { @id = "AnnoP", @name = "AnnoP" })
+                                            @Html.DropDownList("CodGru", null, htmlAttributes: new { @class = "form-control" })
+                                        </td>
+                                        <td>
+                                            <input type="submit" value="Aggiungi Gruppo" class="btn btn-info" />
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    }
+                </table>
+            </td>
+        </tr>
+
+    <tr>
+        <td valign="top">
+            <table class="table table-striped table-bordered">
+                @if ((ViewBag.CodRiv != null) || ((ViewBag.CodRiv == null) && (Model.Riviste.Count() > 0)))
+                {
+                     <tr class="alert-info">
+                        <th>
+                            Rivista
+                        </th>
+                        <th>
+                            Importo Unit.
+                        </th>
+                        <th>
+                            Quantità
+                        </th>
+                    </tr>
+                }
+                @if ((Model.Riviste.Count() == 0) && (ViewBag.CodRiv != null))
+                {
+                    var item = Model.Riviste.DefaultIfEmpty();
+                    {
+                        <tr>
+                            @using (Html.BeginForm("CreateRiviste", "Pags"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <td colspan="2">
+                                    @Html.Hidden("CodP", null, new { @id = "CodP", @name = "CodP" })
+                                    @Html.Hidden("AnnoP", null, new { @id = "AnnoP", @name = "AnnoP" })
+                                    @Html.DropDownList("CodRiv", null, htmlAttributes: new { @class = "form-control" })
+                                </td>
+
+                                <td>
+                                    @Html.TextBox("Ncopie", "1", new { @type = "number", @class = "span4", @min = "1" })
+                                </td>
+                                <td>
+                                    <input type="submit" value="Aggiungi Rivista" class="btn btn-info" />
+                                </td>
+                            }
+                        </tr>
+                    }
+                }
+                else
+                {
+                    foreach (var item in Model.Riviste)
+                    {
+                        using (Html.BeginForm("DeleteRiviste", "Pags", new { Annop = item.AnnoP, CodP = item.CodP, CodRiv = item.CodRiv }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabRiv.DescrRiv)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabRiv.ImportoRiv)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ncopie)
+                                </td>
+                                <td><input type="submit" value="Cancella" class="btn btn-warning" /></td>
+                            </tr>
+                        }
+                        if ((item == Model.Riviste.Last()) && (ViewBag.CodRiv != null))
+                        {
+                            <tr>
+                                @using (Html.BeginForm("CreateRiviste", "Pags"))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <td colspan="2">
+                                        @Html.Hidden("CodP", item.CodP, new { @id = "CodP", @name = "CodP" })
+                                        @Html.Hidden("AnnoP", item.AnnoP, new { @id = "AnnoP", @name = "AnnoP" })
+                                        @Html.DropDownList("CodRiv", null, htmlAttributes: new { @class = "form-control" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBox("Ncopie", "1", new { @type = "number", @class = "span4", @min = "1" })
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Aggiungi Rivista" class="btn btn-info" />
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                }
+
+            </table>
+        </td>
+        <td valign="top">
+            <table class="table table-striped table-bordered">
+                @if ((ViewBag.CodConv != null) || ((ViewBag.CodConv == null) && (Model.Convenzioni.Count() > 0)))
+                {
+                    <tr class="alert-info">
+                        <th> 
+                            Convenzione
+                        </th>
+                        <th align="center">
+                            Importo Unit.
+                        </th>
+                        <th>
+                            Quantità
+                        </th>
+                    </tr>
+                }
+                
+                @if ((Model.Convenzioni.Count() == 0) && (ViewBag.CodConv != null))
+                {
+                    var item = Model.Convenzioni.DefaultIfEmpty();
+                    {
+                        <tr>
+                            @using (Html.BeginForm("CreateConvenzioni", "Pags"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <td colspan="2">
+                                    @Html.Hidden("CodP", null, new { @id = "CodP", @name = "CodP" })
+                                    @Html.Hidden("AnnoP", null, new { @id = "AnnoP", @name = "AnnoP" })
+                                    @Html.Hidden("DatConv",null, new { @id = "DatConv", @name = "DatConv" })
+                                    @Html.DropDownList("CodConv", null, htmlAttributes: new { @class = "form-control" })
+                                </td>
+                                <td>
+                                    @Html.TextBox("Ncopie", "1", new { @type = "number", @class = "span4", @min = "1" })
+                                </td>
+                                <td>
+                                    <input type="submit" value="Aggiungi Convenzione" class="btn btn-info" />
+                                </td>
+                            }
+                        </tr>
+                    }
+                }
+                else
+                {
+                    foreach (var item in Model.Convenzioni)
+                    {
+                        using (Html.BeginForm("DeleteConvenzioni", "Pags", new { Annop = item.AnnoP, CodP = item.CodP, CodConv = item.CodConv }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabConv.DescrConv)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabConv.ImportoConv)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ncopie)
+                                </td>
+                                <td><input type="submit" value="Cancella" class="btn btn-warning" /></td>
+                            </tr>
+                        }
+                        if ((item == Model.Convenzioni.Last()) && (ViewBag.CodConv != null))
+                        {
+                            <tr>
+                                @using (Html.BeginForm("CreateConvenzioni", "Pags"))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <td colspan="2">
+                                        @Html.Hidden("CodP", item.CodP, new { @id = "CodP", @name = "CodP" })
+                                        @Html.Hidden("AnnoP", item.AnnoP, new { @id = "AnnoP", @name = "AnnoP" })
+                                        @Html.Hidden("DatConv", null, new { @id = "DatConv", @name = "DatConv" })
+                                        @Html.DropDownList("CodConv", null, htmlAttributes: new { @class = "form-control" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBox("Ncopie", "1", new { @type = "number", @class = "span4", @min = "1" })
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Aggiungi Convenzioni" class="btn btn-info" />
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

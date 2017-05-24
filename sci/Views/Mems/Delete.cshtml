@@ -1,0 +1,208 @@
+﻿@model sci.Models.Mem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Mem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titolo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titolo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Via)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Via)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaNa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaNa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DimAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DimAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoStampa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoStampa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modificato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modificato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentatoDa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentatoDa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlagRegalo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlagRegalo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentatoDa2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentatoDa2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlagRegalo2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlagRegalo2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnoPresentazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnoPresentazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabNaz.DescrNaz)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabNaz.DescrNaz)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSex.DescrSex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSex.DescrSex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabTitStu.DescrTitStu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabTitStu.DescrTitStu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

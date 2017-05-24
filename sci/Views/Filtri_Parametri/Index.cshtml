@@ -1,0 +1,59 @@
+﻿@model List<sci.Models.Filtri_Parametri>
+
+@{
+    ViewBag.Title = "Parametri di Stampa";
+}
+
+<h2>Parametri di Stampa</h2>
+
+@using (Html.BeginForm("Index", "Filtri_Parametri", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.idStampa" id="idStampa" name="idStampa" />
+
+    <div class="form-horizontal">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="form-group">
+                @Html.Hidden("Filtri_Parametri[" + @i + "].IDFiltro", Model[i].IDFiltro)
+                @Html.Hidden("Filtri_Parametri[" + @i + "].IDP", Model[i].IDP)
+                @Html.Hidden("Filtri_Parametri[" + @i + "].Ordine", Model[i].Ordine)
+                <div class="col-md-3" align="right">
+                    @Html.DisplayFor(m => m[i].Prompt)
+                </div>
+                <div class="col-md-6">
+                    @switch (Model[i].TabParametriFiltri.TipoParametro)
+                {
+                    case "Int":
+                            @Html.TextBox("Filtri_Parametri[" + @i + "].Valore", Model[i].Valore, new { @type = "number", @min = "1990" ,@max = "2050", @default="2017"})
+                            break;
+                        case "String":
+                            @Html.TextBox("Filtri_Parametri[" + @i + "].Valore", Model[i].Valore)
+                            break;
+                        case "Date":
+                            @Html.TextBox("Filtri_Parametri[" + @i + "].Valore", Model[i].Valore)
+                            break;
+                        case "Boolean":
+                            @Html.CheckBox("Filtri_Parametri[" + @i + "].Valore")
+                            break;
+                        default:
+                            @Html.TextBox("Filtri_Parametri[" + @i + "].Valore", Model[i].Valore)
+                            break;
+                    }
+                </div>
+            </div>
+        }
+        <div>
+            <label for="sel1">Seleziona il formato</label>
+            <select class="form-control" id="RptFormat" name="RptFormat">
+                <option selected>PDF</option>
+                <option>Excel</option>
+                <option>Word</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<sci.Models.TabPosta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smtpServer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smtpServerPort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sendUsing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AutenticationType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SendUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SendPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotificationTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptTo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smtpServer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smtpServerPort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sendUsing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AutenticationType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotificationTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptTo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Codice }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Codice }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Codice })
+        </td>
+    </tr>
+}
+
+</table>

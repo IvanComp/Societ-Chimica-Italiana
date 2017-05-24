@@ -1,0 +1,62 @@
+﻿@model IEnumerable<sci.Models.Posta_Prototipi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodiceConn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotificationTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodiceConn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotificationTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Codice }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Codice }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Codice })
+        </td>
+    </tr>
+}
+
+</table>

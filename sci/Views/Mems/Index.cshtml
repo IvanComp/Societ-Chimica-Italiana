@@ -1,0 +1,72 @@
+﻿@model PagedList.IPagedList<sci.Models.Mem>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Soci</h2>
+<table>
+
+</table>
+
+<table class="table">
+    <tr>
+        <td colspan="3">
+            @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+            {
+
+                @Html.Raw("Ricerca per Nominativo o Codice: ");
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                <input type="submit" value="Cerca" />
+
+            }
+        </td>
+        
+        <td>
+            @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
+            {
+                <input type="submit" value="Nuovo Socio" />
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            @Html.ActionLink("Cognome", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            @Html.ActionLink("Codice", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod)
+            </td>
+            <td>
+                @Html.ActionLink("Modifica", "Edit", new { id = item.Cod }) |
+                @Html.ActionLink("Iscrizioni", "Details", new { id = item.Cod }) |
+                @Html.ActionLink("Cancella", "Delete", new { id = item.Cod })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
