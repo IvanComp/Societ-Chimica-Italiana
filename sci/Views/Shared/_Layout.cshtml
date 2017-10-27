@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@{
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+    
+}
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -37,8 +44,11 @@
                         </ul>
 
                     </li>
-                    <li style="left:540px;">
-                        <a href="@Url.Action("LogOut","Login")">LOGOUT</a>
+                    <li style="left:385px; color:white; top:13px; font-family:Ebrima; font-size:18px;">
+                        Profilo:  @Session["UserName"].ToString()
+                    </li>
+                    <li style="left:410px; font-family:Ebrima; font-size:18px;">
+                        <a href="@Url.Action("LogOut","Login")">Logout</a>
                     </li>
                 </ul>
                 
