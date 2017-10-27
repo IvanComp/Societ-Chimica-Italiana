@@ -6,7 +6,7 @@ namespace sci.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         public string Email { get; set; }
     }
 
@@ -42,14 +42,14 @@ namespace sci.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         [EmailAddress]
         public string Email { get; set; }
 
@@ -66,7 +66,7 @@ namespace sci.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         public string Email { get; set; }
 
         [Required]
@@ -85,7 +85,7 @@ namespace sci.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         public string Email { get; set; }
 
         [Required]
@@ -106,7 +106,7 @@ namespace sci.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Posta elettronica")]
+        [Display(Name = "Username")]
         public string Email { get; set; }
     }
 }

@@ -15,8 +15,9 @@ namespace sci.Controllers
     {
         private sci_newEntities db = new sci_newEntities();
 
-        // GET: Mems
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+       
+            // GET: Mems
+            public ActionResult Index(string sortOrder, string currentFilter, string searchString,string prefix, int? page)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Cod" ? "cod_desc" : "Cod";
@@ -78,20 +79,24 @@ namespace sci.Controllers
             return View(mems.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Mems/Details/5
-        public ActionResult Details(int? id)
+        
+
+    // GET: Mems/Details/5
+    public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Mem mem = db.Mem.Find(id);
-           
+            var query = db.Pag.Max(x => x.AnnoP);
+
             if (mem == null)
             {
                 return HttpNotFound();
             }
-            return View(mem);
+            return RedirectToAction("Edit", "Pags", new { codp = id, annop = query });
         }
 
         // GET: Mems/Create
@@ -135,7 +140,6 @@ namespace sci.Controllers
             {
                 return HttpNotFound();
             }
-
 
             // anni dei pagamenti
             var anniPag = db.Pag.Where(d => d.CodP == id ).Select(d => d.AnnoP.ToString()).ToList();

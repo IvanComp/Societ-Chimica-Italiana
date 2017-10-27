@@ -11,9 +11,8 @@ namespace sci.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class Pag : PagMetadata
+    
+    public partial class Pag
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pag()
@@ -28,14 +27,11 @@ namespace sci.Models
         public short AnnoP { get; set; }
         public string Tiscr { get; set; }
         public string Cat { get; set; }
-
         public decimal Pagato { get; set; }
         public decimal Dovuto { get; set; }
-
         public Nullable<System.DateTime> DatPag { get; set; }
         public Nullable<System.DateTime> DatReg { get; set; }
         public Nullable<System.DateTime> DatCassa { get; set; }
-
         public string Tpag { get; set; }
         public string Fuori { get; set; }
         public bool Lode { get; set; }

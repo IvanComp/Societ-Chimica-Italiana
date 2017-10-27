@@ -28,7 +28,8 @@ namespace sci.Controllers
             };
         }
 
-        // GET: Pags
+
+        // GET: O_Pag_Mem
         public ActionResult Index(int? page)
         {
             var pag = db.Pag.Include(p => p.Mem).Include(p => p.TabCarica).Include(p => p.TabCat).Include(p => p.TabEnt).Include(p => p.TabPos).Include(p => p.TabSet).Include(p => p.TabSez).Include(p => p.TabTIscr).Include(p => p.TabTPag).OrderBy(p => p.CodP);
@@ -59,6 +60,7 @@ namespace sci.Controllers
             ViewBag.Ent = new SelectList(db.TabEnt, "CodEnt", "DescrEnt");
             ViewBag.Pos = new SelectList(db.TabPos, "CodPos", "DescrPos");
             ViewBag.Sett = new SelectList(db.TabSet, "CodSet", "DescrSet");
+            ViewBag.Sett = new SelectList(db.TabSex, "CodSex", "DescrSex");
             ViewBag.Sez = new SelectList(db.TabSez, "CodSez", "DescrSez");
             ViewBag.Tiscr = new SelectList(db.TabTIscr, "CodTIscr", "DescrTIscr");
             ViewBag.Tpag = new SelectList(db.TabTPag, "CodTPag", "DescrTPag");
@@ -96,11 +98,19 @@ namespace sci.Controllers
         // GET: Pags/Edit/5
         public ActionResult Edit(int? codp, int? annop)
         {
-            if (codp == null || annop == null)
+            if (codp == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Pag pag = db.Pag.Find(codp,annop);
+
+            if (annop == null)
+            {
+                var query = db.Pag.Max(x => x.AnnoP);
+                annop = query;
+            }
+
             if (pag == null)
             {
                 return HttpNotFound();

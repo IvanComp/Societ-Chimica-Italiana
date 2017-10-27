@@ -1,8 +1,8 @@
 ﻿@model PagedList.IPagedList<sci.Models.Mem>
 @using PagedList.Mvc;
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
+    
 }
 
 <h2>Soci</h2>
@@ -17,8 +17,12 @@
             {
 
                 @Html.Raw("Ricerca per Nominativo o Codice: ");
-                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                <input type="submit" value="Cerca" />
+                
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Cerca" />
+                
+
+                
 
             }
         </td>

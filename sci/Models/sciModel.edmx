@@ -4273,7 +4273,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'sc
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram DiagramId="a388db97334d40de96526f51d77c9359" Name="Diagram1">
+      <Diagram DiagramId="b8d669c4cdd34439bf4b81244e559694" Name="Diagram1">
         <EntityTypeShape EntityType="sci_newModel.Convenzioni" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="sci_newModel.DatGen" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="sci_newModel.DatLoc" Width="1.5" PointX="9.75" PointY="10" IsExpanded="true" />

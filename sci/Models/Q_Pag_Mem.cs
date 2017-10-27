@@ -72,5 +72,15 @@ namespace sci.Models
         public Nullable<short> AnnoPresentazione { get; set; }
         public string CodTitStu { get; set; }
         public string DescrTitStu { get; set; }
+        public virtual TabCarica TabCarica { get; set; }
+        public virtual TabCat TabCat { get; set; }
+        public virtual TabEnt TabEnt { get; set; }
+        public virtual TabPos TabPos { get; set; }
+        public virtual TabSet TabSet { get; set; }
+        public virtual TabSez TabSez { get; set; }
+        public virtual TabTIscr TabTIscr { get; set; }
+        public virtual TabTPag TabTPag { get; set; }
+        public virtual Pag Pag { get; set; }
+        public virtual Mem Mem { get; set; }
     }
 }

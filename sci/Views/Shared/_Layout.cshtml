@@ -10,15 +10,17 @@
 
 </head>
 <body>
+    
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SCI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="../imm/logosci.jpg" alt="Società Chimica Italiana" height="52" width="100" top="10">
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -33,11 +35,13 @@
                             <li>@Html.ActionLink("Cariche", "Index", "TabCaricas", null, new { id = "TabCaricas" })</li>
                             <li>@Html.ActionLink("Nazioni", "Index", "TabNazs")</li>
                         </ul>
+
                     </li>
-                    <li>@Html.ActionLink("Chi siamo", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contatti", "Contact", "Home")</li>
+                    <li style="left:540px;">
+                        <a href="@Url.Action("LogOut","Login")">LOGOUT</a>
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
@@ -51,6 +55,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+   
 </body>
 </html>
