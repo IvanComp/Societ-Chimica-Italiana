@@ -3,7 +3,8 @@
     {
         Response.Redirect("~/Login/Index");
     }
-    
+    @RenderSection("scripts", required: false)
+
 }
 <!DOCTYPE html>
 <html>
@@ -31,7 +32,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Soci", "Index", "Mems")</li>
+                    <li>@Html.ActionLink("Lista Soci", "Index", "Mems")</li>
+                    <li>@Html.ActionLink("Soci", "Edit", new RouteValueDictionary(new { action = "Main", AnnoP = 2017, CodP = 962 }))</li>
                     <li>@Html.ActionLink("Iscrizioni", "Index", "Pags")</li>
                     <li>@Html.ActionLink("Posta", "Index", "Posta")</li>
                     <li>@Html.ActionLink("Stampe", "Index", "Stampe")</li>

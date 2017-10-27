@@ -61,9 +61,7 @@
                 @Html.DisplayFor(modelItem => item.Cod)
             </td>
             <td>
-                @Html.ActionLink("Modifica", "Edit", new { id = item.Cod }) |
-                @Html.ActionLink("Iscrizioni", "Details", new { id = item.Cod }) |
-                @Html.ActionLink("Cancella", "Delete", new { id = item.Cod })
+                @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
             </td>
         </tr>
     }

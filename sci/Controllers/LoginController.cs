@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace sci.Controllers
 {
@@ -30,7 +31,9 @@ namespace sci.Controllers
                 {
                     Session["UserID"] = userDetails.UserID;
                     Session["Username"] = userDetails.username;
-                    return RedirectToAction("Index", "Home");
+                   
+                    return RedirectToAction("Index", "Pags/Edit", new RouteValueDictionary(
+                    new { controller = "PagsController", action = "Main", AnnoP = 2017, CodP = 962 }));
 
                     int userid = (int)Session["UserID"];
                 }
