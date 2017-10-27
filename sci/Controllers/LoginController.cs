@@ -23,6 +23,7 @@ namespace sci.Controllers
                 if (userDetails == null)
                 {
                     CredenzialiModel.LoginErrorMessage = "Username o password errati";
+                    
                     return View("Index", CredenzialiModel);
                 }
                 else

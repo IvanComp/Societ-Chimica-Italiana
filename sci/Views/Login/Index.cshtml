@@ -12,66 +12,96 @@
     <title>Index</title>
     <style>
 
-        #login-div {
-            height: 100px;
-            width: 400px;
-            position: absolute;
-            left: 30%;
-            top: 30%;
-            border: 1px solid #ccc;
+        #login-cont {
+            height: 300px;
+            width: 410px;
+            border: 10px double #030269;
             padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        #login-div {
+            height: 120px;
+            width: 300px;
+            border: 1px solid grey;
+            padding: 20px 30px;
+            background-color: gainsboro;
+            border-radius: 25px;
         }
 
         .field-validation-error{
             color:red;
         }
 
+
+        #button {
+            box-shadow: rgb(12, 54, 97) 0px 1px 0px 0px inset;
+            background: linear-gradient(rgb(18, 77, 119) 5%, rgb(18, 77, 119) 100%) rgb(18, 77, 119);
+            border-radius: 3px;
+            border: 1px solid rgb(18, 77, 119);
+            display: inline-block;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            font-family: "Trebuchet MS";
+            font-size: 13px;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: rgb(21, 70, 130) 0px 1px 0px;
+        }
+        
+
     </style>
 </head>
 <body>
-    <div id="login-div">
-        @using (Html.BeginForm("Autherize","Login",FormMethod.Post))
-        {
-            <table>
-                <tr>
+    <div id="login-cont" style="left:400px; top:138px; position:absolute;">
+        <div style="left:25%; position:absolute;">
+            <img src="../imm/logosci.jpg" alt="Società Chimica Italiana">
+        </div>
+        <div id="login-div" style="left:25px; top:130px; position:relative;">
+            @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.username)
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.username)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.username)</td>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.password)</td>
+                        <td>@Html.EditorFor(model => model.password)</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.password)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                        </td>
+                    </tr>
                     <td></td>
-                    <td style="text-decoration:underline">Accedi</td>
-                </tr>
-                <tr>
+                   
                     <td>
-                        @Html.LabelFor(model => model.username)
-                    </td>
-                    <td>
-                        @Html.EditorFor(model => model.username)
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.username)</td>
-                <tr>
-                    
-                    <td>@Html.LabelFor(model => model.password)</td>                   
-                    <td>@Html.EditorFor(model => model.password)</td>
-                </tr>
-                
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.password)</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
-                    </td>
-                </tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="name" value="Login" />
-                        <input type="reset" name="name" value="Clear" />
+                        
+                            <input type="submit" name="name" id="button" value="Login" />
+                            <input type="reset"  name="name"  id="button" value="Pulisci" />
+                        
                     </td>
                 </table>
-        }
-    </div>
-  
+            }
+        </div>
+    </div> 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

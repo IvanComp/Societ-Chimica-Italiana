@@ -33,21 +33,23 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Soci", "Index", "Mems")</li>
                     <li>@Html.ActionLink("Iscrizioni", "Index", "Pags")</li>
-
+                    <li>@Html.ActionLink("Posta", "Index", "Posta")</li>
                     <li>@Html.ActionLink("Stampe", "Index", "Stampe")</li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Gestione Tabelle <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Sesso", "Index", "TabSexes", null, new { id = "TabSexes" })</li>
-                            <li>@Html.ActionLink("Cariche", "Index", "TabCaricas", null, new { id = "TabCaricas" })</li>
-                            <li>@Html.ActionLink("Nazioni", "Index", "TabNazs")</li>
-                        </ul>
 
-                    </li>
-                    <li style="left:385px; color:white; top:13px; font-family:Ebrima; font-size:18px;">
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Gestione Tabelle <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>@Html.ActionLink("Sesso", "Index", "TabSexes", null, new { id = "TabSexes" })</li>
+                                        <li>@Html.ActionLink("Cariche", "Index", "TabCaricas", null, new { id = "TabCaricas" })</li>
+                                        <li>@Html.ActionLink("Nazioni", "Index", "TabNazs")</li>
+                                    </ul>
+                            </li>
+                    
+                    <li style="left:340px; color:white; top:13px; font-family:Ebrima; font-size:18px;">
                         Profilo:  @Session["UserName"].ToString()
                     </li>
-                    <li style="left:410px; font-family:Ebrima; font-size:18px;">
+                    <li style="left:355px; font-family:Ebrima; font-size:18px;">
                         <a href="@Url.Action("LogOut","Login")">Logout</a>
                     </li>
                 </ul>
