@@ -273,7 +273,6 @@
     <Compile Include="Controllers\Filtri_ParametriController.cs" />
     <Compile Include="Controllers\GruppiController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemsController.cs" />
@@ -760,7 +759,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -852,10 +850,14 @@
     <Content Include="Views\Mailing\Index1.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home1\Index.cshtml" />
+    <Content Include="Views\Pags\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ModelExtension\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Error\" />
+    <Folder Include="Views\Q_Pags_Mems\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
