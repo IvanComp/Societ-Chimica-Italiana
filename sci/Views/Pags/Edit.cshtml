@@ -148,8 +148,7 @@
                 <div class="col-md-3" style="">
                     @Html.LabelFor(model => model.Lode, htmlAttributes: new { @class = "control-label col-md-2" })
                     <br />
-                </div>
-                <div style="margin-left:730px; margin-top:28px;">
+                    <br />
                     @Html.EditorFor(model => model.Lode, new { htmlAttributes = new { @type = "radio" } })                
                     @Html.ValidationMessageFor(model => model.Lode, "", new { @class = "text-danger" })
                     @Html.CheckBoxFor(model => model.Lode)
