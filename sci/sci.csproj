@@ -857,7 +857,6 @@
     <Folder Include="ModelExtension\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Error\" />
-    <Folder Include="Views\Q_Pags_Mems\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

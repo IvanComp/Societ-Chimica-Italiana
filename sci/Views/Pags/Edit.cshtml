@@ -23,20 +23,27 @@
         Anno &nbsp;
         @Html.DisplayFor(model => model.AnnoP)
     </h3>
-    @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
-    {
-        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class="", @placeholder = "Inserisci Codice o Nominativo.." })
-        <button type="submit" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-search"></span> Cerca
-        </button>
-    }
+    <div style="margin-top:23px;">
+        @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+        {
+            
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "", @placeholder = "Inserisci Codice o Nominativo.." })
+            
+            <button type="submit" class="btn btn-default btn-sm" style="margin-top:-9px; margin-bottom:-8px;">
+                <span class="glyphicon glyphicon-search"></span> Cerca
+            </button>
 
-    @using (Html.BeginForm("Edit/"+Model.CodP.ToString(), "Mems", FormMethod.Get))
-    {
-        <button type="submit" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-user"></span> Anagrafe
-        </button>
-    }
+        }
+
+        @using (Html.BeginForm("Edit/" + Model.CodP.ToString(), "Mems", FormMethod.Get))
+            {
+            <button type="submit" class="btn btn-default btn-sm" style="margin-left:280px; margin-top:-41px;">
+                <span class="glyphicon glyphicon-user"></span> Anagrafe
+            </button>
+
+        }
+    </div>
+
     <table class="table table-condensed">
         <tr>
             @foreach (String anno in ViewBag.anniPag)
@@ -48,6 +55,24 @@
         </tr>
     </table>
 </div>
+<style>
+    #button {
+        margin-top:30px;
+        margin-bottom:10px;
+        box-shadow: rgb(12, 54, 97) 0px 1px 0px 0px inset;
+        background: linear-gradient(rgb(18, 77, 119) 5%, rgb(18, 77, 119) 100%) rgb(18, 77, 119);
+        border-radius: 3px;
+        border: 1px solid rgb(18, 77, 119);
+        display: inline-block;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        font-family: "Trebuchet MS";
+        font-size: 13px;
+        padding: 6px 24px;
+        text-decoration: none;
+        text-shadow: rgb(21, 70, 130) 0px 1px 0px;
+    }
+</style>
 
     @using (Html.BeginForm("Edit", "Pags", FormMethod.Post))
     {
@@ -58,29 +83,29 @@
             @Html.HiddenFor(model => model.AnnoP)
             <div class="row">
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Tiscr, "Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Tiscr,"Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.DropDownList("Tiscr", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Tiscr, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Cat, "Cat.", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Cat,"Cat.", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.DropDownList("Cat", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Cat, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Sez, "Sez.", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Sez,"Sez.", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.DropDownList("Sez", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Sez, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Carica, "Carica", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Carica,"Carica", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.DropDownList("Carica", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Carica, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <br />
             <div class="row">
                 <div class="col-md-3">
                     @Html.LabelFor(model => model.Pagato, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -93,17 +118,17 @@
                     @Html.ValidationMessageFor(model => model.Dovuto, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Tpag, "Tipo Pag.to", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Tpag,"TipoPag.to", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.DropDownList("Tpag", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Tpag, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.LabelFor(model => model.Fuori, "Sede Pag.to", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Fuori,"SedePag.to", htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.EditorFor(model => model.Fuori, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Fuori, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <br />
             <div class="row">
                 <div class="col-md-3">
                     @Html.LabelFor(model => model.DatPag, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -120,57 +145,45 @@
                     @Html.EditorFor(model => model.DatCassa, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DatCassa, "", new { @class = "text-danger" })
                 </div>
-                <div class="col-md-3">
-                    @Html.LabelFor(model => model.Lode, htmlAttributes: new { @class = "control-label col-md-2"})
-                    @Html.EditorFor(model => model.Lode, new { htmlAttributes = new { @type = "radio" } })
+                <div class="col-md-3" style="">
+                    @Html.LabelFor(model => model.Lode, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <br />
+                </div>
+                <div style="margin-left:730px; margin-top:28px;">
+                    @Html.EditorFor(model => model.Lode, new { htmlAttributes = new { @type = "radio" } })                
                     @Html.ValidationMessageFor(model => model.Lode, "", new { @class = "text-danger" })
                     @Html.CheckBoxFor(model => model.Lode)
-                </div>
+               </div>
             </div>
 
 
+            <br />
 
-
-            <div class="row">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Sett, "Settore", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="row">                               
                     <div class="col-md-3">
+                        @Html.LabelFor(model => model.Sett, "Settore", htmlAttributes: new { @class = "control-label col-md-2" })
                         @Html.DropDownList("Sett", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Sett, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Pos, "Posizione", htmlAttributes: new { @class = "control-label col-md-2" })
+                    </div>           
                     <div class="col-md-3">
+                        @Html.LabelFor(model => model.Pos, "Posizione", htmlAttributes: new { @class = "control-label col-md-2" })
                         @Html.DropDownList("Pos", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Pos, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Ent, "Ente", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-3">
+                        @Html.LabelFor(model => model.Ent, "Ente", htmlAttributes: new { @class = "control-label col-md-2" })
                         @Html.DropDownList("Ent", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Ent, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.CodSocCol, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-3">
+                        @Html.LabelFor(model => model.CodSocCol, htmlAttributes: new { @class = "control-label col-md-2" })
                         @Html.EditorFor(model => model.CodSocCol, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.CodSocCol, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Salva Registrazione" class="btn btn-default" />
-                </div>
-            </div>
+                    <input type="submit" id="button" value="Salva Registrazione" class="btn btn-default" />             
+            
         </div>
         Html.EndForm();
 
@@ -179,7 +192,7 @@
     <table class="table">
         <tr>
             <td valign="top">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" style="margin-top: 10px;">
                     @if ((ViewBag.CodDiv != null) || ((ViewBag.CodDiv == null) && (Model.Divisioni.Count() > 0)))
                     {
                         <tr class="alert-info">
@@ -270,7 +283,7 @@
                 </table>
             </td>
             <td valign="top">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" style="margin-top: 10px;">
                     @if ((ViewBag.CodGru != null) || ((ViewBag.CodGru == null) && (Model.Gruppi.Count() > 0)))
                     {
                         <tr class="alert-info">
@@ -344,7 +357,7 @@
 
         <tr>
             <td valign="top">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" style="margin-top: 10px;">
                     @if ((ViewBag.CodRiv != null) || ((ViewBag.CodRiv == null) && (Model.Riviste.Count() > 0)))
                     {
                         <tr class="alert-info">
@@ -429,7 +442,7 @@
                 </table>
             </td>
             <td valign="top">
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered" style="margin-top: 10px;">
                     @if ((ViewBag.CodConv != null) || ((ViewBag.CodConv == null) && (Model.Convenzioni.Count() > 0)))
                     {
                         <tr class="alert-info">
@@ -517,9 +530,7 @@
         </tr>
     </table>
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+    
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
