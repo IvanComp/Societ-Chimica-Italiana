@@ -109,12 +109,12 @@
             <div class="row">
                 <div class="col-md-3">
                     @Html.LabelFor(model => model.Pagato, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.Pagato, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Pagato, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Pagato, new { htmlAttributes = new { @class = "form-control", id="pagato" } })
+                    @Html.ValidationMessageFor(model => model.Pagato, "", new { @class = "text-danger"})
                 </div>
                 <div class="col-md-3">
                     @Html.LabelFor(model => model.Dovuto, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.Dovuto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Dovuto, new { htmlAttributes = new { @class = "form-control", id="dovuto"} }) 
                     @Html.ValidationMessageFor(model => model.Dovuto, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
@@ -529,8 +529,21 @@
         </tr>
     </table>
 
+   
     
 
     @section Scripts {
+
+        <script src="jquery.min.js"></script>
+        <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+
         @Scripts.Render("~/bundles/jqueryval")
+
+        <script type="text/javascript">
+            $(function () {
+                $("#pagato").dblclick(function () {
+                    $(this).val($("#dovuto").val());
+                });
+            })
+        </script>
     }
