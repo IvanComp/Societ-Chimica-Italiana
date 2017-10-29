@@ -1,18 +1,16 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model sci.Models.Mem
 
-<!DOCTYPE html>
-
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error404</title>
+    <title>Attenzione</title>
+    <meta http-equiv="refresh" content="8;url=/Mems" />
 </head>
 <body>
-    <div> 
-        ERRORE ELEMENTO INESISTENTE
-    </div>
+    <h1 style="margin-top:50px;">Attenzione</h1>
+    <p style="font-size:20px; margin-top:20px;">Il socio che si sta cercando, attualmente non presenta più dati relativi alle iscrizioni.
+     <br />  Probabilmente non fa più parte dell'associazione.</p>
+    <p style="font-size:20px; margin-top:30px; float:left;">Rindirizzamento alla lista dei soci in corso...</p>
+    <img style="width:50px; height:50px; margin-left:25px; margin-top:20px;" src="../imm/rind.gif" />
+    <p style="font-size:20px; margin-top:20px;">@Html.ActionLink("Torna subito indietro", "Index", "Mems")</p>
 </body>
 </html>

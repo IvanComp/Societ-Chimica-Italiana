@@ -113,7 +113,7 @@ namespace sci.Controllers
 
             if (pag == null)
             {
-                return HttpNotFound();
+                return View("Error404");
             }
 
             // anni dei pagamenti
