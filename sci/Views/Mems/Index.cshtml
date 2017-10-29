@@ -48,9 +48,11 @@
         <th></th>
     </tr>
 
-    @foreach (var item  in Model )
+    @foreach (var item  in Model)
     {
-        <tr>
+        if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2 )
+        {
+        <tr> 
             <td>
                 @Html.DisplayFor(modelItem => item.Cognome)
             </td>
@@ -64,7 +66,10 @@
                 @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
             </td>
         </tr>
-    }
+            }
+
+        
+        }
 
 </table>
 <br />

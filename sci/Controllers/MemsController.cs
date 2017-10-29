@@ -74,7 +74,7 @@ namespace sci.Controllers
                     break;
             }
 
-            int pageSize = 20;
+            int pageSize = 50;
             int pageNumber = (page ?? 1);
             return View(mems.ToPagedList(pageNumber, pageSize));
         }
