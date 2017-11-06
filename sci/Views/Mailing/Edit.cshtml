@@ -103,6 +103,7 @@
             <div class="col-md-3">
                 @Html.LabelFor(model => model.IDFiltro, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.IDFiltro, new SelectList((IEnumerable<SelectListItem>)ViewBag.IDFiltro, "Value", "Text", Model.IDFiltro), new { @id = "IDFiltro", @Name = "IDFiltro" })
+                
                 <input type="submit" style="margin-top:25px;" value="Salva e Aggiorna Lista Destinatari" class="btn btn-default" name="submit" id="salva" />
                 <br />
                 <br />
