@@ -35,7 +35,9 @@ namespace sci.Models
         public string Allegati { get; set; }
         public string Azione { get; set; }
         public string FullMessage { get; set; }
-    
+        public Nullable<int> IDFiltro { get; set; }
+        public string Filtro { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Posta_Messaggi> Posta_Messaggi { get; set; }
         public virtual TabPosta TabPosta { get; set; }
