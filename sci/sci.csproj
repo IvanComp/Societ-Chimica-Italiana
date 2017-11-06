@@ -290,6 +290,7 @@
     </Compile>
     <Compile Include="HubsOld\ProgressHub.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Autocomplete.cs" />
     <Compile Include="Models\Convenzioni.cs">
       <DependentUpon>sciModel.tt</DependentUpon>
     </Compile>
@@ -723,6 +724,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.signalR-2.2.2.js" />
     <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -849,7 +852,6 @@
     <Content Include="Views\Mailing\Edit.cshtml" />
     <Content Include="Views\Mailing\Index1.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Home1\Index.cshtml" />
     <Content Include="Views\Pags\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>

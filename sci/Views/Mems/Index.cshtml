@@ -13,14 +13,14 @@
 <table class="table">
     <tr>
         <td colspan="3">
-            @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+            @using (Html.BeginForm("Index", "Mems", FormMethod.Post))
             {
-
+                
                 @Html.Raw("Ricerca per Nominativo o Codice: ");
                 
-                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "autocomplete" })
                     <input type="submit" value="Cerca" />
-                
+                    
 
                 
 
@@ -77,3 +77,14 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 
 @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+@section Scripts {
+
+    
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui.js"></script>   
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+}

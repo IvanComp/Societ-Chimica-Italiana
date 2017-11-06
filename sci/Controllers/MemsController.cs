@@ -17,7 +17,7 @@ namespace sci.Controllers
 
        
             // GET: Mems
-            public ActionResult Index(string sortOrder, string currentFilter, string searchString,string prefix, int? page)
+            public ActionResult Index(string sortOrder, string currentFilter, string searchString,string term, int? page)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Cod" ? "cod_desc" : "Cod";
@@ -38,19 +38,20 @@ namespace sci.Controllers
             {
                 if (searchString.All(char.IsDigit))
                 {
-                    mems = mems.Where(m => m.Cod.ToString().Equals(searchString));
-                    if (mems.Count() == 1)
-                    {
-                        var pags = db.Pag.Where(p => p.CodP.ToString().Equals(searchString)).Select(d => d.AnnoP);
-                        if (pags.Any())
-                        {
-                            var last = pags.Max();
-                            var lastcod = Convert.ToInt32(searchString); ;
-                            return RedirectToAction("Edit", "Pags", new { codp = lastcod, annop = last });
-                        }
-                        else
-                            return RedirectToAction("Edit/" + mems.Select(m => m.Cod).Max().ToString(), "Mems", null);
-                    }
+                     mems = mems.Where(m => m.Cod.ToString().Equals(searchString));
+                     if (mems.Count() == 1)
+                     {
+                         var pags = db.Pag.Where(p => p.CodP.ToString().Equals(searchString)).Select(d => d.AnnoP);
+                         if (pags.Any())
+                         {
+                             var last = pags.Max();
+                             var lastcod = Convert.ToInt32(searchString); ;
+                             return RedirectToAction("Edit", "Pags", new { codp = lastcod, annop = last });
+                         }
+                         else
+                             return RedirectToAction("Edit/" + mems.Select(m => m.Cod).Max().ToString(), "Mems", null);
+                     } 
+              
                 }
                      
                 else
@@ -78,9 +79,9 @@ namespace sci.Controllers
             int pageNumber = (page ?? 1);
             return View(mems.ToPagedList(pageNumber, pageSize));
         }
-
+ 
+      
         
-
     // GET: Mems/Details/5
     public ActionResult Details(int? id)
         {

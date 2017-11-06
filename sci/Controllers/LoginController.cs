@@ -31,9 +31,13 @@ namespace sci.Controllers
                 {
                     Session["UserID"] = userDetails.UserID;
                     Session["Username"] = userDetails.username;
-                   
-                    return RedirectToAction("Index", "Pags/Edit", new RouteValueDictionary(
-                    new { controller = "PagsController", action = "Main", AnnoP = 2017, CodP = 962 }));
+
+
+                    //VECCHIO TIPO 
+                    //return RedirectToAction("Index", "Pags/Edit", new RouteValueDictionary(
+                    //new { controller = "PagsController", action = "Main", AnnoP = 2017, CodP = 962 }));
+
+                    return RedirectToAction("Index", "Mems");
 
                     int userid = (int)Session["UserID"];
                 }

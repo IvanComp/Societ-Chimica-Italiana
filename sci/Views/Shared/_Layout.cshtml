@@ -1,10 +1,12 @@
 ﻿@{
-    string admin = Session["UserName"].ToString();
+
 
     if (Session["UserID"] == null)
     {
         Response.Redirect("~/Login/Index");
     }
+
+    string admin = Session["UserName"].ToString();
 
     if (admin == "admin")
     {
@@ -17,6 +19,7 @@
             <title>@ViewBag.Title - Applicazione ASP.NET</title>
             @Styles.Render("~/Content/css")
             @Scripts.Render("~/bundles/modernizr")
+            @Scripts.Render("~/bundles/jquery")
 
         </head>
         <body>
@@ -37,7 +40,7 @@
                             <li>@Html.ActionLink("Lista Soci", "Index", "Mems")</li>
                             <li>@Html.ActionLink("Soci", "Edit", new RouteValueDictionary(new { controller = "Pags", action = "Main", AnnoP = 2017, CodP = 962 }))</li>
                             <li>@Html.ActionLink("Iscrizioni", "Index", "Pags")</li>
-                            <li>@Html.ActionLink("Posta", "Index", "Posta")</li>
+                            <li>@Html.ActionLink("Posta", "Index", "Mailing")</li>
                             <li>@Html.ActionLink("Stampe", "Index", "Stampe")</li>
 
 
@@ -133,7 +136,7 @@
                 </footer>
             </div>
 
-            @Scripts.Render("~/bundles/jquery")
+            
             @Scripts.Render("~/bundles/bootstrap")
 
         </body>
