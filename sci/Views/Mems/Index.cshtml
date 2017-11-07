@@ -24,43 +24,32 @@
                placeholder = "Programming language name",
                name = "language22",
                list = "languages",
+               //data = ANDREBBE SOSTITUITO A LIST, INSERENDO LA LISTA DI TUTTI I NOMI
                multiple = "",
                SelectList = "1",
                MinLengthAttributeAdapter = "1",
+               
            })
 
 
 
                 <datalist id="languages">
 
-
-                    @foreach (var item in Model)
+                @foreach (var item in Model)
                     {
-                        if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
-                        {
-                            <option value="Opzione">
-                                @Html.DisplayFor(modelItem => item.Cognome)
+                         if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                             {
+                              <option value="scelta">
+                               @Html.DisplayFor(modelItem => item.Cognome)
 
-                                @Html.DisplayFor(modelItem => item.Nome)
-                                
-                                    @Html.DisplayFor(modelItem => item.Cod)                                                                
-                            </option>
-                        }
-                    }
+                               @Html.DisplayFor(modelItem => item.Nome)
 
+                               @Html.DisplayFor(modelItem => item.Cod)
+                              </option>
+                              }
+                      }
 
-
-                    <!-- <option value="PHP">PHP</option>
-                     <option value="JavaScript">JavaScript</option>
-                     <option value="Cobol">Cobol</option>
-                     <option value="C#">C#</option>
-                     <option value="C++">C++</option>
-                     <option value="Java">Java</option>
-                     <option value="Pascal">Pascal</option>
-                     <option value="FORTRAN">FORTRAN</option>
-                     <option value="Lisp">Lisp</option>
-                     <option value="Swift">Swift</option> -->
-                    </datalist>
+                </datalist>
             }</td>
 
             <td>
@@ -125,7 +114,7 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 <a href="~/Views/Mems/countries.json">~/Views/Mems/countries.json</a>
 <script>
     $('.flexdatalist').flexdatalist({
-        selectionRequired: 1,
+        selectionRequired: true,
         minLength: 1
     });
 </script>
