@@ -2,7 +2,7 @@
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
-    
+
 }
 
 <h2>Soci</h2>
@@ -15,63 +15,106 @@
         <td colspan="3">
             @using (Html.BeginForm("Index", "Mems", FormMethod.Post))
             {
-                
+
                 @Html.Raw("Ricerca per Nominativo o Codice: ");
-                
-                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "autocomplete" })
-                    <input type="submit" value="Cerca" />
-                    
 
-                
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
+               {
+                   @class = "flexdatalist",
+                   placeholder = "Programming language name",
+                   name = "language22",
+                   list = "languages",
+                   multiple = "",
+                   SelectList = "1",
+                   MinLengthAttributeAdapter = "1",
+               })
 
-            }
-        </td>
-        
-        <td>
-            @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
+
+
+                <datalist id="languages">
+                    <option value="PHP">PHP</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Cobol">Cobol</option>
+                    <option value="C#">C#</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Pascal">Pascal</option>
+                    <option value="FORTRAN">FORTRAN</option>
+                    <option value="Lisp">Lisp</option>
+                    <option value="Swift">Swift</option>
+
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cognome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cod)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
+                    </td>
+                </tr>
+                        }
+
+
+                    }
+
+                    </datalist>
+            }</td>
+
+            <td>
+                @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
             {
-                <input type="submit" value="Nuovo Socio" />
+                    <input type="submit" value="Nuovo Socio" />
+                }
+            </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.ActionLink("Cognome", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    @Html.ActionLink("Codice", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cognome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cod)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
+                        </td>
+                    </tr>
+                }
+
+
             }
-        </td>
-    </tr>
 
-    <tr>
-        <th>
-            @Html.ActionLink("Cognome", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            Nome
-        </th>
-        <th>
-            @Html.ActionLink("Codice", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item  in Model)
-    {
-        if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2 )
-        {
-        <tr> 
-            <td>
-                @Html.DisplayFor(modelItem => item.Cognome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cod)
-            </td>
-            <td>
-                @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
-            </td>
-        </tr>
-            }
-
-        
-        }
-
-</table>
+        </table>
 <br />
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
@@ -80,11 +123,18 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 
 @section Scripts {
 
-    
-<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
-<script src="~/Scripts/jquery-ui.js"></script>   
+ 
 
     @Scripts.Render("~/bundles/jqueryval")
-
+    
+<link href="~/Scripts/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css"/>
+<script src="~/Scripts/jquery.flexdatalist.min.js"></script>
+<a href="~/Views/Mems/countries.json">~/Views/Mems/countries.json</a>
+<script>
+    $('.flexdatalist').flexdatalist({
+        selectionRequired: 1,
+        minLength: 1
+    });
+</script>
     
 }

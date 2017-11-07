@@ -309,3 +309,5 @@ C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\bin\System.Diagnostics.
 C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\obj\Debug\sci.csprojResolveAssemblyReference.cache
 C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\obj\Debug\sci.dll
 C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\obj\Debug\sci.pdb
+C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\calli\Source\Repos\Societ-Chimica-Italiana2\sci\bin\Microsoft.ScriptManager.jQuery.UI.Combined.dll
