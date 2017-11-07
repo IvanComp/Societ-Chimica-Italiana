@@ -1,32 +1,41 @@
-﻿@model PagedList.IPagedList<sci.Models.Mem>
-@using PagedList.Mvc;
+﻿@model IEnumerable<sci.Models.Mem>
 @{
     ViewBag.Title = "Index";
-    
+
 }
-
 <h2>Soci</h2>
-<table>
-
-</table>
-
+<table></table>
 <table class="table">
     <tr>
         <td colspan="3">
-            @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+            @using (Html.BeginForm("Index", "Mems"))
             {
 
                 @Html.Raw("Ricerca per Nominativo o Codice: ");
-                
-                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                    <input type="submit" value="Cerca" />
-                
 
-                
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
+           {
+               @class = "flexdatalist",
+               placeholder = "Ricerca",
+               list = "data",
+               multiple = "",
+               SelectList = "1",
+               MinLengthAttributeAdapter = "1",
 
+           })
+                <datalist id="data">
+                    @foreach (var item in ViewBag.data)
+                    {
+                        <option>
+                            <li>@item.Nome</li>
+                            <li>@item.Cognome</li>
+                            <li>@item.Cod</li>
+                        </option>
+
+                    }
+                </datalist>
             }
         </td>
-        
         <td>
             @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
             {
@@ -34,7 +43,6 @@
             }
         </td>
     </tr>
-
     <tr>
         <th>
             @Html.ActionLink("Cognome", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
@@ -47,28 +55,44 @@
         </th>
         <th></th>
     </tr>
+    @foreach (var item in Model)
+            {
+                if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cognome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cod)
+                </td>
+                <td>
+                    @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
+                </td>
+            </tr>
+        }
 
-    @foreach (var item  in Model )
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cognome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cod)
-            </td>
-            <td>
-                @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
-            </td>
-        </tr>
+
     }
-
 </table>
 <br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <link href="~/Scripts/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery.flexdatalist.min.js"></script>
+    <a href="~/Views/Mems/countries.json">~/Views/Mems/countries.json</a>
+    <script>
+    $('.flexdatalist').flexdatalist({
+        selectionRequired: true,
+        minLength: 1
+    });
+    </script>
+
+}
