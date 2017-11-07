@@ -20,7 +20,7 @@
 
                 @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
            {
-               @class = "flexdatalist",
+               @id = "flexdatalist",
                placeholder = "Programming language name",
                name = "language22",
                list = "languages",
@@ -28,18 +28,19 @@
                multiple = "",
                SelectList = "1",
                MinLengthAttributeAdapter = "1",
-               
+               onchange = "myFunction()",
+
            })
 
 
 
-                <datalist id="languages">
+                <datalist id="languages" >
 
                 @foreach (var item in Model)
                     {
                          if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
                              {
-                              <option value="scelta">
+                              <option value="scelta" >
                                @Html.DisplayFor(modelItem => item.Cognome)
 
                                @Html.DisplayFor(modelItem => item.Nome)
@@ -85,7 +86,9 @@
                             @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Cod)
+                            
+                                @Html.DisplayFor(modelItem => item.Cod, new { id = "codp" })
+                            
                         </td>
                         <td>
                             @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
@@ -113,10 +116,22 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 <script src="~/Scripts/jquery.flexdatalist.min.js"></script>
 <a href="~/Views/Mems/countries.json">~/Views/Mems/countries.json</a>
 <script>
-    $('.flexdatalist').flexdatalist({
+
+    $('#flexdatalist').flexdatalist({
         selectionRequired: true,
-        minLength: 1
+        minLength: 1,
     });
 </script>
+
+<script>
+    function myFunction() {
+       
+        var codp = document.getElementById("#codp");       
+        var annop = 2017;
+        windows: location = "../Pags/Edit?codp=" + codp + "&annop=" + annop  ;
+    }
+</script>       
+
+
     
 }
