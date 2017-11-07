@@ -19,54 +19,47 @@
                 @Html.Raw("Ricerca per Nominativo o Codice: ");
 
                 @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
-               {
-                   @class = "flexdatalist",
-                   placeholder = "Programming language name",
-                   name = "language22",
-                   list = "languages",
-                   multiple = "",
-                   SelectList = "1",
-                   MinLengthAttributeAdapter = "1",
-               })
+           {
+               @class = "flexdatalist",
+               placeholder = "Programming language name",
+               name = "language22",
+               list = "languages",
+               multiple = "",
+               SelectList = "1",
+               MinLengthAttributeAdapter = "1",
+           })
 
 
 
                 <datalist id="languages">
-                    <option value="PHP">PHP</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Cobol">Cobol</option>
-                    <option value="C#">C#</option>
-                    <option value="C++">C++</option>
-                    <option value="Java">Java</option>
-                    <option value="Pascal">Pascal</option>
-                    <option value="FORTRAN">FORTRAN</option>
-                    <option value="Lisp">Lisp</option>
-                    <option value="Swift">Swift</option>
 
 
                     @foreach (var item in Model)
                     {
                         if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
                         {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cognome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cod)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
-                    </td>
-                </tr>
+                            <option value="Opzione">
+                                @Html.DisplayFor(modelItem => item.Cognome)
+
+                                @Html.DisplayFor(modelItem => item.Nome)
+                                
+                                    @Html.DisplayFor(modelItem => item.Cod)                                                                
+                            </option>
                         }
-
-
                     }
 
+
+
+                    <!-- <option value="PHP">PHP</option>
+                     <option value="JavaScript">JavaScript</option>
+                     <option value="Cobol">Cobol</option>
+                     <option value="C#">C#</option>
+                     <option value="C++">C++</option>
+                     <option value="Java">Java</option>
+                     <option value="Pascal">Pascal</option>
+                     <option value="FORTRAN">FORTRAN</option>
+                     <option value="Lisp">Lisp</option>
+                     <option value="Swift">Swift</option> -->
                     </datalist>
             }</td>
 
