@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -16,7 +16,9 @@ namespace sci.Controllers
     {
         private sci_newEntities db = new sci_newEntities();
 
+            // GET: Mems
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Cod" ? "cod_desc" : "Cod";
@@ -122,6 +124,79 @@ namespace sci.Controllers
             ViewBag.CodTitStu = new SelectList(db.TabTitStu, "TCodTitStu", "DescrTitStu", mem.CodTitStu);
             return View(mem);
         }
+
+
+        // GET: Mems/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Mem mem = db.Mem.Find(id);
+            if (mem == null)
+            {
+                return HttpNotFound();
+            }
+
+            // anni dei pagamenti
+            var anniPag = db.Pag.Where(d => d.CodP == id ).Select(d => d.AnnoP.ToString()).ToList();
+            if (anniPag.Any())
+            {
+                ViewBag.anniPag = anniPag;
+            }
+
+            ViewBag.Naz = new SelectList(db.TabNaz, "CodNaz", "DescrNaz", mem.Naz);
+            ViewBag.Sesso = new SelectList(db.TabSex, "CodSex", "DescrSex", mem.Sesso);
+            ViewBag.CodTitStu = new SelectList(db.TabTitStu, "TCodTitStu", "DescrTitStu", mem.CodTitStu);
+            return View(mem);
+        }
+
+        // POST: Mems/Edit/5
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per ulteriori dettagli, vedere http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Cod,Sesso,Nom,Titolo,Nome,Cognome,Ist,Via,CAP,Cit,Naz,DaNa,Tel,Fax,Email,DimAn,NoStampa,Modificato,PresentatoDa,FlagRegalo,PresentatoDa2,FlagRegalo2,AnnoPresentazione,CodTitStu")] Mem mem)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(mem).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Naz = new SelectList(db.TabNaz, "CodNaz", "DescrNaz", mem.Naz);
+            ViewBag.Sesso = new SelectList(db.TabSex, "CodSex", "DescrSex", mem.Sesso);
+            ViewBag.CodTitStu = new SelectList(db.TabTitStu, "TCodTitStu", "DescrTitStu", mem.CodTitStu);
+            return View(mem);
+        }
+
+        // GET: Mems/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Mem mem = db.Mem.Find(id);
+            if (mem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(mem);
+        }
+        //
+        // POST: Mems/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Mem mem = db.Mem.Find(id);
+            db.Mem.Remove(mem);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
         protected override void Dispose(bool disposing)
         {
