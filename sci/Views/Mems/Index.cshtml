@@ -1,11 +1,15 @@
-﻿@model IEnumerable<sci.Models.Mem>
+﻿@model PagedList.IPagedList<sci.Models.Mem>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
-
 }
+
 <h2>Soci</h2>
 <table></table>
+
 <table class="table">
+    <tr>
     <tr>
         <td colspan="3">
             @using (Html.BeginForm("Index", "Mems"))
@@ -36,6 +40,7 @@
                 </datalist>
             }
         </td>
+
         <td>
             @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
             {
@@ -43,6 +48,7 @@
             }
         </td>
     </tr>
+
     <tr>
         <th>
             @Html.ActionLink("Cognome", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
@@ -55,31 +61,33 @@
         </th>
         <th></th>
     </tr>
+
     @foreach (var item in Model)
-            {
-                if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
-                {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cognome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cod)
-                </td>
-                <td>
-                    @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
-                </td>
-            </tr>
-        }
-
-
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod)
+            </td>
+            <td>
+                @Html.ActionLink("Modifica", "Edit", new { id = item.Cod }) |
+                @Html.ActionLink("Iscrizioni", "Details", new { id = item.Cod }) |
+                @Html.ActionLink("Cancella", "Delete", new { id = item.Cod })
+            </td>
+        </tr>
     }
+
 </table>
 <br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
 @section Scripts {
 
