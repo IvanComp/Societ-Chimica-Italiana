@@ -1,5 +1,6 @@
 ﻿@model PagedList.IPagedList<sci.Models.Mem>
 @using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
 
@@ -13,46 +14,45 @@
 <table class="table">
     <tr>
         <td colspan="3">
-            @using (Html.BeginForm("Index", "Mems", FormMethod.Post))
+            @using (Html.BeginForm("Index", "Mems"))
             {
 
-                @Html.Raw("Ricerca per Nominativo o Codice: ");
+              
 
                 @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
            {
                @id = "flexdatalist",
-               placeholder = "Programming language name",
                name = "language22",
-               list = "languages",
+               list = "data",
                //data = ANDREBBE SOSTITUITO A LIST, INSERENDO LA LISTA DI TUTTI I NOMI
                multiple = "",
                SelectList = "1",
                MinLengthAttributeAdapter = "1",
+               maxShownResult="10",
                onchange = "myFunction()",
 
            })
                 <input type="submit" value="Cerca" />
 
 
-                <datalist id="languages" >
+                <datalist id="data" >
                 
                 
-                @foreach (var item in Model)
+                @foreach (var item in ViewBag.data)
+                {
+                    if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
                     {
-                         if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
-                             {
-                              <option value="scelta" >
-                               @Html.DisplayFor(modelItem => item.Cognome)
-
-                               @Html.DisplayFor(modelItem => item.Nome)
-  
-                               @Html.DisplayFor(modelItem => item.Cod, new { @id = "codp" })                                   
+                              <option>
+                                  <li>@item.Cognome</li>
+                                  <li>@item.Nome</li>                                 
+                                  <li>@item.Cod</li>                               
                               </option>
                               }
                       }
 
                 </datalist>
-            }</td>
+            }
+        </td>
 
             <td>
                 @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
@@ -89,7 +89,7 @@
                         </td>
                         <td>
                             
-                            @Html.DisplayFor(modelItem => item.Cod, new { id = "codp" })
+                            @Html.DisplayFor(modelItem => item.Cod)
                            
                         </td>
                         <td>
@@ -116,7 +116,7 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
     
 <link href="~/Scripts/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css"/>
 <script src="~/Scripts/jquery.flexdatalist.min.js"></script>
-<a href="~/Views/Mems/countries.json">~/Views/Mems/countries.json</a>
+
 <script>
 
     $('#flexdatalist').flexdatalist({
@@ -134,7 +134,5 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
         
     }
 </script>       
-
-
     
 }
