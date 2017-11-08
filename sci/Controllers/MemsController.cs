@@ -16,39 +16,6 @@ namespace sci.Controllers
     {
         private sci_newEntities db = new sci_newEntities();
 
-        //public ActionResult Index(string sortOrder, string currentFilter, int? page)
-        //{
-        //    var mems = db.Mem.Select(m => m);
-        //    var data = db.Mem.Select(m => m).ToList();
-        //    ViewBag.data = data;
-
-        //    switch (sortOrder)
-        //    {
-        //        case "name_desc":
-        //            mems = mems.OrderByDescending(m => m.Cognome);
-        //            break;
-        //        case "Cod":
-        //            mems = mems.OrderBy(m => m.Cod);
-        //            break;
-        //        case "cod_desc":
-        //            mems = mems.OrderByDescending(m => m.Cod);
-        //            break;
-        //        default:  // Name ascending 
-        //            mems = mems.OrderBy(m => m.Cognome);
-        //            break;
-        //    }
-
-        //    int pageSize = 20;
-        //    int pageNumber = (page ?? 1);
-        //    return View(mems.ToPagedList(pageNumber, pageSize));
-        //}
-
-
-
-
-
-
-
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -88,7 +55,7 @@ namespace sci.Controllers
                 case "cod_desc":
                     mems = mems.OrderByDescending(m => m.Cod);
                     break;
-                default:  // Name ascending 
+                default: 
                     mems = mems.OrderBy(m => m.Cognome);
                     break;
             }
@@ -97,23 +64,6 @@ namespace sci.Controllers
             int pageNumber = (page ?? 1);
             return View(mems.ToPagedList(pageNumber, pageSize));
         }
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         [HttpPost]
         public ActionResult Index(string searchString)
