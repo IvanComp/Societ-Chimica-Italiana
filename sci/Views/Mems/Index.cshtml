@@ -1,36 +1,59 @@
 @model PagedList.IPagedList<sci.Models.Mem>
 @using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
-    
+
 }
 
 <h2>Soci</h2>
-<table>
-
-</table>
+<table></table>
 
 <table class="table">
     <tr>
         <td colspan="3">
-            @using (Html.BeginForm("Index", "Mems", FormMethod.Get))
+            @using (Html.BeginForm("Index", "Mems"))
             {
 
-                @Html.Raw("Ricerca per Nominativo o Codice: ");
-                
-                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                    <input type="submit" value="Cerca" />
-                
 
-                
 
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new
+           {
+               @id = "flexdatalist",
+               list = "data",
+               multiple = "",
+               SelectList = "1",
+               MinLengthAttributeAdapter = "1",
+               onchange = "myFunction()",
+
+           })
+                <input type="submit" value="Cerca" />
+
+
+                <datalist id="data">
+
+
+                    @foreach (var item in ViewBag.data)
+                {
+                    if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                    {
+                            <option>
+                                <li>@item.Cognome</li>
+                                <li>@item.Nome</li>
+                                <li>@item.Cod</li>
+                            </option>
+                        }
+                    }
+
+                </datalist>
             }
         </td>
-        
+
         <td>
             @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
             {
                 <input type="submit" value="Nuovo Socio" />
+
             }
         </td>
     </tr>
@@ -48,22 +71,29 @@
         <th></th>
     </tr>
 
-    @foreach (var item  in Model )
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cognome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cod)
-            </td>
-            <td>
-                @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
-            </td>
-        </tr>
+    @foreach (var item in Model)
+            {
+                if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cognome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Cod)
+
+                </td>
+                <td>
+                    @Html.ActionLink("Dettagli Socio", "Details", new { id = item.Cod })
+                </td>
+            </tr>
+        }
+
+
     }
 
 </table>
@@ -74,18 +104,31 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
 @section Scripts {
-    
+
+
+
     @Scripts.Render("~/bundles/jqueryval")
 
     <link href="~/Scripts/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery.flexdatalist.min.js"></script>
 
     <script>
-    $('#flexdatalist').flexdatalist({
-        selectionRequired: true,
-        minLength: 1,
-        maxShownResult: 10,
-    });
+
+        $('#flexdatalist').flexdatalist({
+            selectionRequired: true,
+            minLength: 1,
+            maxShownResult: 10,
+        });
+    </script>
+
+    <script>
+        function myFunction() {
+
+            var codice = $('#codp').val();
+            var annop = 2017;
+            windows: location = "../Pags/Edit?codp=" + codice + "&annop=" + annop;
+
+        }
     </script>
 
 }
