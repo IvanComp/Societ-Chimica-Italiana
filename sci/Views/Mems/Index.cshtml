@@ -7,9 +7,24 @@
 }
 
 <h2>Soci</h2>
-<table>
-
-</table>
+<style>
+    #button {
+        margin-top: 3px;
+        
+        box-shadow: rgb(12, 54, 97) 0px 1px 0px 0px inset;
+        background: linear-gradient(rgb(18, 77, 119) 5%, rgb(18, 77, 119) 100%) rgb(18, 77, 119);
+        border-radius: 3px;
+        border: 1px solid rgb(18, 77, 119);
+        display: inline-block;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        font-family: "Trebuchet MS";
+        font-size: 13px;
+        padding: 6px 24px;
+        text-decoration: none;
+        text-shadow: rgb(21, 70, 130) 0px 1px 0px;
+    }
+</style>
 
 <table class="table">
     <tr>
@@ -27,25 +42,22 @@
                //data = ANDREBBE SOSTITUITO A LIST, INSERENDO LA LISTA DI TUTTI I NOMI
                multiple = "",
                SelectList = "1",
-               MinLengthAttributeAdapter = "1",
-               maxShownResult="10",
+               MinLengthAttributeAdapter = "1",            
                onchange = "myFunction()",
+               
 
            })
-                <input type="submit" value="Cerca" />
-
-
+               
                 <datalist id="data" >
-                
-                
+ 
                 @foreach (var item in ViewBag.data)
                 {
                     if (item.Cognome != null && item.Nome != null && item.Cognome.Length > 2)
                     {
-                              <option>
-                                  <li>@item.Cognome</li>
-                                  <li>@item.Nome</li>                                 
-                                  <li>@item.Cod</li>                               
+                              <option style="background-color: red;color: red;">
+                                  @item.Cognome
+                                  @item.Nome                                 
+                                  @item.Cod                               
                               </option>
                               }
                       }
@@ -57,7 +69,7 @@
             <td>
                 @using (Html.BeginForm("Create", "Mems", FormMethod.Get))
             {
-                    <input type="submit" value="Nuovo Socio" />
+                    <input type="submit" id="button" value="Nuovo Socio" />
                     
                 }
             </td>
@@ -122,6 +134,7 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
     $('#flexdatalist').flexdatalist({
         selectionRequired: true,
         minLength: 1,
+        maxShownResults: 10,
     });
 </script>
 

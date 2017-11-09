@@ -34,14 +34,14 @@ namespace sci.Controllers
 
             ViewBag.CurrentFilter = searchString;
             var mems = from m in db.Mem select m;
-            var data = db.Mem.Select(m => m).ToList().OrderBy(m => m.Cognome); 
-            ViewBag.data = data;
+            var data = db.Mem.Select(m => m).ToList().OrderBy(m => m.Cognome);
+            ViewBag.data = data; 
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.All(char.IsDigit))
                 {
-                    mems = mems.Where(m => m.Cognome.StartsWith(searchString));  
+                    mems = mems.Where(m => m.Cognome.StartsWith(searchString)); 
                  }
                 
             }
@@ -73,7 +73,7 @@ namespace sci.Controllers
         {
             ViewBag.CurrentFilter = searchString;
 
-            var mems = db.Mem.Where(m => m.Cognome.StartsWith(searchString)); 
+            var mems = db.Mem.Where(m => m.Cognome.StartsWith(searchString) || m.Cod.ToString().StartsWith(searchString)); 
 
             return View(mems);
         }
